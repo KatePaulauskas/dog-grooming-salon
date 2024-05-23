@@ -6,5 +6,5 @@ from django.http import HttpResponse
 
 
 def my_home(request):
-    return HttpResponce("Hello, World!")
+    return HttpResponse("Welcome to the Grooming Salon!")
 
