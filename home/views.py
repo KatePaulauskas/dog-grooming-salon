@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic import TemplateView
 
 
 # Create your views here.
 
 
-def my_home(request):
-    return HttpResponse("Welcome to the Grooming Salon!")
+class HomeView(TemplateView):
+    template_name = 'home/index.html'
 
