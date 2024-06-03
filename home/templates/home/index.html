@@ -3,6 +3,46 @@
 {% block content %}
 
 <!-- index.html content starts here -->
-Home page
+<!-- Above Fold Section -->
+<div class="container text-center" aria-label="Welcome image">
+    <div class="row">
+        <div class="col-12">
+            <h2>{{ about.welcome_message }}</h2>
+            <img src="{{ about.image.url }}" class="img-fluid mx-auto d-block" width="50%" alt="Welcome Image">
+            <!-- About Us -->
+            <h1 class="text-uppercase">{{ about.title }}</h1>
+            <p>{{ about.content }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Service List -->
+<h2 class="text-center text-uppercase">Services</h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 mt-3 left">
+            <div class="row">
+                {% for service in services_list %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2 class="card-title">{{ service.name }}</h2>
+                            <div class="image-container">
+                                <img src="{{ service.service_image.url }}" width="100%"" alt="{{ service.name }}">
+                            </div>
+                            <p>{{ service.description }}</p>
+                            <p>Price: {{ service.price }}</p>
+                            <p>Duration: {{ service.duration }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="d-flex flex-column align-items-center">
+    <a href="#" class="btn btn-success btn-book mt-3 w-45 mb-4">Book Now</a>
+</div>
 <!-- index.html content ends here -->
 {% endblock %}
