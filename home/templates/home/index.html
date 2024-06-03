@@ -11,7 +11,7 @@
             <img src="{{ about.image.url }}" class="img-fluid mx-auto d-block" width="50%" alt="Welcome Image">
             <!-- About Us -->
             <h1 class="text-uppercase">{{ about.title }}</h1>
-            <p>{{ about.content }}</p>
+            <p>{{ about.content | safe }}</p>
         </div>
     </div>
 </div>
@@ -30,7 +30,7 @@
                             <div class="image-container">
                                 <img src="{{ service.service_image.url }}" width="100%"" alt="{{ service.name }}">
                             </div>
-                            <p>{{ service.description }}</p>
+                            <p>{{ service.description | safe }}</p>
                             <p>Price: {{ service.price }}</p>
                             <p>Duration: {{ service.duration }}</p>
                         </div>
