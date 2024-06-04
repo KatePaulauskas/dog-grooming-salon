@@ -3,6 +3,8 @@ from django.contrib import messages
 from .forms import ContactForm
 
 def contact_request(request):
+    # Create an empty form instance
+    contact_form = ContactForm()
     
     if request.method == "POST":
         contact_form = ContactForm(data=request.POST)
