@@ -18,6 +18,20 @@ footer {
     border-top: 1px solid grey;
 }
 
+/* Style pagination bar */
+.pagination .page-link {
+    color: darkgrey;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: darkgrey;
+    border-color: darkgrey;
+}
+
+.pagination .page-link:hover {
+    color: #555;
+}
+
 /* Media query: mobile phones (370px and up) */
 @media screen and (min-width: 370px) {
     html {
