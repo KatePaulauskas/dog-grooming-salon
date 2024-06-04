@@ -1,3 +1,41 @@
+/* Basic styles */
 body {
-    background-color: aquamarine;
+    background-color: #ffff;
 }
+
+/* Ensure anchor links adjust for the header height */
+html {
+    scroll-padding-top: 50px;
+}
+
+/* Add header bottom border */
+header {
+    border-bottom: 1px solid grey;
+}
+
+/* Add footer top border */
+footer {
+    border-top: 1px solid grey;
+}
+
+/* Media query: mobile phones (370px and up) */
+@media screen and (min-width: 370px) {
+    html {
+        scroll-padding-top: 260px;
+    }
+}
+
+/* Media query: tablets and larger screens (576px and up) */
+@media screen and (min-width: 576px) {
+    html {
+        scroll-padding-top: 150px;
+    }
+}
+
+/* Media query: larger devices (laptops & desktops, 992px and up) */
+@media screen and (min-width: 992px) {
+    html {
+        scroll-padding-top: 145px;
+    }
+}
+    
