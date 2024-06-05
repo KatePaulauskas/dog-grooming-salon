@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'home',
     'gallery',
     'contact_request',
+    'groomers',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
