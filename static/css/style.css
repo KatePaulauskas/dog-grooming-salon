@@ -37,6 +37,7 @@ p {
     font-family: "Khula", sans-serif !important;
     font-size: 120% !important;
     padding: 5px;
+    
 }
 
 
@@ -57,8 +58,8 @@ h2.card-title
     text-align: center;
 }
 
-/**/
-.about-us {
+/* Style paragraphs on Home and Groomers pages */
+.about-us .about-groomers {
     line-height: 1.8; 
     text-align: justify;
 }

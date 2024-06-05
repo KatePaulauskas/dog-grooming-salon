@@ -2,6 +2,7 @@
 {% url 'home' as home_url %}
 {% url 'gallery' as gallery_url %}
 {% url 'contact' as contact_url %}
+{% url 'groomers' as groomers_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,6 +47,10 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'home' %}#services">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if request.path == groomers_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'groomers' %}">Groomers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {% if request.path == gallery_url %}active" aria-current="page{% endif %}"
