@@ -4,4 +4,4 @@ from .models import ContactRequest
 @admin.register(ContactRequest)
 class ContactRequestAdmin(admin.ModelAdmin):
 
-    list_display = ('message', 'read',)
+    list_display = ('name', 'email', 'created_on', 'read')

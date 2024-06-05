@@ -1,7 +1,44 @@
+/* Import Google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@400;600&family=Khula:wght@400;600&family=Righteous&display=swap");
+
+
 /* Basic styles */
 body {
     background-color: #ffff;
 }
+
+
+/* H1 style */
+h1 {
+    font-family: "Righteous", sans-serif !important;
+    font-size: 250% !important;
+}
+
+/* H2-4 styles */
+h2,
+h3,
+h4
+ {
+    font-family: "Cormorant Upright", sans-serif !important;
+    font-size: 350% !important;
+}
+
+/* H5-6 styles */
+h5,
+h6
+ {
+    font-family: "Cormorant Upright", sans-serif !important;
+    font-size: 170% !important;
+
+ }
+
+/* Paragraph style */
+p {
+    font-family: "Khula", sans-serif !important;
+    font-size: 120% !important;
+    padding: 5px;
+}
+
 
 /* Ensure anchor links adjust for the header height */
 html {
@@ -13,9 +50,17 @@ header {
     border-bottom: 1px solid grey;
 }
 
-/* Add footer top border */
-footer {
-    border-top: 1px solid grey;
+/* Style Services titles */
+h2.card-title
+ {
+    font-size: 250% !important;
+    text-align: center;
+}
+
+/**/
+.about-us {
+    line-height: 1.8; 
+    text-align: justify;
 }
 
 /* Style pagination bar */
@@ -32,11 +77,32 @@ footer {
     color: #555;
 }
 
+/* Add footer top border */
+footer {
+    border-top: 1px solid grey;
+}
+
 /* Media query: mobile phones (370px and up) */
 @media screen and (min-width: 370px) {
     html {
         scroll-padding-top: 260px;
     }
+
+    /* H1 style */
+h1 {
+    font-family: "Righteous", sans-serif !important;
+    font-size: 180% !important;
+}
+
+/* H2-4 styles */
+h2,
+h3,
+h4
+ {
+    font-family: "Cormorant Upright", sans-serif !important;
+    font-size: 250% !important;
+}
+
 }
 
 /* Media query: tablets and larger screens (576px and up) */
