@@ -7,12 +7,12 @@
 <div class="container text-center" aria-label="Welcome image">
     <div class="row">
         <div class="col-12">
-            <h2 class="my-4">{{ about.welcome_message }}</h2>
+            <h1 class="my-4">{{ about.welcome_message }}</h1>
             <img src="{{ about.image.url }}" class="img-fluid mx-auto d-block" width="100%" alt="Welcome Image">
             <!-- About Us -->
             <section id="about">
-                <h1 class="text-uppercase mt-5">{{ about.title }}</h1>
-                <p>{{ about.content | safe }}</p>
+                <h2 class="mt-4">{{ about.title }}</h2>
+                <p class="about-us">{{ about.content | safe }}</p>
             </div>
         </div>
     </div>
@@ -20,7 +20,7 @@
 
 <!-- Service List -->
 <section id="services">
-    <h2 class="text-center text-uppercase mt-5">Services</h2>
+    <h2 class="text-center mt-4">Services</h2>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mt-3 left">
