@@ -51,6 +51,15 @@ header {
     border-bottom: 1px solid grey;
 }
 
+/* Ensure logo is always in the center of the header 
+   Source: https://www.shecodes.io/athena/121718-how-
+   to-use-transform-translate-50-50-to-center-an-element-in-css */
+.logo-container {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+}
+
 /* Style Services titles */
 h2.card-title
  {

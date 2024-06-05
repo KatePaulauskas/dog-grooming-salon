@@ -29,10 +29,10 @@
 
         <!-- Header -->
         <header class=" navbar-light bg-white py-3 sticky-top mb-2">
-            <div class="container-fluid d-flex justify-content-between align-items-start">
+            <div class="d-flex justify-content-between align-items-start">
 
                 <!-- Menu Section-->
-                <nav class="navbar navbar-expand-sm navbar-light">
+                <nav class="navbar navbar-expand-lg navbar-light pb-5">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -65,17 +65,16 @@
                 </nav>
 
                 <!-- Logo Section -->
-                <div class="d-flex flex-column align-items-center">
-                    <a class="navbar-brand mx-3" href="#">
+                <div class="logo-container">
+                    <a class="navbar-brand mx-3" href="{% url 'home' %}">
                         <img src="{% static 'images/logo/barks-in-bubbles-logo.webp' %}" alt="Barks in Bubbles Logo" class="img-fluid" style="max-height: 100px;">
                     </a>
-                    <a href="#" class="btn btn-success btn-book mt-3 w-45 d-sm-none">Book</a>
                 </div>
 
                 <!-- Header Buttons Section-->
                 <div class="header-buttons d-flex flex-column flex-md-row">
                     <a href="#" class="btn btn-primary me-2 mt-2">Login</a>
-                    <a href="#" class="btn btn-success btn-book me-2 mt-2 d-none d-sm-block">Book Now</a>
+                    <a href="#" class="btn btn-success btn-book me-2 mt-2">Book Now</a>
                 </div>
             </div>
         </header>
@@ -129,16 +128,13 @@
                 <!-- Social Media -->
                 <div class="row mt-3">
                     <div class="col-6 offset-3">
-
                         <!-- Instagram -->
                         <a href="https://www.instagram.com/barks-in-bubbles/" target="_blank" rel="noopener" aria-label="Visit my Instagram page (opend in a new tab)">
-                            <iconify-icon icon="skill-icons:instagram" width="32" height="32"></iconify-icon>
-                        </a>
+                            <iconify-icon icon="skill-icons:instagram" width="32" height="32"></iconify-icon></a>
 
                         <!-- Facebook -->
                         <a href="https://www.facebook.com/barks-in-bubbles/" target="_blank" rel="noopener" aria-label="Visit my Facebook page (opend in a new tab)">
-                            <iconify-icon icon="devicon:facebook" width="32" height="32"></iconify-icon>
-                        </a>
+                            <iconify-icon icon="devicon:facebook" width="32" height="32"></iconify-icon></a>
                     </div>
                 </div>
             </div>
