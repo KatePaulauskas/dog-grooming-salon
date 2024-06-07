@@ -12,6 +12,7 @@ body {
 h1 {
     font-family: "Righteous", sans-serif !important;
     font-size: 250% !important;
+    color: black;
 }
 
 /* H2-4 styles */
@@ -21,6 +22,7 @@ h4
  {
     font-family: "Cormorant Upright", sans-serif !important;
     font-size: 350% !important;
+    color: #272D2D;
 }
 
 /* H5-6 styles */
@@ -29,6 +31,7 @@ h6
  {
     font-family: "Cormorant Upright", sans-serif !important;
     font-size: 170% !important;
+    color: #272D2D;
 
  }
 
@@ -37,6 +40,7 @@ p {
     font-family: "Khula", sans-serif !important;
     font-size: 120% !important;
     padding: 5px;
+    color: #50514F;
     
 }
 
@@ -51,6 +55,18 @@ header {
     border-bottom: 1px solid grey;
 }
 
+/* Style navbar text */
+.nav-link {
+    color: #50514F !important;
+    font-size: 17px;
+
+}
+
+.nav-link.active {
+    color: #ff5cb7 !important;
+    text-decoration: underline !important;
+}
+
 /* Ensure logo is always in the center of the header 
    Source: https://www.shecodes.io/athena/121718-how-
    to-use-transform-translate-50-50-to-center-an-element-in-css */
@@ -58,6 +74,58 @@ header {
     position: absolute !important;
     left: 50% !important;
     transform: translateX(-50%) !important;
+}
+
+.btn-book {
+    background-color: #14cfdb;
+    border: 2px solid #14cfdb;
+    color: #3f3850;
+    font-weight: 400;
+}
+
+/* Style book button */
+
+.btn-book {
+    background-color: #14cfdb !important;
+    font-weight: 400;
+}
+
+.btn-book:active {
+    background-color: #14cfdb !important;
+    border: 2px solid #ffffff !important;
+    color: #ffffff;
+}
+
+.btn-book:hover {
+    background-color: #3f3850 !important;
+    color: #ffffff !important;
+}
+
+.btn-book:visited {
+    border: 2px solid #ffffff;
+    color: #000000;}
+
+/* Style login button */
+
+.btn-login {
+    background-color: #3f3850 !important;
+    font-weight: 400;
+}
+
+.btn-login:active {
+    background-color: #3f3850 !important;
+    border: 2px solid #14cfdb;
+    color: #ffffff;
+}
+
+.btn-login:hover {
+    background-color: #14cfdb !important;
+    color: #000000 !important;
+}
+
+.btn-login:visited {
+    border: 2px solid #000000;
+    color: #ffffff;
 }
 
 /* Style Services titles */
