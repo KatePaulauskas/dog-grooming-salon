@@ -44,7 +44,6 @@ p {
     
 }
 
-
 /* Ensure anchor links adjust for the header height */
 html {
     scroll-padding-top: 50px;
@@ -59,7 +58,7 @@ header {
 .nav-link {
     color: #50514F !important;
     font-size: 17px;
-
+    font-family: "Righteous", sans-serif !important;
 }
 
 .nav-link.active {
@@ -83,49 +82,74 @@ header {
     font-weight: 400;
 }
 
-/* Style book button */
-
-.btn-book {
-    background-color: #14cfdb !important;
-    font-weight: 400;
-}
-
-.btn-book:active {
-    background-color: #14cfdb !important;
-    border: 2px solid #ffffff !important;
-    color: #ffffff;
-}
-
-.btn-book:hover {
-    background-color: #3f3850 !important;
-    color: #ffffff !important;
-}
-
-.btn-book:visited {
-    border: 2px solid #ffffff;
-    color: #000000;}
-
 /* Style login button */
-
 .btn-login {
     background-color: #3f3850 !important;
-    font-weight: 400;
-}
-
-.btn-login:active {
-    background-color: #3f3850 !important;
-    border: 2px solid #14cfdb;
-    color: #ffffff;
+    color: #14cfdb;
 }
 
 .btn-login:hover {
     background-color: #14cfdb !important;
-    color: #000000 !important;
+    color: #3f3850 !important;
+    border: none;
+}
+
+.btn-login:active {
+    border: 2px solid #3f3850 !important;
 }
 
 .btn-login:visited {
-    border: 2px solid #000000;
-    color: #ffffff;
+    color: #14cfdb;
+    border: 2px solid #3f3850 !important;
+}
+
+/* Style book button */
+.btn-book {
+    background-color: #14cfdb !important;
+    color: #3f3850;
+    border: none;
+}
+
+.btn-book:hover {
+    background-color: #3f3850 !important;
+    color: #14cfdb !important;
+    border: none;
+}
+
+.btn-book:active {
+    border: 2px solid #14cfdb !important;
+}
+
+.btn-book:visited {
+    color: #3f3850;
+}
+
+/* Style Logout button */
+
+.btn-logout {
+    background-color: #ff5cb7 !important;
+    color: #3f3850;
+}
+
+.btn-logout:hover {
+    background-color: #3f3850 !important;
+    color: #ff5cb7 !important;
+    border: #3f3850;
+}
+
+.btn-logout:active {
+    border: 2px solid #ff5cb7 !important;
+}
+
+.btn-logout:visited {
+    color: #3f3850;
+    border: 2px solid #ff5cb7 !important;
+}
+
+/* Style Django messages */
+
+.d-messages {
+    background-color: #FFD1AE;
 }
 
 /* Style Services titles */
@@ -158,6 +182,44 @@ h2.card-title
 /* Add footer top border */
 footer {
     border-top: 1px solid grey;
+}
+
+/* Style Sign In button */
+
+.primaryAction {
+    background-color: #5ecc5c;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+}
+
+.primaryAction:hover {
+    color: #3f3850;
+    border: none;
+}
+
+.primaryAction:active {
+    border: 2px solid #3f3850;
+}
+
+.sign-out {
+    background-color: #fe8b32;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+}
+
+.sign-out:hover {
+    color: #3f3850;
+    border: none;
+}
+
+.sign-out:active {
+    border: 2px solid #3f3850;
 }
 
 /* Media query: mobile phones (370px and up) */
