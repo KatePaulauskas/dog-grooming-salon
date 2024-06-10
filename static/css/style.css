@@ -146,6 +146,11 @@ header {
     border: 2px solid #ff5cb7 !important;
 }
 
+/* Style authentication messages*/
+.auth {
+    color: #fe8b32 !important;
+}
+
 /* Style Django messages */
 
 .d-messages {

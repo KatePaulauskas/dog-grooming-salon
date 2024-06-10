@@ -51,7 +51,7 @@
             <div class="d-flex justify-content-between align-items-start">
 
                 <!-- Menu Section-->
-                <nav class="navbar navbar-expand-lg navbar-light mt-1 p-4">
+                <nav class="navbar navbar-expand-lg navbar-light mt-1 px-4 my-sm-3">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -80,6 +80,14 @@
                                 href="{% url 'contact' %}">Contact</a>
                             </li>
                         </ul>
+                        <!-- Authentication messages -->
+                        <div class=" auth d-block d-lg-none">
+                            {% if user.is_authenticated %}
+                            <p class="fs-6 my-1">You are logged in as {{ user }}</p>
+                            {% else %}
+                            <p class="fs-6 my-1">You are not logged in</p>
+                            {% endif %}
+                        </div>
                     </div>
                 </nav>
 
@@ -91,13 +99,23 @@
                 </div>
 
                 <!-- Header Buttons Section-->
-                <div class="header-buttons d-flex flex-column flex-md-row my-md-4 mx-3">
-                    {% if user.is_authenticated %}
-                    <a href="{% url 'account_logout' %}" class="btn btn-logout me-2 mt-2 {% if request.path == logout_url %}active{% endif %}" aria-current="page">Logout</a>
-                    {% else %}
-                    <a href="{% url 'account_login' %}" class="btn btn-login me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Login</a>
-                    {% endif %}
-                    <a href="#" class="btn btn-book btn-book me-2 mt-2">Book Now</a>
+                <div class="d-flex flex-column align-items-start my-0 my-md-3 my-lg-0">
+                    <div class="header-buttons d-flex flex-column flex-md-row my-md-2 mx-3">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'account_logout' %}" class="btn btn-logout me-2 mt-2 {% if request.path == logout_url %}active{% endif %}" aria-current="page">Logout</a>
+                        {% else %}
+                        <a href="{% url 'account_login' %}" class="btn btn-login me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Login</a>
+                        {% endif %}
+                        <a href="#" class="btn btn-book btn-book me-2 mt-2">Book Now</a>
+                    </div>
+                    <!-- Authentication messages -->
+                    <div class="auth d-none d-lg-block">
+                        {% if user.is_authenticated %}
+                        <p class="text-end fs-6 my-0  ms-5 me-0">You are logged in as {{ user }}</p>
+                        {% else %}
+                        <p class="text-end fs-6 my-0  ms-4 me-0">You are not logged in</p>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </header>
@@ -116,11 +134,6 @@
             </div>
         </div>
         <main>
-            {% if user.is_authenticated %}
-            <p class="text-end m-3">You are logged in as {{ user }}</p>
-            {% else %}
-            <p class="text-end m-3">You are not logged in</p>
-            {% endif %}
             {% block content %}
             <!-- Content Goes here --> 
             {% endblock content %}
