@@ -125,7 +125,6 @@ header {
 }
 
 /* Style Logout button */
-
 .btn-logout {
     background-color: #ff5cb7 !important;
     color: #3f3850;
@@ -152,7 +151,6 @@ header {
 }
 
 /* Style Django messages */
-
 .d-messages {
     background-color: #FFD1AE;
 }
@@ -248,20 +246,19 @@ footer {
     }
 
     /* H1 style */
-h1 {
-    font-family: "Righteous", sans-serif !important;
-    font-size: 180% !important;
-}
+    h1 {
+        font-family: "Righteous", sans-serif !important;
+        font-size: 180% !important;
+    }
 
-/* H2-4 styles */
-h2,
-h3,
-h4
- {
+    /* H2-4 styles */
+    h2,
+    h3,
+    h4
+    {
     font-family: "Cormorant Upright", sans-serif !important;
     font-size: 250% !important;
-}
-
+    }
 }
 
 /* Media query: tablets and larger screens (576px and up) */

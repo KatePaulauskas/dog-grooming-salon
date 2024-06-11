@@ -3,14 +3,14 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Log In" %}{% endblock %}
 
 {% block content %}
 
 <div class="container">
   <div class="row text-center">
       <div class="col-lg-8 offset-lg-2 mt-5">
-          <h1>{% trans "Sign In" %}</h1>
+          <h1>{% trans "Log In" %}</h1>
           <p>{% blocktrans %}Welcome back to Barks in Bubbles! 
             To make a booking please log in. If you have not created an account yet, 
             <a href="{{ signup_url }}">Sign up</a> first. {% endblocktrans %} </p>
@@ -23,10 +23,8 @@
             {{ form.as_p }} 
             {% if redirect_field_value %} 
             <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> 
-            {% endif %} <a class="button secondaryAction" href="{% url 'account_reset_password' %}"> 
-              {% trans "Forgot Password?" %}</a>
-              <br>
-              <button class="primaryAction my-3" type="submit">{% trans "Sign In" %}</button>
+            {% endif %}
+              <button class="primaryAction my-3 and Sign In pages" type="submit">{% trans "Log In" %}</button>
           </form>
       </div>
   </div>

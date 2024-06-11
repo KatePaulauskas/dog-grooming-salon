@@ -125,7 +125,6 @@ header {
 }
 
 /* Style Logout button */
-
 .btn-logout {
     background-color: #ff5cb7 !important;
     color: #3f3850;
@@ -146,8 +145,12 @@ header {
     border: 2px solid #ff5cb7 !important;
 }
 
-/* Style Django messages */
+/* Style authentication messages */
+.auth {
+    color: #fe8b32 !important;
+}
 
+/* Style Django messages */
 .d-messages {
     background-color: #FFD1AE;
 }
@@ -184,8 +187,22 @@ footer {
     border-top: 1px solid grey;
 }
 
-/* Style Sign In button */
+/* Style Sign Up form */
+.signup ul {
+    text-align: left;
+    margin-bottom: 0px;
+}
 
+.signup p {
+    margin-bottom: 16px;
+    padding: 5px;
+}
+
+.signup label {
+    width: 160px;
+}
+
+/* Style Sign In button */
 .primaryAction {
     background-color: #5ecc5c;
     height: 35px;
@@ -229,20 +246,19 @@ footer {
     }
 
     /* H1 style */
-h1 {
-    font-family: "Righteous", sans-serif !important;
-    font-size: 180% !important;
-}
+    h1 {
+        font-family: "Righteous", sans-serif !important;
+        font-size: 180% !important;
+    }
 
-/* H2-4 styles */
-h2,
-h3,
-h4
- {
+    /* H2-4 styles */
+    h2,
+    h3,
+    h4
+    {
     font-family: "Cormorant Upright", sans-serif !important;
     font-size: 250% !important;
-}
-
+    }
 }
 
 /* Media query: tablets and larger screens (576px and up) */
