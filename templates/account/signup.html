@@ -15,14 +15,14 @@
       </div>
   </div>
 
-  <div class="row text-left">
+  <div class="row text-center">
       <div class="col-lg-6 offset-lg-3 my-3">
           <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
               {% csrf_token %} {{ form.as_p }} {% if redirect_field_value %}
               <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" /> 
               {% endif %}
               <div class="text-center">
-                  <button class="primaryAction my3" type="submit">{% trans "Sign Up" %} &raquo;</button>
+                  <button class="primaryAction my-3" type="submit">{% trans "Sign Up" %} &raquo;</button>
               </div>
           </form>
       </div>

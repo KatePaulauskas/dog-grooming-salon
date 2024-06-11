@@ -146,7 +146,7 @@ header {
     border: 2px solid #ff5cb7 !important;
 }
 
-/* Style authentication messages*/
+/* Style authentication messages */
 .auth {
     color: #fe8b32 !important;
 }
@@ -189,8 +189,22 @@ footer {
     border-top: 1px solid grey;
 }
 
-/* Style Sign In button */
+/* Style Sign Up form */
+.signup ul {
+    text-align: left;
+    margin-bottom: 0px;
+}
 
+.signup p {
+    margin-bottom: 16px;
+    padding: 5px;
+}
+
+.signup label {
+    width: 160px;
+}
+
+/* Style Sign In button */
 .primaryAction {
     background-color: #5ecc5c;
     height: 35px;
