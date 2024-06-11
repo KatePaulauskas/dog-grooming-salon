@@ -169,17 +169,14 @@ h2.card-title
 }
 
 /* Style pagination bar */
-.pagination .page-link {
-    color: darkgrey;
-}
-
 .pagination .page-item.active .page-link {
-    background-color: darkgrey;
-    border-color: darkgrey;
+    background-color: #ff5cb7;
+    border-color: #50514F;
 }
 
-.pagination .page-link:hover {
-    color: #555;
+.pagination .page-item .page-link {
+    background-color: #FFEBF6;
+    border-color: #50514F;
 }
 
 /* Add footer top border */
@@ -202,7 +199,7 @@ footer {
     width: 160px;
 }
 
-/* Style Sign In button */
+/* Style Log In button */
 .primaryAction {
     background-color: #5ecc5c;
     height: 35px;
@@ -221,6 +218,7 @@ footer {
     border: 2px solid #3f3850;
 }
 
+/* Style Log Out button */
 .sign-out {
     background-color: #fe8b32;
     height: 35px;
@@ -236,6 +234,27 @@ footer {
 }
 
 .sign-out:active {
+    border: 2px solid #3f3850;
+}
+
+/* Style Contact page submit button */
+.btn-contact {
+    background-color: #5ecc5c;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-contact:hover {
+    background-color: #5ecc5c;
+    color: #3f3850;
+    border: none;
+}
+
+.btn-contact:active {
+    background-color: #5ecc5c;
     border: 2px solid #3f3850;
 }
 

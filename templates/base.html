@@ -51,7 +51,7 @@
             <div class="d-flex justify-content-between align-items-start">
 
                 <!-- Menu Section-->
-                <nav class="navbar navbar-expand-lg navbar-light mt-1 px-4 my-sm-3">
+                <nav class="navbar navbar-expand-lg navbar-light mt-1 px-4 pb-0 my-sm-1">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -81,11 +81,11 @@
                             </li>
                         </ul>
                         <!-- Authentication messages -->
-                        <div class=" auth d-block d-lg-none">
+                        <div class="auth d-block d-lg-none">
                             {% if user.is_authenticated %}
-                            <p class="fs-6 my-1">You are logged in as {{ user }}</p>
+                            <p class="auth fs-6 pt-1 pb-0 px-0 mb-0">You are logged in as {{ user }}</p>
                             {% else %}
-                            <p class="fs-6 my-1">You are not logged in</p>
+                            <p class="auth fs-6 pt-1 pb-0 px-0 mb-0">You are not logged in</p>
                             {% endif %}
                         </div>
                     </div>
@@ -111,9 +111,9 @@
                     <!-- Authentication messages -->
                     <div class="auth d-none d-lg-block">
                         {% if user.is_authenticated %}
-                        <p class="text-end fs-6 my-0  ms-5 me-0">You are logged in as {{ user }}</p>
+                        <p class="auth text-end fs-6 my-0 ms-5 me-0">You are logged in as {{ user }}</p>
                         {% else %}
-                        <p class="text-end fs-6 my-0  ms-4 me-0">You are not logged in</p>
+                        <p class="auth text-end fs-6 my-0 ms-4 me-0">You are not logged in</p>
                         {% endif %}
                     </div>
                 </div>
