@@ -6,3 +6,7 @@ class AppointmentForm(forms.ModelForm):
     class Meta:
         model = Appointment
         fields = ('service', 'groomer', 'datetime')
+        labels = {
+            'datetime': 'Date and Time',
+        }
+

@@ -237,8 +237,8 @@ footer {
     border: 2px solid #3f3850;
 }
 
-/* Style Contact page submit button */
-.btn-contact {
+/* Style Contact page submit button, Booking page Book Appointment button */
+.btn-contact, .btn-appointment {
     background-color: #5ecc5c;
     height: 35px;
     width: 100px;
@@ -247,17 +247,20 @@ footer {
     border: none;
 }
 
-.btn-contact:hover {
+.btn-contact:hover, .btn-appointment:hover {
     background-color: #5ecc5c;
     color: #3f3850;
     border: none;
 }
 
-.btn-contact:active {
+.btn-contact:active, .btn-appointment:active  {
     background-color: #5ecc5c;
     border: 2px solid #3f3850;
 }
 
+.btn-appointment {
+    width: 180px;
+}
 /* Media query: mobile phones (370px and up) */
 @media screen and (min-width: 370px) {
     html {

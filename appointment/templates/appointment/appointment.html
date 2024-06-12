@@ -11,11 +11,11 @@
                 {{ appointment_form | crispy }}
                 {% csrf_token %}
                 <div class="d-flex justify-content-center">  
-                    <button class="btn-contact" type="submit">Submit</button>
+                    <button class="btn-appointment" type="submit">Book Appointment</button>
                 </div>
               </form>
               {% else %}
-              <p>Log in <a href="https://8000-katepaulaus-doggrooming-8qlo6gbu3ax.ws-eu114.gitpod.io/accounts/login/">here</a> to book your appointment.</p>
+              <p class="text-center mt-5">Log in <a href="https://8000-katepaulaus-doggrooming-8qlo6gbu3ax.ws-eu114.gitpod.io/accounts/login/">here</a> to book your appointment.</p>
               {% endif %}
         </div>
     </div>
