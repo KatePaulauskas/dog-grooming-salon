@@ -98,7 +98,7 @@
                     </a>
                 </div>
 
-                <!-- Header Buttons Section-->
+                <!-- Header Buttons Section--> 
                 <div class="d-flex flex-column align-items-start my-0 my-md-3 my-lg-0">
                     <div class="header-buttons d-flex flex-column flex-md-row my-md-2 mx-3">
                         {% if user.is_authenticated %}
@@ -106,7 +106,7 @@
                         {% else %}
                         <a href="{% url 'account_login' %}" class="btn btn-login me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Log In</a>
                         {% endif %}
-                        <a href="#" class="btn btn-book btn-book me-2 mt-2">Book Now</a>
+                        <a href="{% url 'appointment' %}" class="btn btn-book btn-book me-2 mt-2">Book Now</a>
                     </div>
                     <!-- Authentication messages -->
                     <div class="auth d-none d-lg-block">
