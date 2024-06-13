@@ -107,7 +107,7 @@
                         <!-- Redirect to the Appointment booking page after login. Source: https://realpython.com/django-redirects/ -->
                         <a href="{% url 'account_login' %}?next={% url 'appointment' %}" class="btn btn-login me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Log In</a>
                         {% endif %}
-                        <a href="{% url 'appointment' %}" class="btn btn-book btn-book me-2 mt-2">Book Now</a>
+                        <a href="{% url 'appointment' %}" class="btn btn-book me-2 mt-2">Book Now</a>
                     </div>
                     <!-- Authentication messages -->
                     <div class="auth d-none d-lg-block">
