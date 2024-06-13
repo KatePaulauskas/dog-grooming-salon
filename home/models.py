@@ -27,3 +27,6 @@ class Services(models.Model):
 
     class Meta:
         verbose_name_plural = "Services"
+
+    def __str__(self):
+        return self.name
