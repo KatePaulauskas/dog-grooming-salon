@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from home.models import Services
-from groomers.models import Groomers
+from groomers.models import GroomerSchedule, Groomers
 # Import the time and timezone classes
 from datetime import time
 from django.utils import timezone
