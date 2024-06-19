@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-=a=n20t#qbm6jpt5)^kmcn35a4i-h0t#t0h1+r(yocj7nd-ig9
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-katepaulaus-doggrooming-8qlo6gbu3ax.ws-eu114.gitpod.io',
+    '8000-katepaulaus-doggrooming-98d5mf21glf.ws.codeinstitute-ide.net',
     '.herokuapp.com'
 ]
 
@@ -104,16 +104,14 @@ WSGI_APPLICATION = 'groomingsalon.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.gitpod.io/",
