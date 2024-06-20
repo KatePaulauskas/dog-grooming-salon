@@ -4,15 +4,15 @@
 
 <!-- index.html content starts here -->
 <!-- Above Fold Section -->
-<div class="container text-center" aria-label="Welcome image">
+<div class="container-fluid text-center" aria-label="Welcome image">
     <div class="row">
         <div class="col-12">
             <h1 class="my-4">{{ about.welcome_message }}</h1>
-            <img src="{{ about.image.url }}" class="img-fluid mx-auto d-block" width="100%" alt="Welcome Image">
+            <img src="{{ about.image.url }}" class="hero-img" width="100%" alt="Welcome Image">
             <!-- About Us -->
             <section id="about">
-                <h2 class="mt-4">{{ about.title }}</h2>
-                <p class="about-us">{{ about.content | safe }}</p>
+                <h2 class="my-4">{{ about.title }}</h2>
+                <p class="about-us mx-1 mx-sm-2 mx-md-3 mx-lg-5 text-center">{{ about.content | safe }}</p>
             </div>
         </div>
     </div>

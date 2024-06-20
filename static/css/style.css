@@ -11,7 +11,7 @@ body {
 /* H1 style */
 h1 {
     font-family: "Righteous", sans-serif !important;
-    font-size: 250% !important;
+    font-size: 150% !important;
     color: black;
 }
 
@@ -21,7 +21,7 @@ h3,
 h4
  {
     font-family: "Cormorant Upright", sans-serif !important;
-    font-size: 350% !important;
+    font-size: 210% !important;
     color: #272D2D;
 }
 
@@ -30,7 +30,7 @@ h5,
 h6
  {
     font-family: "Cormorant Upright", sans-serif !important;
-    font-size: 170% !important;
+    font-size: 100% !important;
     color: #272D2D;
 
  }
@@ -103,24 +103,24 @@ header {
     border: 2px solid #3f3850 !important;
 }
 
-/* Style book button */
-.btn-book {
+/* Style book anf my apoointments buttons */
+.btn-book, .btn-appointments {
     background-color: #14cfdb !important;
     color: #3f3850;
     border: none;
 }
 
-.btn-book:hover {
+.btn-book:hover, .btn-appointments:hover {
     background-color: #3f3850 !important;
     color: #14cfdb !important;
     border: none;
 }
 
-.btn-book:active {
+.btn-book:active, .btn-appointments:active {
     border: 2px solid #14cfdb !important;
 }
 
-.btn-book:visited {
+.btn-book:visited, .btn-appointments:visited {
     color: #3f3850;
 }
 
@@ -153,6 +153,11 @@ header {
 /* Style Django messages */
 .d-messages {
     background-color: #FFD1AE;
+}
+
+/* Style Hero Image */
+.hero-img {
+    width: 95%;
 }
 
 /* Style Services titles */
@@ -264,8 +269,8 @@ footer {
     width: 180px;
 }
 
-/* Media query: mobile phones (370px and up) */
-@media screen and (min-width: 370px) {
+/* Media query: mobile phones (320px and up) */
+@media screen and (min-width: 320px) {
     html {
         scroll-padding-top: 260px;
     }
