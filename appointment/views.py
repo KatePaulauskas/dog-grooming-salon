@@ -76,8 +76,8 @@ def book_appointment_step_two(request):
             appointment.save()
             messages.add_message(request, messages.SUCCESS, "Thank you for booking your appointment!")
 
-            # Redirect to step one for new appointment
-            return redirect('book_appointment_step_one')
+            # Redirect to booked appointments
+            return redirect('my_appointments')
 
     else:
         # Create an empty form
