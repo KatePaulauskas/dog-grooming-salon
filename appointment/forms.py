@@ -22,6 +22,21 @@ class StepOneForm(forms.ModelForm):
         model = Appointment
         fields = ('service', 'groomer', 'date',)
 
+    """
+    Prevent past date booking
+    Source: 
+    https://stackoverflow.com/questions/4941974/
+    django-how-to-set-datefield-to-only-accept-today-future-dates
+    """
+    def clean_date(self):
+        selected_date = self.cleaned_data.get('date')
+        today = date.today()
+
+        if selected_date < today:
+            raise ValidationError("Not possible to select date in the past")
+        
+        return selected_date
+
 class StepTwoForm(forms.ModelForm):
     time = forms.ChoiceField(choices=[])
 
