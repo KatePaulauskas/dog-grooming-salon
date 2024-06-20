@@ -1,30 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
-from .forms import StepOneForm
+from .forms import StepOneForm, StepTwoForm
+from .models import Groomers, Appointment, Services
 import datetime
-
-"""
-Create a list of 30-minute time slots for a single day, 
-starting at 9:00 AM and ending at 5:00 PM.
-"""
-def generate_time_choices():
-    # Define the start and end time of appointments
-    start_time = datetime.time(9, 0)
-    end_time = datetime.time(17, 0)
-    # Define interval between appointments
-    interval = datetime.timedelta(minutes=30)
-    times = []
-    # Combine today's date with the start time
-    current_datetime = datetime.datetime.combine(datetime.date.today(), start_time)
-    # Combine today's date with the end time
-    end_datetime = datetime.datetime.combine(datetime.date.today(), end_time)
-
-    # Generate time slots between the start and end times
-    while current_datetime < end_datetime:
-        times.append((current_datetime.time().strftime('%H:%M'), current_datetime.time().strftime('%H:%M')))
-        current_datetime += interval
-
-    return times
 
 def book_appointment_step_one(request):
     """
@@ -59,5 +37,57 @@ def book_appointment_step_one(request):
         "appointment/appointment_step_one.html", 
         {
             'form_step_one': form_step_one
+            }
+    )
+
+def book_appointment_step_two(request):
+    """
+    Handle the second step of the appointment booking process.
+    Users select an available time slot.
+    """
+    # Retrieve stored service, groomer, and date from the session
+    service_id = request.session.get('service_id')
+    groomer_id = request.session.get('groomer_id')
+    date_str = request.session.get('date')
+
+    """
+    Retrieve the specified Services and Groomers objects using the IDs stored in the session 
+    If no object is found with the given ID, 404 error is raised
+    Source: 
+    https://www.geeksforgeeks.org/get_object_or_404-method-in-django-models/
+    """
+    service = get_object_or_404(Services, id=service_id)
+    groomer = get_object_or_404(Groomers, id=groomer_id)
+    
+    # Convert the date string back to a date object to ensure that date operations can be performed correctly
+    
+    date = datetime.datetime.strptime(date_str, '%Y-%m-%d').date()
+
+    if request.method == 'POST':
+        form_step_two = StepTwoForm(data=request.POST, groomer=groomer, date=date, request=request)
+        if form_step_two.is_valid():
+            # Create and save the new appointment
+            appointment = form_step_two.save(commit=False)
+            appointment.service = service
+            appointment.groomer = groomer
+            appointment.date = date
+            appointment.user = request.user
+            appointment.save()
+            messages.add_message(request, messages.SUCCESS, "Thank you for booking your appointment!")
+
+            # Redirect to step one for new appointment
+            return redirect('book_appointment_step_one')
+
+    else:
+        # Create an empty form
+        form_step_two = StepTwoForm(groomer=groomer, date=date, request=request)
+ 
+
+    return render(
+        request, 
+        "appointment/appointment_step_two.html", 
+        {
+            'form_step_two': form_step_two, 'service': service, 
+            'groomer': groomer, 'date': date
             }
     )
