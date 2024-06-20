@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib import messages
-from .forms import AppointmentForm
+from .forms import StepOneForm
 import datetime
 
 """
@@ -26,32 +26,38 @@ def generate_time_choices():
 
     return times
 
-def book_appointment(request):
-    # Generate time choices for the form
-    time_choices = generate_time_choices()
-
+def book_appointment_step_one(request):
+    """
+    Handle the first step of the appointment booking process.
+    Users select a service, groomer, and date.
+    """
     if request.method == 'POST':
-        appointment_form = AppointmentForm(data=request.POST)
-        # Update time choices before processing form
-        appointment_form.set_time_choices(time_choices)
+        form_step_one = StepOneForm(data=request.POST)
+        if form_step_one.is_valid():
 
-        if appointment_form.is_valid():
-            # Create the booking but don't save it to the database yet
-            appointment = appointment_form.save(commit=False)
-            # Set the user to the current user to ensure user is included into the booking form
-            appointment.user = request.user
-            appointment_form.save()
-            # Add success message
-            messages.add_message(request, messages.SUCCESS, "Thank you for booking your appointment!")
-            # Reset the form to clear input fields
-            appointment_form = AppointmentForm()
-            # Reset time choices
-            appointment_form.set_time_choices(time_choices)  
+            """
+            Store selected service, groomer, and date in the session to be used in the next step
+            Sources:
+            https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78
+            https://docs.djangoproject.com/en/5.0/topics/forms/
+            https://docs.djangoproject.com/en/5.0/ref/forms/validation/
+            """
 
+            # Retrieve service and groomer id from the cleaned data
+            request.session['service_id'] = form_step_one.cleaned_data['service'].id
+            request.session['groomer_id'] = form_step_one.cleaned_data['groomer'].id
+
+            # Convert the date to a string format for consistent storage in the session
+            request.session['date'] = form_step_one.cleaned_data['date'].strftime('%Y-%m-%d')
+            
+            return redirect('book_appointment_step_two') 
+    else:
+        # Create an empty form for GET request
+        form_step_one = StepOneForm()
     return render(
-        request,
-        "appointment/appointment.html",
+        request, 
+        "appointment/appointment_step_one.html", 
         {
-            "appointment_form": appointment_form,
-        },
+            'form_step_one': form_step_one
+            }
     )
