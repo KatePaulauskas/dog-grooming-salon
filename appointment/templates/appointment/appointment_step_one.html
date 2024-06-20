@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-9 col-md-6 m-3">
+            {% if user.is_authenticated %}
+            <h1 class="text-center my-3">Step 1: Select Service, Groomer, and Date</h1>
+            <form method="post">
+                {{ form_step_one | crispy }}
+                {% csrf_token %}
+                <div class="d-flex justify-content-center">
+                    <button class="btn-appointment" type="submit">Next</button>
+                </div>
+            </form>
+            {% else %}
+            <div class="alert alert-info" role="alert">
+                <p class="text-center mt-5">Log in <a href="{% url 'account_login' %}">here</a> to book your appointment.</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
