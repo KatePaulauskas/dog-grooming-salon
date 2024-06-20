@@ -3,6 +3,7 @@ from django.contrib import messages
 from .forms import StepOneForm, StepTwoForm
 from .models import Groomers, Appointment, Services
 import datetime
+from django.urls import reverse
 
 def book_appointment_step_one(request):
     """
@@ -91,3 +92,17 @@ def book_appointment_step_two(request):
             'groomer': groomer, 'date': date
             }
     )
+
+def my_appointments(request):
+    # Check if the user is authenticated
+    if request.user.is_authenticated:
+        # Get all appointments for the logged-in user, ordered by date ascending
+        appointments = Appointment.objects.filter(user=request.user).order_by('date')
+        return render(request,
+        "appointment/my_appointments.html",
+        {'appointments': appointments
+        }
+    )
+    else:
+        # If the user is not logged in, redirect them to the login page
+        return redirect(reverse('account_login'))
