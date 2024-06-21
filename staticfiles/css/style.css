@@ -11,7 +11,7 @@ body {
 /* H1 style */
 h1 {
     font-family: "Righteous", sans-serif !important;
-    font-size: 250% !important;
+    font-size: 150% !important;
     color: black;
 }
 
@@ -21,7 +21,7 @@ h3,
 h4
  {
     font-family: "Cormorant Upright", sans-serif !important;
-    font-size: 350% !important;
+    font-size: 210% !important;
     color: #272D2D;
 }
 
@@ -30,7 +30,7 @@ h5,
 h6
  {
     font-family: "Cormorant Upright", sans-serif !important;
-    font-size: 170% !important;
+    font-size: 160% !important;
     color: #272D2D;
 
  }
@@ -42,11 +42,6 @@ p {
     padding: 5px;
     color: #50514F;
     
-}
-
-/* Ensure anchor links adjust for the header height */
-html {
-    scroll-padding-top: 50px;
 }
 
 /* Add header bottom border */
@@ -103,24 +98,24 @@ header {
     border: 2px solid #3f3850 !important;
 }
 
-/* Style book button */
-.btn-book {
+/* Style book anf my apoointments buttons */
+.btn-book, .btn-appointments {
     background-color: #14cfdb !important;
     color: #3f3850;
     border: none;
 }
 
-.btn-book:hover {
+.btn-book:hover, .btn-appointments:hover {
     background-color: #3f3850 !important;
     color: #14cfdb !important;
     border: none;
 }
 
-.btn-book:active {
+.btn-book:active, .btn-appointments:active {
     border: 2px solid #14cfdb !important;
 }
 
-.btn-book:visited {
+.btn-book:visited, .btn-appointments:visited {
     color: #3f3850;
 }
 
@@ -155,10 +150,15 @@ header {
     background-color: #FFD1AE;
 }
 
+/* Style Hero Image */
+.hero-img {
+    width: 95%;
+}
+
 /* Style Services titles */
 h2.card-title
  {
-    font-size: 250% !important;
+    font-size: 180% !important;
     text-align: center;
 }
 
@@ -169,17 +169,14 @@ h2.card-title
 }
 
 /* Style pagination bar */
-.pagination .page-link {
-    color: darkgrey;
-}
-
 .pagination .page-item.active .page-link {
-    background-color: darkgrey;
-    border-color: darkgrey;
+    background-color: #ff5cb7;
+    border-color: #50514F;
 }
 
-.pagination .page-link:hover {
-    color: #555;
+.pagination .page-item .page-link {
+    background-color: #FFEBF6;
+    border-color: #50514F;
 }
 
 /* Add footer top border */
@@ -202,7 +199,7 @@ footer {
     width: 160px;
 }
 
-/* Style Sign In button */
+/* Style Log In and Edit buttons */
 .primaryAction {
     background-color: #5ecc5c;
     height: 35px;
@@ -221,8 +218,9 @@ footer {
     border: 2px solid #3f3850;
 }
 
-.sign-out {
-    background-color: #fe8b32;
+/* Style Log Out button, My appointments Delete button  */
+.sign-out, .btn-delete {
+    background-color: #fe8b32 !important;
     height: 35px;
     width: 100px;
     border-radius: 5px;
@@ -230,17 +228,44 @@ footer {
     border: none;
 }
 
-.sign-out:hover {
+.sign-out:hover, .btn-delete:hover {
     color: #3f3850;
     border: none;
 }
 
-.sign-out:active {
+.sign-out:active, .btn-delete:active {
     border: 2px solid #3f3850;
 }
 
-/* Media query: mobile phones (370px and up) */
-@media screen and (min-width: 370px) {
+
+
+/* Style Contact page submit button, Booking page Book Appointment button, My Appointments Edit button */
+.btn-contact, .btn-appointment, .btn-edit {
+    background-color: #5ecc5c;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-contact:hover, .btn-appointment:hover, .btn-edit:hover {
+    background-color: #5ecc5c !important;
+    color: #3f3850;
+    border: none;
+}
+
+.btn-contact:active, .btn-appointment:active, .btn-edit:active {
+    background-color: #5ecc5c !important;
+    border: 2px solid #3f3850;
+}
+
+.btn-appointment {
+    width: 180px;
+}
+
+/* Media query: mobile phones (320px and up) */
+@media screen and (min-width: 320px) {
     html {
         scroll-padding-top: 260px;
     }
@@ -259,6 +284,11 @@ footer {
     font-family: "Cormorant Upright", sans-serif !important;
     font-size: 250% !important;
     }
+
+    /* Table font size */
+    table {
+        font-size: 12px !important;
+    }
 }
 
 /* Media query: tablets and larger screens (576px and up) */
@@ -266,12 +296,21 @@ footer {
     html {
         scroll-padding-top: 150px;
     }
+    /* Table font size */
+    table {
+        font-size: 16px !important;
+    }
 }
 
 /* Media query: larger devices (laptops & desktops, 992px and up) */
 @media screen and (min-width: 992px) {
     html {
         scroll-padding-top: 145px;
+    }
+
+    /* Table font size */
+    table {
+        font-size: 18px !important;
     }
 }
     
