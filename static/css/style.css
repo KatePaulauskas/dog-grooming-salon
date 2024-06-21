@@ -46,7 +46,7 @@ p {
 
 /* Ensure anchor links adjust for the header height */
 html {
-    scroll-padding-top: 50px;
+    scroll-padding-top: 250px !important;
 }
 
 /* Add header bottom border */
