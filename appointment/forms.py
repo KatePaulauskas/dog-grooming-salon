@@ -23,7 +23,8 @@ class StepOneForm(forms.ModelForm):
         fields = ('service', 'groomer', 'date',)
 
     """
-    Prevent past date booking
+    Prevent date booking in the pasr or
+    more than 90 days in advance
     Source: 
     https://stackoverflow.com/questions/4941974/
     django-how-to-set-datefield-to-only-accept-today-future-dates
@@ -34,6 +35,9 @@ class StepOneForm(forms.ModelForm):
 
         if selected_date < today:
             raise ValidationError("Not possible to select date in the past")
+        
+        elif selected_date > today + timedelta(days=90):
+            raise ValidationError("Not possible to select a date more than 90 days in advance")
         
         return selected_date
 
