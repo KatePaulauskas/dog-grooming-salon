@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import StepOneForm, StepTwoForm
+from django.http import HttpResponseRedirect
 from .models import Groomers, Appointment, Services
 import datetime
 from django.urls import reverse
@@ -106,3 +107,16 @@ def my_appointments(request):
     else:
         # If the user is not logged in, redirect them to the login page
         return redirect(reverse('account_login'))
+
+def appointment_delete(request, appointment_id):
+    """
+    View to delete an appointment.
+    """
+    appointment = get_object_or_404(Appointment, pk=appointment_id)
+    
+    appointment.delete()
+    
+    messages.add_message(request, messages.SUCCESS, 'Appointment deleted!')
+
+    return HttpResponseRedirect(reverse('my_appointments'))
+
