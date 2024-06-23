@@ -153,3 +153,59 @@ def edit_appointment_step_one(request, appointment_id):
         }
     )
 
+def edit_appointment_step_two(request):
+    """
+    View to handle the second step of editing an appointment.
+    """
+    # Retrieve the appointment ID from the session
+    appointment_id = request.session.get('edit_appointment_id')
+
+    # Get the appointment object, or return a 404 error if not found
+    appointment = get_object_or_404(Appointment, pk=appointment_id)
+
+    # Retrieve service, groomer, and date information from the session
+    service_id = request.session.get('service_id')
+    groomer_id = request.session.get('groomer_id')
+    date_str = request.session.get('date')
+
+    # Get the service and groomer objects, or return a 404 error if not found
+    service = get_object_or_404(Services, id=service_id)
+    groomer = get_object_or_404(Groomers, id=groomer_id)
+
+    # Convert the date string back to a date object
+    date = datetime.datetime.strptime(date_str, '%Y-%m-%d').date()
+
+    # Check if the form has been submitted via POST request
+    if request.method == 'POST':
+        # Initialise the form with the submitted data, groomer, and date.
+        form_step_two = StepTwoForm(data=request.POST, groomer=groomer, date=date, request=request)
+
+        # Validate the form
+        if form_step_two.is_valid():
+            # Update the appointment with the new details
+            appointment.service = service
+            appointment.groomer = groomer
+            appointment.date = date
+            appointment.time = form_step_two.cleaned_data['time']
+            appointment.save()
+
+            # Add a success message
+            messages.add_message(request, messages.SUCCESS, "Your appointment is updated!")
+
+            # Redirect to the user's appointments page
+            return redirect('my_appointments')
+    else:
+        # Initialise the form with the current appointment details
+        form_step_two = StepTwoForm(groomer=groomer, date=date, request=request, instance=appointment)
+
+    # Render the template with the form and context data
+    return render(
+        request, 
+        "appointment/edit_appointment_step_two.html", 
+        {'form_step_two': form_step_two,
+        'service': service,
+        'groomer': groomer,
+        'date': date,
+        # Pass the appointment_id to the template context
+        'appointment_id': appointment_id
+    })
