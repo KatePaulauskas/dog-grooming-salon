@@ -34,8 +34,6 @@ class GroomerSchedule(models.Model):
     saturday_end = models.TimeField(null=True, blank=True)
     sunday_start = models.TimeField(null=True, blank=True)
     sunday_end = models.TimeField(null=True, blank=True)
-    lunch_start = models.TimeField()
-    lunch_end = models.TimeField()
 
     def __str__(self):
         return f"{self.groomer.name}'s schedule"

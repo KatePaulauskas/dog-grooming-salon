@@ -80,8 +80,8 @@ class StepTwoForm(forms.ModelForm):
         start_datetime = datetime.combine(date, start_time)
         end_datetime = datetime.combine(date, end_time)
 
-        # Create time intervals
-        interval = timedelta(minutes=30)
+        # Create time intervals of 2 hours, accountign for 30 min buffer time after each session
+        interval = timedelta(hours=2)
         times = []
 
         # Generate the list of time slots
