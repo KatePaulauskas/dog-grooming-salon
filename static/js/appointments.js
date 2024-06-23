@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
     const deleteButtons = document.getElementsByClassName("btn-delete");
     const deleteConfirm = document.getElementById("deleteConfirm");
+    const editButtons = document.getElementsByClassName("btn-edit");
 
     /**
 * Initializes deletion functionality for the provided delete buttons.
@@ -34,6 +35,29 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('Appointment ID not found');
             }
 
+        });
+    }
+
+    /**
+ * Initializes editing functionality for the provided edit buttons.
+ * 
+ * For each button in the `editButtons` collection:
+ * - Retrieves the associated appointment's ID upon click.
+ * - Redirects the browser to the edit endpoint for the specific appointment.
+ * */
+
+    for (let button of editButtons) {
+        button.addEventListener("click", (e) => {
+            let appointmentId = e.target.getAttribute("data-appointment-id");
+            if (appointmentId) {
+                /** Redirect browser to a different URL for edititng appointment
+            * Source: https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/
+            */
+                window.location.href = `/appointment/edit_appointment_step_one/${appointmentId}/`;
+            } 
+            else {
+                console.error('Appointment ID not found');
+            }
         });
     }
 });

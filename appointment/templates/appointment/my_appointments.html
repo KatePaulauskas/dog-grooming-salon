@@ -28,7 +28,7 @@
                         <td class="d-none d-lg-block">{{ appointment.get_status_display }}</td>
                         <td>
                             <div class="d-flex flex-column flex-md-row justify-content-center my-md-2 mx-3">
-                                <a href="#" class="btn btn-edit m-1">Edit</a>
+                                <button class="btn btn-edit m-1" data-appointment-id="{{ appointment.id }}">Edit</button>
                                 <button class="btn btn-delete m-1" data-appointment-id="{{ appointment.id }}">Delete</button>
                             </div>
                         </td>

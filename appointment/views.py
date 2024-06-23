@@ -120,3 +120,36 @@ def appointment_delete(request, appointment_id):
 
     return HttpResponseRedirect(reverse('my_appointments'))
 
+def edit_appointment_step_one(request, appointment_id):
+    """
+    View to handle the first step of editing an appointment.
+    If the request method is GET, it pre-fills the form with the current appointment details and renders the form for editing.
+    If the form is submitted via POST request, it validates the form data and, if valid, saves the relevant details
+    to the session and redirects the user to the second step of the edit process. 
+    """
+    appointment = get_object_or_404(Appointment, id=appointment_id)
+
+    if request.method == 'POST':
+        # Initialize the form with the existing appointment details
+        form_step_one = StepOneForm(data=request.POST, instance=appointment)
+        if form_step_one.is_valid():
+            # Save the relevant appointment details to the session.
+            request.session['edit_appointment_id'] = appointment_id
+            request.session['service_id'] = form_step_one.cleaned_data['service'].id
+            request.session['groomer_id'] = form_step_one.cleaned_data['groomer'].id
+            request.session['date'] = form_step_one.cleaned_data['date'].strftime('%Y-%m-%d')
+            # Redirect to the second step of the edit process.
+            return redirect('edit_appointment_step_two')
+
+    else:
+        form_step_one = StepOneForm(instance=appointment)
+
+    # Render the form for editing the appointment.
+    return render(
+        request, 
+        "appointment/edit_appointment_step_one.html", 
+        {'form_step_one': form_step_one, 
+        'appointment_id': appointment_id
+        }
+    )
+
