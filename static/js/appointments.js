@@ -15,17 +15,25 @@ document.addEventListener('DOMContentLoaded', function() {
 * 
 * For each button in the `deleteButtons` collection:
 * - Retrieves the associated appointment's ID upon click.
+* - Checks if the appointment ID is valid.
 * - Updates the `deleteConfirm` link's href to point to the 
 * deletion endpoint for the specific appointment.
 * - Displays a confirmation modal (`deleteModal`) to prompt 
 * the user for confirmation before deletion.
+* - Logs an error if the appointment ID is not found.
 */
 
     for (let button of deleteButtons) {
-        button.addEventListener("click", function(e) {
-            const appointmentId = button.getAttribute("data-appointment-id");
-            deleteConfirm.href = `/appointment/appointment_delete/${appointmentId}/`;
-            deleteModal.show();
+        button.addEventListener("click", (e) => {
+            let appointmentId = e.target.getAttribute("data-appointment-id");
+            if (appointmentId) {
+                deleteConfirm.href = `/appointment/appointment_delete/${appointmentId}/`;
+                deleteModal.show();
+            } 
+            else {
+                console.error('Appointment ID not found');
+            }
+
         });
     }
 });
