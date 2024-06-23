@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
     const deleteButtons = document.getElementsByClassName("btn-delete");
     const deleteConfirm = document.getElementById("deleteConfirm");
+    const editModal = new bootstrap.Modal(document.getElementById("editModal"));
     const editButtons = document.getElementsByClassName("btn-edit");
+    const editConfirm = document.getElementById("editConfirm");
 
     /**
 * Initializes deletion functionality for the provided delete buttons.
@@ -24,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
 * - Logs an error if the appointment ID is not found.
 */
 
+    // Attach event listeners to delete buttons
     for (let button of deleteButtons) {
         button.addEventListener("click", (e) => {
             let appointmentId = e.target.getAttribute("data-appointment-id");
@@ -44,20 +47,33 @@ document.addEventListener('DOMContentLoaded', function() {
  * For each button in the `editButtons` collection:
  * - Retrieves the associated appointment's ID upon click.
  * - Redirects the browser to the edit endpoint for the specific appointment.
- * */
+ */
+    
+    // Initialise a variable to store the appointment ID to be edited. It gets updated when an edit button is clicked
+    let appointmentIdToEdit = null;
 
+    // Attach event listeners to edit buttons
     for (let button of editButtons) {
         button.addEventListener("click", (e) => {
             let appointmentId = e.target.getAttribute("data-appointment-id");
             if (appointmentId) {
-                /** Redirect browser to a different URL for edititng appointment
-            * Source: https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/
-            */
-                window.location.href = `/appointment/edit_appointment_step_one/${appointmentId}/`;
-            } 
-            else {
+                appointmentIdToEdit = appointmentId;
+                editModal.show();
+            } else {
                 console.error('Appointment ID not found');
             }
         });
     }
+
+    // Confirm edit action and redirect
+    editConfirm.addEventListener("click", () => {
+        if (appointmentIdToEdit) {
+            /** Redirect browser to a different URL for edititng appointment
+            * Source: https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/
+            */
+            window.location.href = `/appointment/edit_appointment_step_one/${appointmentIdToEdit}/`;
+        } else {
+            console.error('No appointment ID set for editing');
+        }
+    });
 });
