@@ -13,6 +13,62 @@
 #### Interested Parties
 ### User Stories
 
+**Epic 1: Homepage Above Fold and Navigation**
+
+***User Stories:***
+
+- As a Site User, I can view information about the salon on the homepage so that I can understand the salon's mission and background.
+
+- As a Site User, I can see a welcoming message and a catchy image when I first visit the homepage so that I feel engaged and have a positive first impression of the salon.
+
+- As a Site User, I can easily navigate the website through a comprehensive menu located in the header and access site pages so that I can explore the site fully and access my account.
+
+**Epic 2: Information About Services Offered: Services, Groomers & Gallery**
+
+***User Stories:***
+
+- As a Site User, I can view a list of services on the homepage so that I can quickly learn about the different grooming options available.
+
+- As a Site User, I can view information about the groomers on the 'Our Groomers' page so that I can choose a groomer based on their expertise.
+
+- As a Site User, I can view a gallery of photos on the 'Gallery' page featuring dogs in the process of being groomed or already groomed so that I can see the quality and range of grooming services offered.
+
+**Epic 3: Contact Information and Inquiries**
+
+***User Stories:***
+
+- As a Site User, I can find contact details in the footer on any page of the site so that I can reach out to the salon for further inquiries, to book an appointment, or to know the salon's location and working hours.
+
+- As a Site User, I can access and use the contact form on the 'Contact' page so that I can send inquiries directly to the salon.
+
+- As a Site Owner, I can store contact form requests in the database so that I can review them, mark as read, or delete.
+
+- As a Site Owner, I can mark contact form submission as "read" so that I can track how many I still need to process.
+
+**Epic 4: Account Management**
+
+***User Stories:***
+
+- As a Site User, I can create an account through Log In bar so that I can access personalized services to book and store my appointments.
+
+- As a Site User, I can log in using the Log In bar so that I can easily see and manage my existing bookings or log out.
+
+**Epic 5: Appointment Booking and Management**
+
+***User Stories:***
+
+- As a Site User, I can see multiple entry points to make a booking so that I can easily book a service.
+
+- As a Registered Customer, I can book an appointment so that I can groom my dog.
+
+- As a Registered Customer, I can delete my existing booking so that I can remove an appointment I no longer need.
+
+- As a Registered Customer, I can edit my booking appointment so that I can update or change the details of the appointment or the information I have provided.
+
+- As a Site Owner, I can view and manage all existing bookings so that I can oversee the salon's schedule and make changes or cancel bookings when needed.
+
+
+
 ## Design
 
 ### Wireframes
