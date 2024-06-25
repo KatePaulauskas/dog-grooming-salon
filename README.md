@@ -17,9 +17,9 @@
 
 ***User Stories:***
 
-- As a Site User, I can view information about the salon on the homepage so that I can understand the salon's mission and background.
-
 - As a Site User, I can see a welcoming message and a catchy image when I first visit the homepage so that I feel engaged and have a positive first impression of the salon.
+
+- As a Site User, I can view information about the salon on the homepage so that I can understand the salon's mission and background.
 
 - As a Site User, I can easily navigate the website through a comprehensive menu located in the header and access site pages so that I can explore the site fully and access my account.
 
@@ -29,7 +29,7 @@
 
 - As a Site User, I can view a list of services on the homepage so that I can quickly learn about the different grooming options available.
 
-- As a Site User, I can view information about the groomers on the 'Our Groomers' page so that I can choose a groomer based on their expertise.
+- As a Site User, I can view information about the groomers on the 'Groomers' page so that I can choose a groomer based on their expertise.
 
 - As a Site User, I can view a gallery of photos on the 'Gallery' page featuring dogs in the process of being groomed or already groomed so that I can see the quality and range of grooming services offered.
 
@@ -93,6 +93,25 @@
 ### Manual Testing
 #### Site features and behaviour
 #### User Stories
+| User Story | Expected Behavior  | Actual Behavior | Status |
+|------------|-------------------|----------------|-----------|
+| As a Site User, I can see a welcoming message and a catchy image when I first visit the homepage so that I feel engaged and have a positive first impression of the salon.| The homepage shows a welcoming message and a catchy image upon first visit. | The homepage shows the welcoming message and the catchy image as expected. | Passed|
+| As a Site User, I can view information about the salon on the homepage so that I can understand the salon's mission and background. | The homepage displays the salon's mission and background information clearly. | The homepage displays the salon's mission and background information as expected. | Passed|
+| As a Site User, I can easily navigate the website through a comprehensive menu located in the header and access site pages so that I can explore the site fully and access my account. | The header menu is comprehensive, functional, and allows access to all site pages and user account. | The header menu is functional and allows access to all pages and user account. | Passed|
+| As a Site User, I can view a list of services on the homepage so that I can quickly learn about the different grooming options available.  | The homepage lists all grooming services available, clearly and accessibly. | The homepage lists all grooming services as expected. | Passed|
+| As a Site User, I can view information about the groomers on the 'Groomers' page so that I can choose a groomer based on their expertise.  | The 'Groomers' page provides information about each groomer and their expertise. | The 'Groomers' page provides information as expected. | Passed|
+| As a Site User, I can view a gallery of photos on the 'Gallery' page featuring dogs in the process of being groomed or already groomed so that I can see the quality and range of grooming services offered. | The 'Gallery' page displays photos of dogs being groomed or already groomed, showcasing the quality of services. | The 'Gallery' page displays photos of dogs as expected. | Passed|
+| As a Site User, I can find contact details in the footer on any page of the site so that I can reach out to the salon for further inquiries, to book an appointment, or to know the salon's location and working hours.  | Contact details are visible in the footer on every page, providing information for inquiries, booking, and location. | Contact details are visible in the footer on every page as expected. | Passed|
+| As a Site User, I can access and use the contact form on the 'Contact' page so that I can send inquiries directly to the salon.  | The 'Contact' page contains a functional contact form that allows users to send inquiries directly to the salon. | The 'Contact' page contains a functional contact form as expected. | Passed|
+| As a Site Owner, I can store contact form requests in the database so that I can review them, mark as read, or delete. | Contact form submissions are stored in the database and can be reviewed, marked as read, or deleted by the owner.  | Contact form submissions are stored in the database and can be reviewed, marked as read, or deleted as expected. | Passed|
+| As a Site Owner, I can mark contact form submission as "read" so that I can track how many I still need to process. | The site owner can mark contact form submissions as "read" to track processing status. | Contact form submissions can be marked as "read" to track processing status as expected. | Passed|
+| As a Site User, I can create an account through the Log In bar so that I can access personalised services to book and store my appointments.  | Users can create an account through the Log In bar to access personalised services and manage appointments. | Account creation through the Log In bar works as expected. | Passed|
+| As a Site User, I can log in using the Log In bar so that I can easily see and manage my existing bookings or log out. | Users can log in through the Log In bar to view and manage bookings or log out. | Logging in through the Log In bar works as expected. | Passed|
+| As a Site User, I can see multiple entry points to make a booking so that I can easily book a service. | Multiple entry points for booking are available throughout the site, making it easy for users to book services. | Multiple entry points for booking are available as expected. | Passed|
+| As a Registered Customer, I can book an appointment so that I can groom my dog. | Registered customers can book grooming appointments through the site. | Booking an appointment works as expected. | Passed|
+| As a Registered Customer, I can delete my existing booking so that I can remove an appointment I no longer need. | Registered customers can delete their existing bookings. | Deleting an existing booking works as expected. | Passed|
+| As a Registered Customer, I can edit my booking appointment so that I can update or change the details of the appointment or the information I have provided.  | Registered customers can edit their existing bookings to update or change details.| Editing an existing booking works as expected. | Passed|
+| As a Site Owner, I can view and manage all existing bookings in the admin panel, so that I can oversee the salon's schedule and make changes or cancel bookings when needed.  | The site owner can view and manage all bookings, including making changes or cancellations in the admin panel. | Viewing and managing all bookings through admin panel works as expected for the site owner. | Passed|
 
 ### Validator Testing
 ### Responsinvess
