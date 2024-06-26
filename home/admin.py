@@ -14,4 +14,3 @@ class ServicesAdmin(SummernoteModelAdmin):
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
     list_display = ('title', 'welcome_message')
-

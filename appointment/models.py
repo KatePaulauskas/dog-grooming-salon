@@ -7,7 +7,6 @@ from datetime import time
 from django.utils import timezone
 
 
-
 class Appointment(models.Model):
 
     """
@@ -24,8 +23,10 @@ class Appointment(models.Model):
     groomer = models.ForeignKey(Groomers, on_delete=models.CASCADE)
     date = models.DateField(default=timezone.now)
     time = models.TimeField(default=time(9, 0))
-    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='scheduled')
+    status = models.CharField(max_length=10,
+                              choices=STATUS_CHOICES, default='scheduled')
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.username} - {self.service.name} - {self.date} {self.time} - {self.get_status_display()}"
+        return f"{self.user.username} - {self.service.name}
+        - {self.date} {self.time} - {self.get_status_display()}"

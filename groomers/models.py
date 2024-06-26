@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
 
 class Groomers(models.Model):
     id = models.AutoField(primary_key=True)
@@ -15,11 +14,12 @@ class Groomers(models.Model):
         verbose_name_plural = "Groomers"
 
     def __str__(self):
-        return self.name    
+        return self.name
 
 
 class GroomerSchedule(models.Model):
-    groomer = models.OneToOneField(Groomers, on_delete=models.CASCADE, related_name='schedule')
+    groomer = models.OneToOneField(Groomers, on_delete=models.CASCADE,
+                                   related_name='schedule')
     monday_start = models.TimeField(null=True, blank=True)
     monday_end = models.TimeField(null=True, blank=True)
     tuesday_start = models.TimeField(null=True, blank=True)
@@ -37,4 +37,3 @@ class GroomerSchedule(models.Model):
 
     def __str__(self):
         return f"{self.groomer.name}'s schedule"
-    

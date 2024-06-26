@@ -19,13 +19,23 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Appointment',
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('id', models.BigAutoField(auto_created=True, primary_key=True,
+                 serialize=False, verbose_name='ID')),
                 ('datetime', models.DateTimeField()),
-                ('status', models.CharField(choices=[('scheduled', 'Scheduled'), ('completed', 'Completed'), ('cancelled', 'Cancelled')], default='scheduled', max_length=10)),
+                ('status', models.CharField(choices=[
+                    ('scheduled', 'Scheduled'), ('completed', 'Completed'),
+                    ('cancelled', 'Cancelled')],
+                 default='scheduled', max_length=10)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('groomer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='groomers.groomers')),
-                ('service', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='home.services')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('groomer', models.ForeignKey
+                 (on_delete=django.db.models.deletion.CASCADE,
+                  to='groomers.groomers')),
+                ('service', models.ForeignKey
+                 (on_delete=django.db.models.deletion.CASCADE,
+                  to='home.services')),
+                ('user', models.ForeignKey
+                 (on_delete=django.db.models.deletion.CASCADE,
+                  to=settings.AUTH_USER_MODEL)),
             ],
         ),
     ]

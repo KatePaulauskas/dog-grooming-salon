@@ -8,11 +8,12 @@ from datetime import timedelta
 from django.core.exceptions import ValidationError
 # Form for booking appointments with dynamic time slot choices.
 
+
 class StepOneForm(forms.ModelForm):
     """
-    Specifies how date and time fields should be handled within the form 
+    Specifies how date and time fields should be handled within the form
     Sets date field with Calendar widget.
-    Sources: 
+    Sources:
     https://pythonassets.com/posts/date-field-with-calendar-widget-in-django-forms/
     https://docs.djangoproject.com/en/5.0/ref/forms/fields/
     """
@@ -25,7 +26,7 @@ class StepOneForm(forms.ModelForm):
     """
     Prevent date booking in the pasr or
     more than 90 days in advance
-    Source: 
+    Source:
     https://stackoverflow.com/questions/4941974/
     django-how-to-set-datefield-to-only-accept-today-future-dates
     """
@@ -35,11 +36,13 @@ class StepOneForm(forms.ModelForm):
 
         if selected_date < today:
             raise ValidationError("Not possible to select date in the past")
-        
+
         elif selected_date > today + timedelta(days=90):
-            raise ValidationError("Not possible to select a date more than 90 days in advance")
-        
+            raise ValidationError
+            ("Not possible to select a date more than 90 days in advance")
+
         return selected_date
+
 
 class StepTwoForm(forms.ModelForm):
     time = forms.ChoiceField(choices=[])
@@ -59,28 +62,34 @@ class StepTwoForm(forms.ModelForm):
         self.date = kwargs.pop('date')
         # Call the parent class's __init__ method
         super().__init__(*args, **kwargs)
-        
+
         if self.groomer and self.date:
-            self.fields['time'].choices = self.generate_time_choices(self.groomer, self.date)
+            self.fields['time'].choices = self.generate_time_choices
+            (self.groomer, self.date)
 
     def generate_time_choices(self, groomer, date):
         """
-        Generate a list of available time slots for a specific groomer and date,
-        excluding lunch break times.
+        Generate a list of available time slots
+        for a specific groomer and date.
         """
         # Identify start and end time for each groomer
         start_time, end_time = self.get_groomer_schedule(groomer, date)
 
         # Warn user if groomer is not available
         if not start_time or not end_time:
-            messages.add_message(self.request, messages.WARNING, "The selected groomer is not available on the chosen date.")
+            messages.add_message
+            (self.request, messages.WARNING,
+             "The selected groomer is not available on the chosen date.")
             return []
 
         # Combine date with start time and end time to create datetime objects
         start_datetime = datetime.combine(date, start_time)
         end_datetime = datetime.combine(date, end_time)
 
-        # Create time intervals of 2 hours, accountign for 30 min buffer time after each session
+        """
+        Create time intervals of 2 hours,
+        accountign for 30 min buffer time after each session
+        """
         interval = timedelta(hours=2)
         times = []
 
@@ -115,5 +124,6 @@ class StepTwoForm(forms.ModelForm):
         """
         Check if the groomer is available at a specific date and time.
         """
-        appointments = Appointment.objects.filter(groomer=groomer, date=date, time=time)
+        appointments = Appointment.objects.filter(groomer=groomer,
+                                                  date=date, time=time)
         return not appointments.exists()

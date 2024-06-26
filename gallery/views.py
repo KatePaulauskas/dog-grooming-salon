@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.core.paginator import Paginator
 from .models import Gallery
 
+
 def gallery(request):
     galleries = Gallery.objects.all().order_by('-updated_on')
     # Show 6 images per page.
@@ -12,7 +13,8 @@ def gallery(request):
     return render(
         request,
         "gallery/gallery.html",
-        {"page_obj": page_obj,
-        "is_paginated": page_obj.has_other_pages(),
-        },
+        {
+            "page_obj": page_obj,
+            "is_paginated": page_obj.has_other_pages(),
+        }
     )
