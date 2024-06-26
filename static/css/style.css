@@ -65,9 +65,10 @@ header {
    Source: https://www.shecodes.io/athena/121718-how-
    to-use-transform-translate-50-50-to-center-an-element-in-css */
 .logo-container {
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 100px;
 }
 
 .btn-book {
@@ -157,8 +158,8 @@ header {
 }
 
 /* Style Service and Groomer images */ 
-.img-fluid {
-    width: 100%;
+.service-img, .gallery-img {
+    max-width: 100%;
 }
 
 /* Style Services titles */

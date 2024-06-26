@@ -156,11 +156,6 @@ header {
     border-radius: 0.375rem;
 }
 
-/* Style Service and Groomer images */ 
-.img-fluid {
-    width: 100%;
-}
-
 /* Style Services titles */
 h2.card-title
  {
