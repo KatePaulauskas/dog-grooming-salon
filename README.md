@@ -51,13 +51,60 @@ The Barks in Bubbles website targer audience includes:
 
 Live site can be found at the following [adress](https://barks-in-bubbles-a17d3839532d.herokuapp.com/).
 
+## Agile Methodology
+
+This project was developed using the Agile methodology, which allows for iterative development and flexibility. The Agile methodology was utilised to plan and track the progress of the project. Agile principles were applied throughout the project through the use of the following tools and principles:
+
+**Planning and Tracking:** 
+
+All user stories were managed through GitHub Issues and Projects, ensuring a structured and organised workflow.
+
+**Custom Templates:**
+
+Issues were created for each user story using custom templates, including sections such as user story, acceptance criteria, and tasks. This standardised the information captured for each story, making it easier to manage and track their progress.
+
+**MoSCoW Method:**
+
+To prioritise tasks, the MoSCoW method (Must have, Should have, Could have, and Won’t have) was implemented usign labels. This can be viewed [here](https://github.com/KatePaulauskas/dog-grooming-salon/issues?q=is%3Aissue+is%3Aclosed). This method helped in labelling the importance of each user story, ensuring that critical features were developed first within an iteration, while less critical features could be developed towards the end of the iteration or scheduled for later, if needed.
+
+**Kanban Board:** 
+
+A Kanban board on GitHub Projects was employed to manage user stories. The board was divided into three columns: Todo, In Progress, and Done, allowing for clear visibility of the project's status at any given time. This can be viewed [here](https://github.com/users/KatePaulauskas/projects/2).
+
+**Milestones and Iterations:**
+
+Milestones were used to define the project’s iterations. Each user story was categorised within one of five iterations, facilitating a structured development process and ensuring that work progresses in an organised manner. Project Milestones can be seen [here](https://github.com/KatePaulauskas/dog-grooming-salon/milestones).
+
+By leveraging these Agile practices and tools, the project maintained a clear and organised structure, allowing for effective tracking and timely completion of all 17 user stories.
+
+## Strategy
+
+
+
 ## User Experience (UX)
 
-### Strategy
-### User Experience
-#### First Time User
-#### Returning / Frequent User
-#### Interested Parties
+Upon visiting the Barks in Bubbles website, users are greeted with a welcoming message and a visually appealing image. 
+
+The navigation menu provides easy access to information about the salon, including services offered, groomer profiles, and a gallery of previous grooming work. Users can also find contact details in the footer and a form for inquiries on the contact page.
+
+The site allows users to create personal accounts, book and manage grooming appointments, and interact with the salon through a user-friendly interface.
+
+Returning users can quickly access their accounts and manage their bookings.
+
+### User Scenarios
+
+**First Time User:**
+
+A new user can easily navigate through the website with a clear introduction and an intuitive menu. They can learn about the salon's mission, view services offered, explore groomer profiles, and see a gallery of grooming work. They can also create an account and book their first grooming appointment with ease.
+
+**Returning / Frequent User:** 
+
+Returning users can quickly log in to their accounts to view and manage their appointments, view service history, and book new appointments.
+
+**Interested Parties:** 
+
+Veterinary clinics, dog trainers, breeders, and animal shelters can find comprehensive information about the salon's services and expertise. They can view the quality of grooming services through the gallery, and contact the salon for potential collaborations using the dedicated contact form.
+
 ### User Stories
 
 **Epic 1: Homepage Above Fold and Navigation**
