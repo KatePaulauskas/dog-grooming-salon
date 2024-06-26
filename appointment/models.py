@@ -28,5 +28,7 @@ class Appointment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user.username} - {self.service.name}
-        - {self.date} {self.time} - {self.get_status_display()}"
+        return (
+            f"{self.user.username} - {self.service.name} - "
+            f"{self.date} {self.time} - {self.get_status_display()}"
+        )

@@ -64,8 +64,9 @@ class StepTwoForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         if self.groomer and self.date:
-            self.fields['time'].choices = self.generate_time_choices
-            (self.groomer, self.date)
+            self.fields['time'].choices = self.generate_time_choices(
+                self.groomer, self.date
+                )
 
     def generate_time_choices(self, groomer, date):
         """

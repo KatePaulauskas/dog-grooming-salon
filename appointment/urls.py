@@ -1,8 +1,12 @@
 from django.urls import path
-from .views import book_appointment_step_one,
-book_appointment_step_two, my_appointments,
-appointment_delete, edit_appointment_step_one,
-edit_appointment_step_two
+from .views import (
+    book_appointment_step_one,
+    book_appointment_step_two,
+    my_appointments,
+    appointment_delete,
+    edit_appointment_step_one,
+    edit_appointment_step_two,
+)
 
 
 urlpatterns = [

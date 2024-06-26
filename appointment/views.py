@@ -27,17 +27,20 @@ def book_appointment_step_one(request):
             """
 
             # Retrieve service and groomer id from the cleaned data
-            request.session['service_id'] =
-            form_step_one.cleaned_data['service'].id
-            request.session['groomer_id'] =
-            form_step_one.cleaned_data['groomer'].id
+            request.session['service_id'] = (
+                form_step_one.cleaned_data['service'].id
+            )
+            request.session['groomer_id'] = (
+                form_step_one.cleaned_data['groomer'].id
+            )
 
             """
             Convert the date to a string format for
             consistent storage in the session
             """
-            request.session['date'] =
-            form_step_one.cleaned_data['date'].strftime('%Y-%m-%d')
+            request.session['date'] = (
+                form_step_one.cleaned_data['date'].strftime('%Y-%m-%d')
+                )
 
             return redirect('book_appointment_step_two')
     else:
@@ -118,8 +121,9 @@ def my_appointments(request):
         Get all appointments for the logged-in user,
         ordered by date ascending
         """
-        appointments = Appointment.objects.filter
-        (user=request.user).order_by('date')
+        appointments = (
+            Appointment.objects.filter(user=request.user).order_by('date')
+            )
         return render(request,
                       "appointment/my_appointments.html",
                       {'appointments': appointments})
@@ -158,12 +162,15 @@ def edit_appointment_step_one(request, appointment_id):
         if form_step_one.is_valid():
             # Save the relevant appointment details to the session.
             request.session['edit_appointment_id'] = appointment_id
-            request.session['service_id'] =
-            form_step_one.cleaned_data['service'].id
-            request.session['groomer_id'] =
-            form_step_one.cleaned_data['groomer'].id
-            request.session['date'] =
-            form_step_one.cleaned_data['date'].strftime('%Y-%m-%d')
+            request.session['service_id'] = (
+                form_step_one.cleaned_data['service'].id
+                )
+            request.session['groomer_id'] = (
+                form_step_one.cleaned_data['groomer'].id
+                )
+            request.session['date'] = (
+                form_step_one.cleaned_data['date'].strftime('%Y-%m-%d')
+            )
             # Redirect to the second step of the edit process.
             return redirect('edit_appointment_step_two')
 
