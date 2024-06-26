@@ -64,6 +64,17 @@ def book_appointment_step_two(request):
     service_id = request.session.get('service_id')
     groomer_id = request.session.get('groomer_id')
     date_str = request.session.get('date')
+    
+    """
+    Ensure all required information 
+    (service_id, groomer_id, date_str) is present.
+    If any required information is missing, 
+    display an error message and redirect to step one.
+    """
+    if not service_id or not groomer_id or not date_str:
+        messages.error(request, "Required information is missing."
+                       "Please start from the beginning.")
+        return redirect('book_appointment_step_one')
 
     """
     Retrieve the specified Services and Groomers objects using the IDs
