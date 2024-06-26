@@ -1,8 +1,55 @@
 # Barks in Bubbles - Dog Grooming Salon
 
-## Goal & Target Audience
+Barks in Bubbles is a web-based application designed to provide an exceptional dog grooming service in the Cork area through a comprehensive online platform.
+
+The website offers a seamless and user-friendly interface, allowing customers to easily navigate through information about the salon, including services offered, groomer profiles, and a gallery of previous grooming work.
+
+With this application, customers can create personal accounts, book and manage grooming appointments, and contact the salon directly through a contact form.
+
+![Responsive Mockup](media/responsive-mockup.jpeg)
+
+## Goal, Aim & Target Audience
+
+### Goal
+
+The primary goal of the Barks in Bubbles website is to streamline the grooming appointment process for pet owners while ensuring an inviting, informative, and efficient online presence that showcases the high-quality services offered.
+
+### Aim
+
+The aim of this project is to provide a welcoming and informative platform where pet owners can:
+
+- Learn about the salon and range of grooming services offered.
+- View information about groomers and their expertiese.
+- Easily book, manage, and edit their grooming appointments.
+- Access contact details and reach out for inquiries.
+- Enjoy a visually appealing and user-friendly interface.
+
+
+### Target Audience
+
+The Barks in Bubbles website targer audience includes:
+
+**Pet Owners:** Individuals in the Cork area who are looking for reliable and high-quality grooming services for their dogs.
+
+**Local Community Members:** Residents near the salon seeking convenient and professional pet grooming services.
+
+**New Pet Owners:** Individuals who have recently acquired a dog or a puppy and are in need of reliable grooming services in Cork area to introduce the dog to grooming.
+
+**Returning Pet Owners:** Customers looking for a consistent and reliable dog grooming provider in Cork area to use on a regular basis.
+
+**Breeders:** Professionals around Cork who require grooming services to maintain the appearance and health of the dogs they are breeding.
+
+**Exhibition and Competition Participants:** Owners who take part in dog exhibitions and competitions, requiring top-notch grooming services to prepare their dogs for events around Cork.
+
+**Veterinary Clinics:** Clinics around Cork looking for potential partnerships and referrals to provide comprehensive care for pets.
+
+**Dog Training Services:** Training providers around Cork area seeking grooming services for their clients' dogs as part of a complete care package.
+
+**Animal Shelters:** Organisations looking for grooming services to help dogs in their care look their best, increasing their chances of adoption.
 
 ### Project Link
+
+Live site can be found at the following [adress](https://barks-in-bubbles-a17d3839532d.herokuapp.com/).
 
 ## User Experience (UX)
 
