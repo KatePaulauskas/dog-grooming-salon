@@ -71,10 +71,59 @@
 
 ## Design
 
+
+
 ### Wireframes
 ### Site Structure
 ### Database Structute 
-### Colour Scheme
+### Color Scheme
+
+The colors for the Barks in Bubbles site were carefully selected using [Coolors tool](https://coolors.co/) to create an inviting, professional, and engaging atmosphere. 
+
+![Color Scheme](media/barks-in-bubbles-color-pallet.png)
+
+The chosen color palette, set against a white background, combines freshness, warmth, tranquility, playfulness, and sophistication to create a balanced and appealing environment. Each color plays a specific role in enhancing the customer experience:
+
+- Mantis provides a calming and natural feel.
+
+- UT Orange injects energy and warmth.
+
+- Robin Egg Blue offers tranquility and trustworthiness.
+
+- Hot Pink adds fun and liveliness.
+
+- English Violet lends an air of sophistication and quality.
+
+- The white background ensures that these colors stand out beautifully, contributing to an inviting, professional, and engaging atmosphere that appeals to both pets and their owners. 
+
+Below is a detailed breakdown of the color choices and the reasoning behind them:
+
+**Mantis (#5ecc5c):**
+
+Mantis is a vibrant green color that exudes a sense of freshness and vitality. This color was chosen to evoke feelings of nature, growth, and renewal, which are associated with health and well-being. It represents the care and rejuvenation that pets will experience at the grooming salon. Green is also known for its calming effects, making it a good choice for both pets and their owners.
+
+**UT Orange (#fe8b32):**
+
+UT Orange is a bright, warm orange color that captures attention and adds a touch of energy. Orange is often associated with enthusiasm, creativity, and warmth. This color was selected to create a welcoming and energetic atmosphere in the salon. It can help to make the environment feel friendly and inviting, encouraging customers to feel excited about bringing their pets for grooming services.
+
+**Robin Egg Blue (#14cfdb):**
+
+Robin Egg Blue is a light and refreshing blue color reminiscent of clear skies and calm waters. This color was chosen to convey tranquility, trust, and reliability. Blue is known to have a soothing effect, which is beneficial in a setting where pets may be anxious. It also gives a sense of cleanliness and professionalism, reassuring clients of the high standards of hygiene and care in the salon.
+
+**Hot Pink (#ff5cb7):**
+
+Hot Pink is a bold and playful pink color that adds a fun and energetic vibe. Pink is often associated with compassion, nurturing, and love. The vibrant shade of hot pink was chosen to inject a sense of playfulness and joy into the salon's environment. It reflects the affectionate and caring nature of the services provided, making the space feel lively and engaging.
+
+**English Violet (#3f3850):**
+
+English Violet is a deep, rich violet color that adds depth and sophistication. Violet is traditionally associated with luxury, wisdom, and dignity. This color was chosen to convey a sense of premium quality and elegance. It adds a touch of sophistication to the salon's aesthetic, appealing to clients who value high-quality services and a refined atmosphere.
+
+**White Background (#ffffff):**
+
+The primary background color used throughout the design is white. White is the perfect canvas for highlighting the vibrant and diverse color palette. It provides a clean, crisp, and professional look that enhances readability and ensures that the bright colors stand out without overwhelming the viewer. White backgrounds help create a sense of openness and space, making the salon feel more inviting and less cluttered. It also reinforces the notions of cleanliness and simplicity, which are essential qualities for a grooming salon. 
+
+The combination of these colors ensures that the salon not only stands out visually but also conveys the values and quality of the services provided.
+
 ### Typography
 
 ## Features
@@ -272,12 +321,12 @@ The deployed project link can be found at the following URL: [Dog Grooming Salon
 - [Balsamiq Studios software](https://balsamiq.com/wireframes/) was used to create mockup wireframes for the current project.
 - To select the fonts for the site, a font pairing service was used: [Font Joy](https://fontjoy.com/).
 - Paired font families were downloaded from [Google Fonts](https://fonts.google.com/).
-- The color palette for the site was extracted from the logo using [Coolors](https://coolors.co/).
+- The color palette for the site was designed using [Coolors](https://coolors.co/).
 - Site colors' accessibility was checked using [Adobe Color Accessibility Tool](https://color.adobe.com/).
+- The logo was created using [DALL-E](https://openai.com/index/dall-e/) based on the desired outcome description and colors' codes provided.
 
 ### Media
 
-- The logo was created using [DALL-E](https://openai.com/index/dall-e/) based on the desired outcome description provided.
 - Grooming services and gallery images were sourced from [Freepik](https://www.freepik.com/).
 - Groomers' profile images were sourced from [Unsplash](https://unsplash.com/).
 - The hero image was sourced from [Vecteezy](https://www.vecteezy.com/).
