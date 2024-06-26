@@ -257,6 +257,91 @@ The combination of these colors ensures that the salon not only stands out visua
 | As a Site Owner, I can view and manage all existing bookings in the admin panel, so that I can oversee the salon's schedule and make changes or cancel bookings when needed.  | The site owner can view and manage all bookings, including making changes or cancellations in the admin panel. | Viewing and managing all bookings through admin panel works as expected for the site owner. | Passed|
 
 ### Validator Testing
+
+#### HTML
+
+To ensure adherence to web standards and improve accessibility, the site's HTML was submitted to [W3C validation testing](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarks-in-bubbles-a17d3839532d.herokuapp.com%2F#l163c273).
+
+- **Error 1:** There were multiple warnings about trailing slashes on void elements, which were fixed by removing the trailing slashes and extra spaces.
+
+- **Error 2:** On the home page, the following issue was identified: 
+
+```
+Error: No 'p' element in scope but a 'p' end tag seen.
+```
+
+![Home page HTML Validator errors](/media/html-checker-home-page-errors.jpeg)
+
+It was identified that the issue was caused by Summernote styling, and after removing paragraph styling from the service descriptions, the issue was resolved:
+
+![Home page HTML Validator](/media/html-checker-home-page.jpeg)
+
+- __Error 3:__ The second step of the booking process resulted in the following error:
+
+![Step Two Booking Form HTML Validator Error](/media/html-checker-booking-step-two-error.jpeg)
+
+After adding the following 'if' statement to validate the required information in booking step two:
+
+```python
+if not service_id or not groomer_id or not date_str:
+        messages.error(request, "Required information is missing."
+                       "Please start from the beginning.")
+        return redirect('book_appointment_step_one')
+```
+The issue was resolved: 
+
+![Step Two Booking Form HTML Validator](/media/html-checker-booking-step-two.jpeg)
+
+The rest of the pages passed validation with no errors.
+
+![Groomers Page]()
+
+![Gallery Page]()
+
+![Contact Page]()
+
+![Log In Page]()
+
+![Log Out Page]()
+
+![Make Appointment Booking Page]()
+
+![My Appointments Page]()
+
+#### CSS
+
+For compliance with web standards and accessibility guidelines, the site's CSS code was checked using the [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarks-in-bubbles-a17d3839532d.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en). No errors were identified.
+
+![CSS Validation](/media/css-validation.jpeg)
+
+#### JavaScript
+
+To enhance adherence to web standards and ensure accessibility, the site's JavaScript code was validated using the [JSHint Validator](https://jshint.com/). No errors were identified in the JavaScript code.
+
+#### Python
+
+To ensure conformity with web standards and accessibility requirements, the site's Python code was tested using the [PEP8 Python Validator](https://pep8ci.herokuapp.com). Five errors were identified, as described below.
+
+**1. W293: Blank Line Contains Whitespace**
+- Description: This warning indicates that there are blank lines in the code that contain spaces or tabs.
+- Resolution: All the blank lines with whitespace were cleared to contain no spaces or tabs.
+
+**2. W291: Trailing Whitespace**
+- Description: This warning indicates that there are extra spaces or tabs at the end of a line.
+- Resolution: All the trailing whitespaces were removed from the end of each line with such an error.
+
+**3. E302: Expected 2 Blank Lines, Found 1**
+- Description: This error indicates that the code is missing a blank line. PEP 8 recommends two blank lines before the start of a new top-level function or class.
+- Resolution: Added the necessary blank lines to ensure there are two blank lines before the start of each top-level function or class.
+
+**4. E501: Line Too Long (93 > 79 Characters)**
+- Description: This error occurs when a line exceeds the recommended maximum length of 79 characters.
+- Resolution: Lines with such error were broken into multiple lines using parentheses or string concatenation.
+
+**5. E128: Continuation Line Under-Indented for Visual Indent**
+- Description: This error occurs when a continuation line (following an opening parenthesis) is not indented correctly.
+- Resolution: It was ensured that continuation lines with such error are indented to the same level as the opening parenthesis.
+
 ### Responsinvess
 ### Lighthouse Testing
 ### Accessibility Testing
