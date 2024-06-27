@@ -262,6 +262,8 @@ The combination of these colors ensures that the salon not only stands out visua
 
 To ensure adherence to web standards and improve accessibility, the site's HTML was submitted to [W3C validation testing](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarks-in-bubbles-a17d3839532d.herokuapp.com%2F#l163c273).
 
+The following erros were identified and addressed:
+
 - **Error 1:** There were multiple warnings about trailing slashes on void elements, which were fixed by removing the trailing slashes and extra spaces.
 
 - **Error 2:** On the home page, the following issue was identified: 
@@ -272,7 +274,7 @@ Error: No 'p' element in scope but a 'p' end tag seen.
 
 ![Home page HTML Validator errors](/media/html-checker-home-page-errors.jpeg)
 
-It was identified that the issue was caused by Summernote styling, and after removing paragraph styling from the service descriptions, the issue was resolved:
+It was identified that the issue was caused by Summernote styling, and after removing paragraph styling from the service descriptions in Summernote, the issue was resolved:
 
 ![Home page HTML Validator](/media/html-checker-home-page.jpeg)
 
@@ -314,13 +316,41 @@ For compliance with web standards and accessibility guidelines, the site's CSS c
 
 ![CSS Validation](/media/css-validation.jpeg)
 
+434 warning were identified:
+
+![CSS Validator Warnings](/media/css-validator-warnings.jpeg)
+
+These warnings can be grouped in 3 main categories: 
+
+- ***Vendor Extensions and CSS Variables:*** These warnings are necessary for ensuring cross-browser compatibility and are handled by Bootstrap.
+
+- ***Deprecated Properties:*** These warnings are managed by the Bootstrap team.
+
+- **Color Warnings:** State that the same color was used for background and border. These warnings do not affect the site intended design and therefore can be ignored.
+
 #### JavaScript
 
 To enhance adherence to web standards and ensure accessibility, the site's JavaScript code was validated using the [JSHint Validator](https://jshint.com/). No errors were identified in the JavaScript code.
 
+14 Warnings were idenitified:
+
+![JavaScript Validation](/media/js-validator.jpeg)
+
+All the warnings are **ES6 Features Warnings**
+
+- Description: These warnings indicate that the JavaScript code uses features that are only available in ECMAScript 6 (ES6) or later versions.
+
+- Solution: The code should be interpreted as ES6. Having Python runtime version specified in the runtime.txt file helps to address this warning. 
+
 #### Python
 
-To ensure conformity with web standards and accessibility requirements, the site's Python code was tested using the [PEP8 Python Validator](https://pep8ci.herokuapp.com). Five errors were identified, as described below.
+To ensure conformity with web standards and accessibility requirements, the site's Python code from every relevant file was tested using the [PEP8 Python Validator](https://pep8ci.herokuapp.com). 
+
+Five types errors were identified on multiple pages:
+
+![Python Code Validation Errors](/media/python-validator-errors.jpeg)
+
+The errors were addressed, as described below:
 
 **1. W293: Blank Line Contains Whitespace**
 - Description: This warning indicates that there are blank lines in the code that contain spaces or tabs.
@@ -341,6 +371,11 @@ To ensure conformity with web standards and accessibility requirements, the site
 **5. E128: Continuation Line Under-Indented for Visual Indent**
 - Description: This error occurs when a continuation line (following an opening parenthesis) is not indented correctly.
 - Resolution: It was ensured that continuation lines with such error are indented to the same level as the opening parenthesis.
+
+After testign each file with Python code, no more errors were found: 
+
+![Python Code Validation](/media/python-validator.jpeg)
+
 
 ### Responsinvess
 ### Lighthouse Testing
