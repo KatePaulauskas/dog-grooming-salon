@@ -6,7 +6,6 @@ from datetime import date
 from datetime import datetime
 from datetime import timedelta
 from django.core.exceptions import ValidationError
-# Form for booking appointments with dynamic time slot choices.
 
 
 class StepOneForm(forms.ModelForm):
@@ -21,7 +20,7 @@ class StepOneForm(forms.ModelForm):
 
     class Meta:
         model = Appointment
-        fields = ('service', 'groomer', 'date',)
+        fields = ('service', 'date',)
 
     """
     Prevent date booking in the pasr or
@@ -45,27 +44,58 @@ class StepOneForm(forms.ModelForm):
 
 
 class StepTwoForm(forms.ModelForm):
-    time = forms.ChoiceField(choices=[])
+    groomer = forms.ModelChoiceField(queryset=Groomers.objects.none())
 
     class Meta:
         model = Appointment
-        fields = ('time',)
+        fields = ('groomer',)
 
     def __init__(self, *args, **kwargs):
+        date = kwargs.pop('date', None)
+        super().__init__(*args, **kwargs)
+        if date:
+            self.fields['groomer'].queryset = self.get_available_groomers(date)
+
+    def get_available_groomers(self, date):
+        available_groomers = []
+        all_groomers = Groomers.objects.all()
+        for groomer in all_groomers:
+            start_time, end_time = self.get_groomer_schedule(groomer, date)
+            if start_time and end_time:
+                available_groomers.append(groomer)
+        return Groomers.objects.filter(
+            id__in=[g.id for g in available_groomers])
+
+    def get_groomer_schedule(self, groomer, date):
         """
-        Store request object for messages
-        source:
-        https://sayari3.com/articles/16-how-to-pass-user-object-to-django-form/
+        Retrieves the groomer's start and end times for a specific day.
+        Converts the date into the day of the week and dynamically fetches
+        the corresponding start and end times of the groomer.
+        Sources:
+        https://www.programiz.com/python-programming/datetime/strftime
+        https://stackoverflow.com/questions/51905712/
+        how-to-get-the-value-of-a-django-model-field-object
         """
-        self.request = kwargs.pop('request')
-        self.groomer = kwargs.pop('groomer')
-        self.date = kwargs.pop('date')
+        day_name = date.strftime('%A').lower()
+        schedule = groomer.schedule
+        start_time = getattr(schedule, f'{day_name}_start')
+        end_time = getattr(schedule, f'{day_name}_end')
+        return start_time, end_time
+
+
+class StepThreeForm(forms.Form):
+    time = forms.ChoiceField(choices=[])
+
+    def __init__(self, *args, **kwargs):
+
+        groomer = kwargs.pop('groomer', None)
+        date = kwargs.pop('date', None)
         # Call the parent class's __init__ method
         super().__init__(*args, **kwargs)
 
-        if self.groomer and self.date:
+        if groomer and date:
             self.fields['time'].choices = self.generate_time_choices(
-                self.groomer, self.date
+                groomer, date
                 )
 
     def generate_time_choices(self, groomer, date):
@@ -78,9 +108,6 @@ class StepTwoForm(forms.ModelForm):
 
         # Warn user if groomer is not available
         if not start_time or not end_time:
-            messages.add_message
-            (self.request, messages.WARNING,
-             "The selected groomer is not available on the chosen date.")
             return []
 
         # Combine date with start time and end time to create datetime objects
@@ -106,15 +133,6 @@ class StepTwoForm(forms.ModelForm):
         return times
 
     def get_groomer_schedule(self, groomer, date):
-        """
-        Retrieves the groomer's start and end times for a specific day.
-        Converts the date into the day of the week and dynamically fetches
-        the corresponding start and end times of the groomer.
-        Sources:
-        https://www.programiz.com/python-programming/datetime/strftime
-        https://stackoverflow.com/questions/51905712/
-        how-to-get-the-value-of-a-django-model-field-object
-        """
         day_name = date.strftime('%A').lower()
         schedule = groomer.schedule
         start_time = getattr(schedule, f'{day_name}_start')

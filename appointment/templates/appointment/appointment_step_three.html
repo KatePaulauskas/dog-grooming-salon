@@ -5,21 +5,18 @@
 {% block content %}
     <div class="row justify-content-center m-0">
         <div class="col-9 col-md-6 m-3">
-            {% if user.is_authenticated %}
-            <h1 class="text-center my-3">Step One: Select Service and Date</h1>
+            <h1 class="text-center my-3">Step Three: Select Time Slot</h1>
             <form method="post">
                 {{ wizard.management_form }}
                 {{ wizard.form|crispy }}
                 {% csrf_token %}
                 <div class="d-flex justify-content-center">
-                    <button class="btn-appointment" type="submit">Next</button>
+                    <button class="btn-appointment" type="submit">Book Appointment</button>
                 </div>
             </form>
-            {% else %}
-            <div class="alert alert-info" role="alert">
-                <p class="text-center mt-5">Log in <a href="{% url 'account_login' %}">here</a> to book your appointment.</p>
+            <div class="d-flex justify-content-center mt-3">
+                <a href="{% url 'appointment' %}">Start Over</a>
             </div>
-            {% endif %}
         </div>
     </div>
 {% endblock %}
