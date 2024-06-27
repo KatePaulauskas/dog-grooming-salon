@@ -12,7 +12,7 @@ body {
 h1 {
     font-family: "Righteous", sans-serif !important;
     font-size: 150% !important;
-    color: black;
+    color: #3f3850
 }
 
 /* H2-4 styles */
@@ -22,7 +22,7 @@ h4
  {
     font-family: "Cormorant Upright", sans-serif !important;
     font-size: 210% !important;
-    color: #272D2D;
+    color: #3f3850
 }
 
 /* H5-6 styles */
@@ -31,7 +31,7 @@ h6
  {
     font-family: "Cormorant Upright", sans-serif !important;
     font-size: 160% !important;
-    color: #272D2D;
+    color: #3f3850
 
  }
 
@@ -40,8 +40,7 @@ p {
     font-family: "Khula", sans-serif !important;
     font-size: 120% !important;
     padding: 5px;
-    color: #50514F;
-    
+    color: #3f3850;
 }
 
 /* Add header bottom border */
@@ -51,7 +50,7 @@ header {
 
 /* Style navbar text */
 .nav-link {
-    color: #50514F !important;
+    color: #3f3850 !important;
     font-size: 17px;
     font-family: "Righteous", sans-serif !important;
 }
@@ -152,9 +151,19 @@ header {
 }
 
 /* Style Hero Image */
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .hero-img {
-    width: 95%;
+    max-width: 94%;
+    height: auto;
     border-radius: 0.375rem;
+    margin-left: 3%;
+    margin-right: 3%;
 }
 
 /* Style Service and Groomer images */ 
@@ -186,6 +195,34 @@ h2.card-title
     border-color: #50514F;
 }
 
+/* Sty Forms labels font */
+label {
+    font-family: "Khula", sans-serif !important;
+    font-size: 110% !important;
+    color: #3f3850;
+}
+
+input,
+select,
+textarea {
+    font-family: "Khula", sans-serif !important;
+    font-size: 110% !important;
+    color: #3f3850;
+}
+
+input[type="date"],
+input[type="time"] {
+    font-family: "Khula", sans-serif !important;
+    font-size: 110% !important;
+    color: #3f3850 !important;
+}
+
+select option {
+    font-family: "Khula", sans-serif !important;
+    font-size: 110% !important;
+    color: #3f3850 !important;
+}
+
 /* Add footer top border */
 footer {
     border-top: 1px solid grey;
@@ -210,7 +247,7 @@ footer {
 .primaryAction {
     background-color: #5ecc5c;
     height: 35px;
-    width: 100px;
+    width: 120px;
     border-radius: 5px;
     color: #ffffff;
     border: none;
@@ -243,8 +280,6 @@ footer {
 .sign-out:active, .btn-delete:active {
     border: 2px solid #3f3850;
 }
-
-
 
 /* Style Contact page submit button, Booking page Book Appointment button, My Appointments Edit button */
 .btn-contact, .btn-appointment, .btn-edit {

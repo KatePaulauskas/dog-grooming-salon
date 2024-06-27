@@ -4,15 +4,17 @@
 
 <!-- index.html content starts here -->
 <!-- Above Fold Section -->
-<div class="container-fluid text-center">
+<div class="container-fluid">
     <div class="row">
         <div class="col-12">
-            <h1 class="my-4">Barks in Bubbles: Dog Grooming Salon</h1>
-            <h5 class="my-4">{{ about.welcome_message }}</h5>
-            <img src="{{ about.image.url }}" class="hero-img" alt="Welcome Image">
+            <h1 class="my-4 text-center">Barks in Bubbles: Dog Grooming Salon</h1>
+            <h5 class="my-4 text-center">{{ about.welcome_message }}</h5>
+            <div class="heroimage-container">
+                <img src="{{ about.image.url }}" class="hero-img" alt="Welcome Image">
+            </div>
             <!-- About Us -->
             <section id="about">
-                <h2 class="my-4">{{ about.title }}</h2>
+                <h2 class="my-4 text-center">{{ about.title }}</h2>
                 <p class="about-us mx-1 mx-sm-2 mx-md-3 mx-lg-5 text-center">
                     {{ about.content | safe }}</p>
             </section> <!-- Closing section tag instead of div -->
@@ -22,7 +24,7 @@
 
 <!-- Service List -->
 <section id="services">
-    <h2 class="text-center mt-4">Services</h2>
+    <h2 class="text-center">Services</h2>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mt-3 left">
