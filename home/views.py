@@ -7,6 +7,10 @@ class HomeView(ListView):
     template_name = 'home/index.html'
     context_object_name = 'services_list'
 
+    def get_queryset(self):
+        # Order services by 'position'
+        return Services.objects.all().order_by('position')
+
     """
     Use the get_context_data method to include multiple models' data
     in a Django class-based view

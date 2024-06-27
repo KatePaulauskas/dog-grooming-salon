@@ -26,9 +26,24 @@ class Services(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     duration = models.DurationField()
+    created_at = models.DateTimeField()
+    position = models.PositiveIntegerField(default=0)
 
     class Meta:
         verbose_name_plural = "Services"
+        ordering = ['position']
 
     def __str__(self):
         return self.name
+
+    """
+    Convert duration (timedelta) to a string
+    formatted as 'Xh Ym' representing hours and minutes.
+    Source: https://stackoverflow.com/questions/2119472/
+    convert-a-timedelta-to-days-hours-and-minutes
+    """
+    def duration_in_hours_minutes(self):
+        total_seconds = int(self.duration.total_seconds())
+        hours, remainder = divmod(total_seconds, 3600)
+        minutes, _ = divmod(remainder, 60)
+        return f'{hours}h {minutes}m'

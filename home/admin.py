@@ -12,5 +12,6 @@ class ServicesAdmin(SummernoteModelAdmin):
 
 
 @admin.register(About)
-class AboutAdmin(admin.ModelAdmin):
+class AboutAdmin(SummernoteModelAdmin):
     list_display = ('title', 'welcome_message')
+    summernote_fields = ('content',)
