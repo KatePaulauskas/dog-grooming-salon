@@ -14,7 +14,7 @@ FORMS = [
 ]
 
 urlpatterns = [
-    path('appointment/', AppointmentWizard.as_view(FORMS), name='appointment'),
+    path('', AppointmentWizard.as_view(FORMS), name='appointment'),
     path('my-appointments/', my_appointments, name='my_appointments'),
     path('appointment_delete/<int:appointment_id>/',
          appointment_delete, name='appointment_delete'),
