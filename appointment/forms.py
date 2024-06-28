@@ -23,7 +23,7 @@ class StepOneForm(forms.ModelForm):
         fields = ('service', 'date',)
 
     """
-    Prevent date booking in the pasr or
+    Prevent date booking in the past or
     more than 90 days in advance
     Source:
     https://stackoverflow.com/questions/4941974/
@@ -32,6 +32,7 @@ class StepOneForm(forms.ModelForm):
     def clean_date(self):
         selected_date = self.cleaned_data.get('date')
         today = date.today()
+        now = datetime.now()
 
         if selected_date < today:
             raise ValidationError("Not possible to select date in the past")
@@ -120,13 +121,16 @@ class StepThreeForm(forms.Form):
         """
         interval = timedelta(hours=2)
         times = []
+        now = datetime.now()
 
         # Generate the list of time slots
         while start_datetime < end_datetime:
             # Convert start time into '09:30' format
             time_str = start_datetime.time().strftime('%H:%M')
-            current_time = start_datetime.time()
-            if self.is_groomer_available(groomer, date, current_time):
+            if date == date.today() and start_datetime < now:
+                start_datetime += interval
+                continue
+            if self.is_groomer_available(groomer, date, start_datetime.time()):
                 times.append((time_str, time_str))
             start_datetime += interval
 
