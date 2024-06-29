@@ -225,6 +225,15 @@ The combination of these colors ensures that the salon not only stands out visua
 ### Existing Features
 ### Future Features
 
+1. Implement validation against double bookings and overlapping appointments in the admin panel when editing or scheduling appointments.
+2. Add functionality to respond to inquiries via email from the admin panel.
+3. Enable password recovery and reset functionality for existing users.
+4. Implement email notifications for when an appointment is booked, rescheduled, or deleted.
+5. Offer services with different durations and adjust the booking flow accordingly.
+6. Implement functionality to ensure certain services are performed only by specific groomers.
+7. Add a notes field for superuser to be able to add comments to appointments.
+8. Provide more tailored services, taking into consideration the dog’s breed and size.
+
 ## Technologies used
 
 ### Languages
