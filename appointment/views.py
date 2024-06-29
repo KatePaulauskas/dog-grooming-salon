@@ -88,8 +88,14 @@ def my_appointments(request):
     """
     # Check if the user is authenticated
     if request.user.is_authenticated:
-        appointments = (
-            Appointment.objects.filter(user=request.user).order_by('-date')
+        # Check if the logged-in user is an admin
+        if request.user.is_superuser:
+            # Admin sees all appointments
+            appointments = Appointment.objects.all().order_by('-date')
+        else:
+            # Regular users see only their own appointments
+            appointments = (
+                Appointment.objects.filter(user=request.user).order_by('-date')
             )
         now = timezone.now()
 
@@ -100,7 +106,7 @@ def my_appointments(request):
             # Make the combined datetime timezone-aware
             appointment_datetime = timezone.make_aware(appointment_datetime, timezone.get_current_timezone())
             appointment.can_edit_delete = (appointment_datetime - now).total_seconds() > 24 * 3600
-            
+
         return render(request,
                       "appointment/my_appointments.html",
                       {'appointments': appointments})
@@ -224,6 +230,6 @@ class EditAppointmentWizard(SessionWizardView):
         del self.request.session['editing']
 
         messages.add_message(self.request, messages.SUCCESS,
-                             "Your appointment has been updated!")
+                             "Appointment appointment has been updated successfully!")
 
         return redirect('my_appointments')
