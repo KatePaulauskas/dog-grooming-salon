@@ -3,6 +3,7 @@ from django.contrib import messages
 from .forms import StepOneForm, StepTwoForm, StepThreeForm
 from django.http import HttpResponseRedirect
 from .models import Groomers, Appointment, Services
+from django.utils import timezone
 import datetime
 from django.urls import reverse
 from formtools.wizard.views import SessionWizardView
@@ -90,6 +91,16 @@ def my_appointments(request):
         appointments = (
             Appointment.objects.filter(user=request.user).order_by('-date')
             )
+        now = timezone.now()
+
+        # Add a flag to indicate if an appointment can be edited or deleted
+        for appointment in appointments:
+            # Combine the appointment date with a time (midnight)
+            appointment_datetime = datetime.datetime.combine(appointment.date, datetime.time())
+            # Make the combined datetime timezone-aware
+            appointment_datetime = timezone.make_aware(appointment_datetime, timezone.get_current_timezone())
+            appointment.can_edit_delete = (appointment_datetime - now).total_seconds() > 24 * 3600
+            
         return render(request,
                       "appointment/my_appointments.html",
                       {'appointments': appointments})

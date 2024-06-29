@@ -317,6 +317,19 @@ footer {
     border: 2px solid #3f3850 !important;
 }
 
+/* Disabled state for buttons */
+.btn:disabled, .btn[disabled] {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    border: none;
+}
+
+/* Specific disabled state for delete button tooverride the background color style */
+.btn-delete:disabled, .btn-delete[disabled] {
+    background-color: #cccccc;
+}
+
 /* Media query: mobile phones (320px and up) */
 @media screen and (min-width: 320px) {
     html {
