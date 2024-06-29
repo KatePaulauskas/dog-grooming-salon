@@ -70,14 +70,14 @@ header {
     max-height: 100px;
 }
 
-.btn-book {
-    background-color: #14cfdb;
-    border: 2px solid #14cfdb;
-    color: #3f3850;
-    font-weight: 400;
+/* General buttons style */ 
+.btn {
+    height: 35px;
+    border-radius: 5px;
+    border: none;
 }
 
-/* Style login button */
+/* Style header login button */
 .btn-login {
     background-color: #3f3850 !important;
     color: #14cfdb;
@@ -98,7 +98,7 @@ header {
     border: 2px solid #3f3850 !important;
 }
 
-/* Style book anf my apoointments buttons */
+/* Style book and my apoointments buttons in the header*/
 .btn-book, .btn-appointments {
     background-color: #14cfdb !important;
     color: #3f3850;
@@ -243,7 +243,7 @@ footer {
     width: 160px;
 }
 
-/* Style Log In and Edit buttons */
+/* Style Log In and Sign up buttons on account pages */
 .primaryAction {
     background-color: #5ecc5c;
     height: 35px;
@@ -265,9 +265,7 @@ footer {
 /* Style Log Out button, Appointment Prev button, My appointments Delete button  */
 .sign-out, .btn-delete, .btn-back {
     background-color: #fe8b32 !important;
-    height: 35px;
     width: 100px;
-    border-radius: 5px;
     color: #ffffff;
     border: none;
 }
@@ -284,9 +282,7 @@ footer {
 /* Style Contact page submit button, Booking page Book Appointment button, My Appointments Edit button */
 .btn-contact, .btn-appointment, .btn-edit {
     background-color: #5ecc5c;
-    height: 35px;
     width: 100px;
-    border-radius: 5px;
     color: #ffffff;
     border: none;
 }
@@ -300,6 +296,25 @@ footer {
 .btn-contact:active, .btn-appointment:active, .btn-edit:active {
     background-color: #5ecc5c !important;
     border: 2px solid #3f3850;
+}
+
+/* Style Cancel button */
+
+.btn-cancel {
+    background-color: #ff5cb7 !important;
+    width: 100px;
+    color: #ffffff;
+}
+
+.btn-cancel:hover {
+    background-color: #ff5cb7 !important;
+    color: #3f3850 !important;
+    border: none;
+}
+
+.btn-cancel:active  {
+    background-color: #ff5cb7;
+    border: 2px solid #3f3850 !important;
 }
 
 /* Media query: mobile phones (320px and up) */

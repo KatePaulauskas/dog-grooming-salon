@@ -122,6 +122,8 @@ def edit_appointment (request, appointment_id):
     request.session['edit_date'] = appointment.date.strftime('%Y-%m-%d')
     request.session['edit_groomer_id'] = appointment.groomer.id
     request.session['edit_time'] = appointment.time.strftime('%H:%M')
+    # Indicate the edit mode
+    request.session['editing'] = True
         
     # Render the form for editing the appointment.
     return redirect('edit_appointment')

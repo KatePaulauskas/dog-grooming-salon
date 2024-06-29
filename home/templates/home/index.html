@@ -9,6 +9,9 @@
         <div class="col-12">
             <h1 class="my-4 text-center">Barks in Bubbles: Dog Grooming Salon</h1>
             <h5 class="my-4 text-center">{{ about.welcome_message }}</h5>
+            <div class="d-flex flex-column align-items-center">
+                <a href="{% url 'appointment' %}" class="btn btn-book mt-3 w-45 mb-4">Book Now</a>
+            </div>
             <div class="heroimage-container">
                 <img src="{{ about.image.url }}" class="hero-img" alt="Welcome Image">
             </div>

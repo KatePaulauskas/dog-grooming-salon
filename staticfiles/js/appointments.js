@@ -9,9 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
     const deleteButtons = document.getElementsByClassName("btn-delete");
     const deleteConfirm = document.getElementById("deleteConfirm");
-    const editModal = new bootstrap.Modal(document.getElementById("editModal"));
     const editButtons = document.getElementsByClassName("btn-edit");
-    const editConfirm = document.getElementById("editConfirm");
 
     /**
      * Initializes deletion functionality for the provided delete buttons.
@@ -44,31 +42,23 @@ document.addEventListener('DOMContentLoaded', function() {
      * For each button in the `editButtons` collection:
      * - Retrieves the associated appointment's ID upon click.
      * - Stores the appointment ID for further processing.
-     * - Displays a modal (`editModal`) for editing the appointment.
      * - Logs an error if the appointment ID is not found.
      */
-    // Initialise a variable to store the appointment ID to be edited. It gets updated when an edit button is clicked
-    let appointmentIdToEdit = null;
 
     // Attach event listeners to edit buttons
+
     for (let button of editButtons) {
         button.addEventListener("click", (e) => {
             let appointmentId = e.target.getAttribute("data-appointment-id");
             if (appointmentId) {
-                appointmentIdToEdit = appointmentId;
-                editModal.show();
-            } else {
+                /** Redirect browser to a different URL for edititng appointment
+            * Source: https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/
+            */
+                window.location.href = `/appointment/edit/${appointmentId}/`;
+            } 
+            else {
                 console.error('Appointment ID not found');
             }
         });
     }
-
-    // Confirm edit action and redirect
-    editConfirm.addEventListener("click", () => {
-        if (appointmentIdToEdit) {
-            window.location.href = `/appointment/edit/${appointmentIdToEdit}/`;
-        } else {
-            console.error('No appointment ID set for editing');
-        }
-    });
 });
