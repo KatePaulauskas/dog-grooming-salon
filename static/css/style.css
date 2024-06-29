@@ -333,7 +333,7 @@ footer {
 /* Media query: mobile phones (320px and up) */
 @media screen and (min-width: 320px) {
     html {
-        scroll-padding-top: 260px;
+        scroll-padding-top: 360px;
     }
 
     /* H1 style */
@@ -360,7 +360,7 @@ footer {
 /* Media query: tablets and larger screens (576px and up) */
 @media screen and (min-width: 576px) {
     html {
-        scroll-padding-top: 150px;
+        scroll-padding-top: 380px;
     }
     /* Table font size */
     table {
