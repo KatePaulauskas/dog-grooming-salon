@@ -66,10 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Confirm edit action and redirect
     editConfirm.addEventListener("click", () => {
         if (appointmentIdToEdit) {
-            /** Redirect browser to a different URL for editing appointment
-             * Source: https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/
-             */
-            window.location.href = `/appointment/edit_appointment_step_one/${appointmentIdToEdit}/`;
+            window.location.href = `/appointment/edit/${appointmentIdToEdit}/`;
         } else {
             console.error('No appointment ID set for editing');
         }

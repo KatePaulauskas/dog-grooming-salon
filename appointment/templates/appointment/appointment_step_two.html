@@ -6,7 +6,15 @@
 {% block content %}
 <div class="row justify-content-center m-0">
     <div class="col-9 col-md-6 m-3">
-        <h1 class="text-center my-3">"Step Two: Select Groomer"</h1>
+        <h1 class="text-center my-3">
+            {% if editing %}
+                Edit Appointment:
+                <br>
+                Step Two - Select Groomer
+            {% else %}
+                Step Two: Select Groomer
+            {% endif %}
+        </h1>
         <form method="post">
             {{ wizard.management_form }}
             {% csrf_token %}
@@ -14,6 +22,9 @@
             <div class="d-flex justify-content-between mt-3">
                 <button name="wizard_goto_step" type="submit" value="step_one" class="btn btn-back mx-1">{% translate "Prev step" %}</button>
                 <button type="submit" class="btn-appointment mx-1">{% translate "Next" %}</button>
+            </div>
+            <div class="d-flex justify-content-center mt-3">
+                <a href="{% url 'my_appointments' %}" class="btn btn-cancel ms-2">Cancel</a>
             </div>
         </form>
     </div>

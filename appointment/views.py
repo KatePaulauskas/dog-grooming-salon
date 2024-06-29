@@ -8,12 +8,14 @@ from django.urls import reverse
 from formtools.wizard.views import SessionWizardView
 
 
+# Define the steps and forms for the wizard
 FORMS = [
     ("step_one", StepOneForm),
     ("step_two", StepTwoForm),
     ("step_three", StepThreeForm),
 ]
 
+# Define the templates correspondign to each step
 TEMPLATES = {
     "step_one": "appointment/appointment_step_one.html",
     "step_two": "appointment/appointment_step_two.html",
@@ -23,21 +25,30 @@ TEMPLATES = {
 
 class AppointmentWizard(SessionWizardView):
     """
-    View to habdle booking multistep form
+    View to habdle booking multistep form.
+    Utilises Django Form Tools WizardView to manage form sessions.
     Source:
     https://django-formtools.readthedocs.io/en/latest/wizard.html
     """
     form_list = FORMS
 
     def get_template_names(self):
+        """
+        Return the template name for the current step.
+        """
         return [TEMPLATES[self.steps.current]]
 
     def get_form_kwargs(self, step):
+        """
+        Pass additional keyword arguments to forms in different steps.
+        """
         kwargs = super().get_form_kwargs(step)
         if step == 'step_two':
+            # Pass date from step one to step two
             date = self.get_cleaned_data_for_step('step_one')['date']
             kwargs['date'] = date
         if step == 'step_three':
+            # Pass date and groomer from previous steps to step three
             cleaned_data = self.get_cleaned_data_for_step('step_one')
             date = cleaned_data['date']
             groomer = self.get_cleaned_data_for_step('step_two')['groomer']
@@ -46,6 +57,9 @@ class AppointmentWizard(SessionWizardView):
         return kwargs
 
     def done(self, form_list, **kwargs):
+        """
+        Save the appointment when all steps are completed.
+        """
         form_data = [form.cleaned_data for form in form_list]
         service = form_data[0]['service']
         date = form_data[0]['date']
@@ -68,15 +82,13 @@ class AppointmentWizard(SessionWizardView):
 
 
 def my_appointments(request):
+    """
+    View to display the logged-in user's appointments.
+    """
     # Check if the user is authenticated
     if request.user.is_authenticated:
-        """"
-        View to dispaly existing bookings.
-        Get all appointments for the logged-in user,
-        ordered by date ascending
-        """
         appointments = (
-            Appointment.objects.filter(user=request.user).order_by('date')
+            Appointment.objects.filter(user=request.user).order_by('-date')
             )
         return render(request,
                       "appointment/my_appointments.html",
@@ -91,111 +103,114 @@ def appointment_delete(request, appointment_id):
     View to delete an appointment.
     """
     appointment = get_object_or_404(Appointment, pk=appointment_id)
-
     appointment.delete()
-
     messages.add_message(request, messages.SUCCESS, 'Appointment deleted!')
 
     return HttpResponseRedirect(reverse('my_appointments'))
 
 
-"""
-def edit_appointment_step_one(request, appointment_id):
-
+def edit_appointment (request, appointment_id):
+    """
     View to handle the first step of editing an appointment.
-    If the request method is GET, it pre-fills the form
-    with the current appointment details and renders the form for editing.
-    If the form is submitted via POST request, it validates the form data and,
-    if valid, saves the relevant details to the session and redirects the user
-    to the second step of the edit process.
-
+    Sets session variables to pre-fill the edit form.
+    """
     appointment = get_object_or_404(Appointment, id=appointment_id)
-
-    if request.method == 'POST':
-        # Initialize the form with the existing appointment details
-        form_step_one = StepOneForm(data=request.POST, instance=appointment)
-        if form_step_one.is_valid():
-            # Save the relevant appointment details to the session.
-            request.session['edit_appointment_id'] = appointment_id
-            request.session['service_id'] = (
-                form_step_one.cleaned_data['service'].id
-                )
-            request.session['groomer_id'] = (
-                form_step_one.cleaned_data['groomer'].id
-                )
-            request.session['date'] = (
-                form_step_one.cleaned_data['date'].strftime('%Y-%m-%d')
-            )
-            # Redirect to the second step of the edit process.
-            return redirect('edit_appointment_step_two')
-
-    else:
-        form_step_one = StepOneForm(instance=appointment)
-
+    
+    # Save the relevant appointment details for future steps
+    request.session['edit_appointment_id'] = appointment_id
+    request.session['edit_service_id'] = appointment.service.id
+    request.session['edit_date'] = appointment.date.strftime('%Y-%m-%d')
+    request.session['edit_groomer_id'] = appointment.groomer.id
+    request.session['edit_time'] = appointment.time.strftime('%H:%M')
+        
     # Render the form for editing the appointment.
-    return render(
-        request,
-        "appointment/edit_appointment_step_one.html",
-        {'form_step_one': form_step_one,
-         'appointment_id': appointment_id})
+    return redirect('edit_appointment')
+
+    
+class EditAppointmentWizard(SessionWizardView):
+    """
+    View to handle multi-step appointment editing.
+    """
+    form_list = FORMS
+
+    def get_template_names(self):
+        """
+        Return the template name for the current step.
+        """
+        return [TEMPLATES[self.steps.current]]
+
+    def get_context_data(self, form, **kwargs):
+        """
+        Pass additional context data to the template.
+        """
+        context = super().get_context_data(form=form, **kwargs)
+        context['editing'] = self.request.session.get('editing', False)
+        return context
+
+    def get_form_initial(self, step):
+        """
+        Set initial form data based on the session variables.
+        """
+        initial = super().get_form_initial(step)
+
+        if step == 'step_one':
+            initial.update({
+                'service': get_object_or_404(Services, id=self.request.session['edit_service_id']),
+                'date': datetime.datetime.strptime(self.request.session['edit_date'], '%Y-%m-%d').date()
+            })
+
+        if step == 'step_two':
+            initial.update({
+                'groomer': get_object_or_404(Groomers, id=self.request.session['edit_groomer_id']),
+            })
+
+        if step == 'step_three':
+            initial.update({
+                'time': self.request.session['edit_time']
+            })
+
+        return initial
 
 
-def edit_appointment_step_two(request):
+    def get_form_kwargs(self, step):
+        """
+        Pass additional keyword arguments to forms in different steps.
+        """
+        kwargs = super().get_form_kwargs(step)
+        if step == 'step_two':
+            date = self.get_cleaned_data_for_step('step_one')['date']
+            kwargs['date'] = date
+        if step == 'step_three':
+            cleaned_data = self.get_cleaned_data_for_step('step_one')
+            date = cleaned_data['date']
+            groomer = self.get_cleaned_data_for_step('step_two')['groomer']
+            kwargs['date'] = date
+            kwargs['groomer'] = groomer
+        return kwargs
 
-    View to handle the second step of editing an appointment.
+    def done(self, form_list, **kwargs):
+        """
+        Update the appointment when all steps are completed.
+        """
+        form_data = [form.cleaned_data for form in form_list]
+        service = form_data[0]['service']
+        date = form_data[0]['date']
+        groomer = form_data[1]['groomer']
+        time = form_data[2]['time']
 
-    # Retrieve the appointment ID from the session
-    appointment_id = request.session.get('edit_appointment_id')
+        # Update the existing appointment
+        appointment_id = self.request.session['edit_appointment_id']
+        appointment = get_object_or_404(Appointment, id=appointment_id)
+        appointment.service = service
+        appointment.date = date
+        appointment.groomer = groomer
+        appointment.time = time
+        appointment.save()
 
-    # Get the appointment object, or return a 404 error if not found
-    appointment = get_object_or_404(Appointment, pk=appointment_id)
+        # Clear the session variable for editing mode
+        del self.request.session['editing']
 
-    # Retrieve service, groomer, and date information from the session
-    service_id = request.session.get('service_id')
-    groomer_id = request.session.get('groomer_id')
-    date_str = request.session.get('date')
+        messages.add_message(self.request, messages.SUCCESS,
+                             "Your appointment has been updated!")
 
-    # Get the service and groomer objects, or return a 404 error if not found
-    service = get_object_or_404(Services, id=service_id)
-    groomer = get_object_or_404(Groomers, id=groomer_id)
-
-    # Convert the date string back to a date object
-    date = datetime.datetime.strptime(date_str, '%Y-%m-%d').date()
-
-    # Check if the form has been submitted via POST request
-    if request.method == 'POST':
-        # Initialise the form with the submitted data, groomer, and date.
-        form_step_two = StepTwoForm(data=request.POST, groomer=groomer,
-                                    date=date, request=request)
-
-        # Validate the form
-        if form_step_two.is_valid():
-            # Update the appointment with the new details
-            appointment.service = service
-            appointment.groomer = groomer
-            appointment.date = date
-            appointment.time = form_step_two.cleaned_data['time']
-            appointment.save()
-
-            # Add a success message
-            messages.add_message(request, messages.SUCCESS,
-                                 "Your appointment is updated!")
-
-            # Redirect to the user's appointments page
-            return redirect('my_appointments')
-    else:
-        # Initialise the form with the current appointment details
-        form_step_two = StepTwoForm(groomer=groomer, date=date,
-                                    request=request, instance=appointment)
-
-    # Render the template with the form and context data
-    return render(
-        request,
-        "appointment/edit_appointment_step_two.html",
-        {'form_step_two': form_step_two,
-         'service': service,
-         'groomer': groomer,
-         'date': date,
-         # Pass the appointment_id to the template context
-         'appointment_id': appointment_id})
-"""
+        return redirect('my_appointments')

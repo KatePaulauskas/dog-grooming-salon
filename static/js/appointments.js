@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
      * - Stores the appointment ID for further processing.
      * - Logs an error if the appointment ID is not found.
      */
-    // Initialise a variable to store the appointment ID to be edited. It gets updated when an edit button is clicked
+
+    // Attach event listeners to edit buttons
 
     for (let button of editButtons) {
         button.addEventListener("click", (e) => {
@@ -53,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 /** Redirect browser to a different URL for edititng appointment
             * Source: https://www.geeksforgeeks.org/how-to-redirect-to-another-webpage-using-javascript/
             */
-                window.location.href = `/appointment/edit_appointment_step_one/${appointmentId}/`;
+                window.location.href = `/appointment/edit/${appointmentId}/`;
             } 
             else {
                 console.error('Appointment ID not found');

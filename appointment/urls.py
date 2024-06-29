@@ -1,10 +1,11 @@
 from django.urls import path
 from .views import (
-     AppointmentWizard,
-     my_appointments,
-     appointment_delete,
+    AppointmentWizard,
+    my_appointments,
+    appointment_delete,
+    edit_appointment,
+    EditAppointmentWizard,
 )
-
 from .forms import StepOneForm, StepTwoForm, StepThreeForm
 
 FORMS = [
@@ -18,4 +19,8 @@ urlpatterns = [
     path('my-appointments/', my_appointments, name='my_appointments'),
     path('appointment_delete/<int:appointment_id>/',
          appointment_delete, name='appointment_delete'),
+    path('edit/<int:appointment_id>/', edit_appointment,
+         name='edit_appointment'),
+    path('edit_appointment/', EditAppointmentWizard.as_view(FORMS),
+         name='edit_appointment'),
 ]
