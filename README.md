@@ -51,23 +51,23 @@ When approaching the Strategy Plane, the foundation of the user experience, user
 
 Understanding the users and their needs was essential. After conducting research, the **target audience** for the Barks in Bubbles website was identified as follows:
 
-**- Pet Owners:** Individuals in the Cork area who are looking for reliable and high-quality grooming services for their dogs.
+* **Pet Owners:** Individuals in the Cork area who are looking for reliable and high-quality grooming services for their dogs.
 
-**- Local Community Members:** Residents near the salon seeking convenient and professional pet grooming services.
+* **Local Community Members:** Residents near the salon seeking convenient and professional pet grooming services.
 
-**- New Pet Owners:** Individuals who have recently acquired a dog or a puppy and are in need of reliable grooming services in Cork area to introduce the dog to grooming.
+* **New Pet Owners:** Individuals who have recently acquired a dog or a puppy and are in need of reliable grooming services in Cork area to introduce the dog to grooming.
 
-**- Returning Pet Owners:** Customers looking for a consistent and reliable dog grooming provider in Cork area to use on a regular basis.
+* **Returning Pet Owners:** Customers looking for a consistent and reliable dog grooming provider in Cork area to use on a regular basis.
 
-**- Breeders:** Professionals around Cork who require grooming services to maintain the appearance and health of the dogs they are breeding.
+* **Breeders:** Professionals around Cork who require grooming services to maintain the appearance and health of the dogs they are breeding.
 
-**- Exhibition and Competition Participants:** Owners who take part in dog exhibitions and competitions, requiring top-notch grooming services to prepare their dogs for events around Cork.
+* **Exhibition and Competition Participants:** Owners who take part in dog exhibitions and competitions, requiring top-notch grooming services to prepare their dogs for events around Cork.
 
-**- Veterinary Clinics:** Clinics around Cork looking for potential partnerships and referrals to provide comprehensive care for pets.
+* **Veterinary Clinics:** Clinics around Cork looking for potential partnerships and referrals to provide comprehensive care for pets.
 
-**- Dog Training Services:** Training providers around Cork area seeking grooming services for their clients' dogs as part of a complete care package.
+* **Dog Training Services:** Training providers around Cork area seeking grooming services for their clients' dogs as part of a complete care package.
 
-**- Animal Shelters:** Organisations looking for grooming services to help dogs in their care look their best, increasing their chances of adoption.
+* **Animal Shelters:** Organisations looking for grooming services to help dogs in their care look their best, increasing their chances of adoption.
 
 These users need a platform that offers comprehensive, reliable, high-quality dog grooming services, including information about the salon, grooming services, and an easy appointment booking and management system.
 
@@ -360,6 +360,103 @@ Returning users can quickly access their accounts and manage their bookings.
 
 
 ### Existing Features
+
+**Header**
+
+The header contains the navigation bar, logo, and Log In and Book Now buttons. The navigation bar is positioned on the left, while the logo is prominently displayed in the center, ensuring brand recognition. The logo features a drawing of a happy dog in colorful bubbles and foam, representing the brand and providing a clear visual hint about the site's focus on dog grooming.
+
+The Log In and Book Now buttons are positioned on the right side by side, facilitating quick access to appointment booking and management for users. Below these two buttons, there is a notification informing the user whether they are logged in or not.
+
+![Header](/media/header.jpeg)
+
+**Navigation Bar**
+
+The fully responsive navigation bar is displayed on all site pages. It includes links to four site pages: Home, Groomers, Gallery, and Contact, as well as two anchors on the home page: About and Services. The links look identical and consistent, and the only difference between anchors and pages is evident upon clicking on them.
+
+The design of the navigation bar remains consistent across all pages, ensuring seamless navigation. It allows site visitors to navigate through the site with ease, eliminating the need to use the back button in their browser.
+
+* Desktop View:
+
+The navigation bar links are displayed horizontally with the active page highlighted and underlined, providing a clear indication of the user's current location on the site.
+
+![Desktop Navbar](/media/navbar-desktop.jpeg)
+
+* Tablet and Mobile View:
+
+On tablets and mobile devices, the menu is represented by a hamburger icon.
+
+![Tablet and Mobile Navbar Closed](/media/mobile-tablet-navbar-closed.jpeg)
+
+Clicking on it reveals a dropdown menu showcasing the current page highlighted and underlined to ensure smooth navigation. The menu items are displayed on a full-width background, creating a cohesive block with the header.
+
+The notification informing the user whether they are logged in or not is displayed in the dropdown menu. The Log In and Book Now buttons are positioned vertically to ensure the limited screen space is utilized efficiently.
+
+![Tablet and Mobile Navbar Opened](/media/mobile-tablet-navbar-opened.jpeg)
+
+**Above the Fold**
+
+The above-the-fold section on the homepage features a welcoming message and a catchy hero image with a happy dog in a buthtub. This section is designed to engage users immediately, providing a positive first impression of the salon and its services.
+
+![Above Fold](/media/above-fold.jpeg)
+
+**About Us**
+
+The About Us section provides an insightful overview of the salon's mission, vision, and background. This section highlights the salon's dedication to delivering high-quality grooming services and its commitment to building lasting relationships with clients and their pets.
+
+![About Us](/media/about-barks-in-bubbles.jpeg)
+
+**Services**
+
+The Services section, displayed on the homepage, highlights all grooming services offered by Barks in Bubbles. It includes detailed descriptions, duration and pricing for each service, allowing users to quickly learn about the different grooming options available.
+
+![Services](/media/services.jpeg)
+
+**Groomers Page**
+
+The Groomers Page introduces the team of professional groomers and highlights their expertise and experience. This page helps build trust and assurance by showcasing the skills and dedication of the grooming team.
+
+![Groomers Page](/media/groomers-page.jpeg)
+
+
+**Gallery Page**
+
+The Gallery Page showcases a collection of photos featuring dogs during and after grooming sessions. This page provides visual proof of the high-quality grooming services offered by the salon and engages users by displaying successful grooming results.
+
+![Gallery Page](/media/gallery-page.jpeg)
+
+**Contact Us Page**
+
+The Contact Us Page provides a user-friendly contact form for inquiries and feedback. 
+This page is designed to facilitate smooth communication between the salon and its clients, so that clients can easily reach out to the salon for any questions or appointment bookings. 
+
+![Contact Us Page](/media/contact-us-page.jpeg)
+
+**Log In Page**
+
+The Log In page allows existing users to access their accounts and manage their appointments. This page ensures secure authentication and provides an easy way for users to log in and access personalised services.
+
+![Log In Page](/media/log-in-page.jpeg)
+
+**Sign Up Page**
+
+The Sign Up page of the Barks in Bubbles website allows new users to create an account, enabling them to book and manage appointments online.
+
+![Sign Up Page](/media/sign-up-page.jpeg)
+
+**Footer**
+The footer is displayed at the bottom of every page and contains essential information and links:
+
+* Working Hours: Information about the salon's operating hours.
+* Contact Details: Phone number and email address for inquiries.
+* Address: Physical location of the salon.
+* Social Media Links: Icons linking to the salon's Instagram and Facebook pages, allowing users to connect with the salon on social platforms.
+
+![Footer](/media/footer.jpeg)
+
+**Log In**
+
+
+
 ### Future Features
 
 1. Implement validation against double bookings and overlapping appointments in the admin panel when editing or scheduling appointments.
@@ -381,6 +478,74 @@ Returning users can quickly access their accounts and manage their bookings.
 
 ### Manual Testing
 #### Site features and behaviour
+### Feature Testing
+
+| Action/Feature          | Expected Behavior       | Status         |
+|-------------------------|-------------------------|----------------|
+| Enter site URL: <https://barks-in-bubbles-a17d3839532d.herokuapp.com/> | Home page loads | Pass |
+| Menu was tested on all pages of the site on multiple devices: mobile, tablet, desktop |  |  |
+| Click on the Home page link | Home page loads | Pass |
+| Click on the About link on the Home page | Scrolls to About section | Pass |
+| Click on the Services link on the Home page | Scrolls to Services section | Pass |
+| Click on the Groomers page link | Groomers page loads | Pass |
+| Click on the Gallery page link | Gallery page loads | Pass |
+| Click on the Contact page link | Contact page loads | Pass |
+| Click on the hamburger menu icon on the mobile or tablet devise | Menu items expand inside the header in a dropdown | Pass |
+| Hamburger menu icon on larger screens | Hidden | Pass |
+ Click on the logo | Home page loads | Pass |
+| Header buttons were tested on all pages of the site on mobile, tablet, desktop |  |  |
+| Click on the Log In button | Log In page loads | Pass |
+| Click on the Book Now button | 'Log in here to book your appointment' notification appears| Pass |
+| Notification about user login status | Correctly displays user login status | Pass |
+| Form was tested on on mobile, tablet, desktop devices in multiple browsers |  |  |
+| Click submit without filling out fields | "Please fill in this field" appears in the 'Name' field | Pass |
+| Fill out only the name, and click submit | "Please fill in this field" appears in the 'Email' field | Pass |
+| Fill out the name and email fields without the '@' sign, and click submit | "Please include an '@' in the email address. 'email' is missing an '@'" appears in the 'Email' field | Pass |
+| Fill out the name and email address with the '@' sign, and click submit | "Please fill in this field" appears in the 'Message' field | Pass |
+| Fill out the name, email address with the '@'sign and add a message, click submit | The notification "Thanks for reaching out! We got your message and will be in touch within 24 hours." displayed at the top of the screen | Pass |
+| Footer links were tested on all site pages |  |  |
+| Click on the Instagram icon in the footer | External link leading to Instagram opens in a new page | Pass |
+| Click on the Facebook icon in the footer | External link leading to Facebook opens in a new page | Pass |
+
+#### Book Now Buttons
+
+| Action/Feature          | Expected Behavior       | Status         |
+|-------------------------|-------------------------|----------------|
+| Click on the Book Now button in the header of the site while logged out | User is taken to a separate page where the message "Log in here to book your appointment" is displayed | Pass |
+| Click on the Book Now button at the top / bottom of the Home page while logged out | In both cases, user is taken to a separate page where the message "Log in here to book your appointment" is displayed | Pass |
+| Click on the Book Now button at the top / bottom the Groomers page while logged out | User is taken to a separate page where the message "Log in here to book your appointment" is displayed | Pass |
+| Click on the Book Now button at the top / bottom the Gallery page while logged out | User is taken to a separate page where the message "Log in here to book your appointment" is displayed | Pass |
+
+
+#### Log In Page
+
+| Action/Feature          | Expected Behavior       | Status         |
+|-------------------------|-------------------------|----------------|
+| Click Log In button in the header of the site | Log In page loads | Pass |
+| Click Log In without filling in any fields | Error message "Please fill in this field" is displayed in the username field | Pass |
+| Enter only username and click Log In | Error message "Please fill in this field" is displayed next to the password field | Pass |
+| Enter only password and click Log In | Error message "Please fill in this field" is displayed next to the username field | Pass |
+| Enter invalid username and password, click Log In | Error message "The username and/or password you specified are not correct" is displayed | Pass |
+| Enter valid username and password, click Log In | User is redirected to All Bookings list. The following message displayed "Successfully signed in as 'username'" | Pass |
+
+
+#### Sign Up Page
+
+| Action/Feature          | Expected Behavior       | Status         |
+|-------------------------|-------------------------|----------------|
+| Click 'Sign Up' link on the Login Page | Sign Up page loads | Pass |
+| Leave required fields empty and click Sign Up | Error messages "Please fill in this field" are displayed next to the username fields | Pass |
+| Enter only username and click Sing Up | Error message "Please fill in this field" is displayed next to the password field | Pass |
+ Enter only password and click Sing Up | Error message "Please fill in this field" is displayed next to the username field | Pass |
+| Enter username and password, click Sing Up | Error message "Please fill in this field" is displayed next to the password (again) field | Pass |
+|Enter username, password, password (again) and already used email (ekaterina.paulauskas@gmail.com) and click Sign Up | Error message "A user is already registered with this email address" is displayed | Pass |
+| Enter username, a password and password (again) that is less than 8 characters and click Sign Up | Error message "This password is too short. It must contain at least 8 characters." is displayed | Pass |
+| Enter username, a password and password (again), use a common password and click Sign Up | Error message "This password is too common." is displayed | Pass |
+| Enter username, a password and password (again), use a numeric password and click Sign Up | Error message "This password is entirely numeric." is displayed | Pass |
+| Enter username, a password and password (again), use a password similar to personal information and click Sign Up | Error message "Your password can’t be too similar to your other personal information." is displayed | Pass |
+| Enter username, a password and password (again), use different passwords for password and password (again) and click Sign Up | Error message "You must type the same password each time." is displayed | Pass |
+| Fill out all fields correctly: enter username, a password and password (again), use the same passwords, if addign email, add email that was not previously registed and click Sign Up | User is redirected to the appointment booking page | Pass |
+
 #### User Stories
 | User Story | Expected Behavior  | Actual Behavior | Status |
 |------------|-------------------|----------------|-----------|
