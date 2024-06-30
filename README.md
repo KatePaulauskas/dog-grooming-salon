@@ -357,8 +357,6 @@ The site allows users to create personal accounts, book and manage grooming appo
 
 Returning users can quickly access their accounts and manage their bookings.
 
-
-
 ### Existing Features
 
 **Header**
