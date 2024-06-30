@@ -8,48 +8,10 @@ With this application, customers can create personal accounts, book and manage g
 
 ![Responsive Mockup](media/responsive-mockup.jpeg)
 
-## Goal, Aim & Target Audience
-
-### Goal
-
-The primary goal of the Barks in Bubbles website is to streamline the grooming appointment process for pet owners while ensuring an inviting, informative, and efficient online presence that showcases the high-quality services offered.
-
-### Aim
-
-The aim of this project is to provide a welcoming and informative platform where pet owners can:
-
-- Learn about the salon and range of grooming services offered.
-- View information about groomers and their expertiese.
-- Easily book, manage, and edit their grooming appointments.
-- Access contact details and reach out for inquiries.
-- Enjoy a visually appealing and user-friendly interface.
-
-
-### Target Audience
-
-The Barks in Bubbles website targer audience includes:
-
-**Pet Owners:** Individuals in the Cork area who are looking for reliable and high-quality grooming services for their dogs.
-
-**Local Community Members:** Residents near the salon seeking convenient and professional pet grooming services.
-
-**New Pet Owners:** Individuals who have recently acquired a dog or a puppy and are in need of reliable grooming services in Cork area to introduce the dog to grooming.
-
-**Returning Pet Owners:** Customers looking for a consistent and reliable dog grooming provider in Cork area to use on a regular basis.
-
-**Breeders:** Professionals around Cork who require grooming services to maintain the appearance and health of the dogs they are breeding.
-
-**Exhibition and Competition Participants:** Owners who take part in dog exhibitions and competitions, requiring top-notch grooming services to prepare their dogs for events around Cork.
-
-**Veterinary Clinics:** Clinics around Cork looking for potential partnerships and referrals to provide comprehensive care for pets.
-
-**Dog Training Services:** Training providers around Cork area seeking grooming services for their clients' dogs as part of a complete care package.
-
-**Animal Shelters:** Organisations looking for grooming services to help dogs in their care look their best, increasing their chances of adoption.
-
 ### Project Link
 
 Live site can be found at the following [adress](https://barks-in-bubbles-a17d3839532d.herokuapp.com/).
+
 
 ## Agile Methodology
 
@@ -76,9 +38,6 @@ A Kanban board on GitHub Projects was employed to manage user stories. The board
 Milestones were used to define the project’s iterations. Each user story was categorised within one of five iterations, facilitating a structured development process and ensuring that work progresses in an organised manner. Project Milestones can be seen [here](https://github.com/KatePaulauskas/dog-grooming-salon/milestones).
 
 By leveraging these Agile practices and tools, the project maintained a clear and organised structure, allowing for effective tracking and timely completion of all 17 user stories.
-
-## Strategy
-
 
 
 ## User Experience (UX)
@@ -161,14 +120,97 @@ Veterinary clinics, dog trainers, breeders, and animal shelters can find compreh
 
 - As a Site Owner, I can view and manage all existing bookings so that I can oversee the salon's schedule and make changes or cancel bookings when needed.
 
+## User Experience Design 
 
+The Barks in Bubbles website was crafted using the Five Planes of Web Design approach. This methodology addresses each aspect of the design process, from strategy and scope to structure, skeleton, and surface, creating a positive user experience. By following this structured approach, it was possible to align user needs with business goals, resulting in an inviting, informative, and efficient online platform for pet owners in the Cork area.
+
+### Strategy
+
+When approaching the Strategy Plane, the foundation of the user experience, user needs, and business objectives were taken into consideration. Furthermore, the three main areas of interest in this plane: focus, definition, and value, were identified for the current project.
+
+#### User Needs
+
+Understanding the users and their needs was essential. After conducting research, the **target audience** for the Barks in Bubbles website was identified as follows:
+
+**- Pet Owners:** Individuals in the Cork area who are looking for reliable and high-quality grooming services for their dogs.
+
+**- Local Community Members:** Residents near the salon seeking convenient and professional pet grooming services.
+
+**- New Pet Owners:** Individuals who have recently acquired a dog or a puppy and are in need of reliable grooming services in Cork area to introduce the dog to grooming.
+
+**- Returning Pet Owners:** Customers looking for a consistent and reliable dog grooming provider in Cork area to use on a regular basis.
+
+**- Breeders:** Professionals around Cork who require grooming services to maintain the appearance and health of the dogs they are breeding.
+
+**- Exhibition and Competition Participants:** Owners who take part in dog exhibitions and competitions, requiring top-notch grooming services to prepare their dogs for events around Cork.
+
+**- Veterinary Clinics:** Clinics around Cork looking for potential partnerships and referrals to provide comprehensive care for pets.
+
+**- Dog Training Services:** Training providers around Cork area seeking grooming services for their clients' dogs as part of a complete care package.
+
+**- Animal Shelters:** Organisations looking for grooming services to help dogs in their care look their best, increasing their chances of adoption.
+
+These users need a platform that offers comprehensive, reliable, high-quality dog grooming services, including information about the salon, grooming services, and an easy appointment booking and management system.
+
+#### Business Objectives
+
+For Barks in Bubbles as a dog grooming salon, the primary objectives were identified. The salon is looking to streamline the grooming appointment process, showcase high-quality services, and build a strong online presence that attracts and retains customers. 
+
+This understanding of user needs and business objectives helped to formulate the project's overall goal.
+
+**Goal**
+
+The primary goal of the Barks in Bubbles website is to streamline the grooming appointment process for pet owners while ensuring an inviting, informative, and efficient online presence that showcases the high-quality services offered.
+
+#### Focus, Definition, and Value
+
+**Focus**
+
+For Barks in Bubbles, the focus is to streamline the grooming appointment process for pet owners in the Cork area. The key objectives include providing an inviting, informative, and efficient online presence that showcases the high-quality grooming services offered by the salon. 
+
+**Definition**
+
+It was decided to create a comprehensive online platform for Barks in Bubbles that serves as an informative and user-friendly website for pet owners. This platform will include:
+
+- Detailed information about the salon and its range of grooming services.
+- Profiles of groomers, highlighting their expertise.
+- An online booking system for scheduling, managing, and editing grooming appointments.
+- Contact details and a form for inquiries.
+- A visually appealing and easy-to-navigate interface.
+- This custom-built website will provide a tailored experience that generic social media platforms cannot offer.
+
+**Value**
+
+The value of the Barks in Bubbles website is multi-faceted:
+
+**For the Business:** The website will increase the salon’s visibility, streamline the appointment process, build a network of satisfied customers, and enhance the salon's reputation for high-quality services.
+
+**For the Users:** Pet owners will have proof of the salon's ability and quality through service descriptions, groomer profiles, and a gallery of previous work. They will experience convenience in booking and managing appointments online and will have confidence in the services provided by the salon.
+
+By focusing on these key areas, the Barks in Bubbles website aims to deliver a positive user experience that meets both business objectives and user needs.
+
+
+
+
+
+
+
+
+
+
+### Scope
+
+### Structure
+
+### Skeleton
+
+### Surface
 
 ## Design
 
 
 
 ### Wireframes
-### Site Structure
 ### Database Structute 
 ### Color Scheme
 
@@ -537,6 +579,7 @@ The deployed project link can be found at the following URL: [Dog Grooming Salon
 - To convert the date into the day of the week and dynamically fetch the corresponding start and end times of a groomer, the following sources were used: [Programiz](https://www.programiz.com/python-programming/datetime/strftime) and [Stack Overflow](https://stackoverflow.com/questions/51905712/how-to-get-the-value-of-a-django-model-field-object).
 - To store the selected service, groomer, and date in the session to be used in step two of the booking process, the following resources were used: [Django Tutorial On How To Create A Booking System For A Health Clinic](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78) and Django Documentation: [Working with Forms](https://docs.djangoproject.com/en/5.0/topics/forms/) & [Form and Field Validation](https://docs.djangoproject.com/en/5.0/ref/forms/validation/).
 - To retrieve the selected service, groomer, and date stored in the session, the `get_object_or_404` method was used following instructions from [GeeksforGeeks](https://www.geeksforgeeks.org/get_object_or_404-method-in-django-models/).
+- WizardView form application was used to enhance booking process utilisign the following sources: [Medium](https://medium.com/@rts_16853/complete-example-of-django-multi-step-form-with-dynamic-form-choices-36dc1e9a2f48) and [Django Form Tools](https://django-formtools.readthedocs.io/en/latest/wizard.html).
 
 ### Content & Design
 
