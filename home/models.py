@@ -13,8 +13,7 @@ class About(models.Model):
     """
     Add Meta class to the models to avoid 's'
     Being appended at the end of the model name in the Django admin panel
-    Source: https://docs.djangoproject.com/en/5.0/ref/
-    models/options/#verbose-name-plural
+    Source: Django Documentation - verbose_name
     """
     class Meta:
         verbose_name_plural = "About"
@@ -39,8 +38,7 @@ class Services(models.Model):
     """
     Convert duration (timedelta) to a string
     formatted as 'Xh Ym' representing hours and minutes.
-    Source: https://stackoverflow.com/questions/2119472/
-    convert-a-timedelta-to-days-hours-and-minutes
+    Source: Stack Overflow
     """
     def duration_in_hours_minutes(self):
         total_seconds = int(self.duration.total_seconds())

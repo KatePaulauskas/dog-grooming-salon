@@ -1,4 +1,5 @@
 {% load static %}
+
 {% url 'home' as home_url %}
 {% url 'gallery' as gallery_url %}
 {% url 'contact' as contact_url %}
@@ -7,26 +8,26 @@
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 
+
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!-- Meta tags for search engine optimisation -->
-        <meta name="description" 
-            content="Barks in Bubbles is a premier dog grooming service providing 
+        <meta name="description" content="Barks in Bubbles is a premier dog grooming service providing 
             top-notch care for your furry friends. Our professional groomers offer 
             a range of services including baths, haircuts, nail trimming, and more,  
             ensuring your pet looks and feels their best!">
-        <meta name="keywords" 
-            content="dog grooming, pet grooming, Barks in Bubbles, dog baths, 
+        <meta name="keywords" content="dog grooming, pet grooming, Barks in Bubbles, dog baths, 
             dog haircuts, pet care, professional groomers, nail trimming, 
             dog spa, pet grooming services">
 
         <!-- Browser tab title -->
         <title>Barks in Bubbles | Dog Grooming Salon</title>
-        
+
         <!-- Fivacon -->
         <link rel="icon" href="{% static 'images/favicon/barks-in-bubbles-favicon.webp' %}" type="image/webp">
 
@@ -41,8 +42,8 @@
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
-
     </head>
+
     <body class="d-flex flex-column min-vh-100">
 
         <!-- Header -->
@@ -51,14 +52,14 @@
 
                 <!-- Menu Section-->
                 <nav class="navbar navbar-expand-lg navbar-light mt-lg-1 px-3 px-lg-2 pb-0">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
                         <ul class="navbar-nav me-auto pl-3">
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
-                                href="{% url 'home' %}">Home</a>
+                                <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}" href="{% url 'home' %}">Home</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'home' %}#about">About</a>
@@ -67,25 +68,23 @@
                                 <a class="nav-link" href="{% url 'home' %}#services">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == groomers_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'groomers' %}">Groomers</a>
+                                <a class="nav-link {% if request.path == groomers_url %}active" aria-current="page{% endif %}" href="{% url 'groomers' %}">Groomers</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == gallery_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'gallery' %}">Gallery</a>
+                                <a class="nav-link {% if request.path == gallery_url %}active" aria-current="page{% endif %}" href="{% url 'gallery' %}">Gallery</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == contact_url %}active" aria-current="page{% endif %}"
-                                href="{% url 'contact' %}">Contact</a>
+                                <a class="nav-link {% if request.path == contact_url %}active" aria-current="page{% endif %}" href="{% url 'contact' %}">Contact</a>
                             </li>
                         </ul>
+
                         <!-- Authentication messages -->
-                        <div class="auth d-block d-lg-none">
-                            {% if user.is_authenticated %}
-                            <p class="auth fs-6 pt-1 pb-0 px-0 mb-0">You are logged in as {{ user }}</p>
-                            {% else %}
-                            <p class="auth fs-6 pt-1 pb-0 px-0 mb-0">You are not logged in</p>
-                            {% endif %}
+                        <div class="auth d-block d-lg-none"> 
+                            {% if user.is_authenticated %} 
+                            <p class="auth fs-6 pt-1 pb-0 px-0 mb-0">You are logged in as {{ user }}</p> 
+                            {% else %} 
+                            <p class="auth fs-6 pt-1 pb-0 px-0 mb-0">You are not logged in</p> 
+                            {% endif %} 
                         </div>
                     </div>
                 </nav>
@@ -93,29 +92,35 @@
                 <!-- Logo Section -->
                 <div class="logo-container">
                     <a class="navbar-brand mx-3" href="{% url 'home' %}">
-                        <img src="{% static 'images/logo/logo-barks-in-bubbles.webp' %}" alt="Barks in Bubbles Logo" class="img-logo" style="max-height: 100px;">
+                        <img src="{% static 'images/logo/logo-barks-in-bubbles.webp' %}" 
+                        alt="Barks in Bubbles Logo" class="img-logo" style="max-height: 100px;">
                     </a>
                 </div>
 
-                <!-- Header Buttons Section--> 
+                <!-- Header Buttons Section-->
                 <div class="d-flex flex-column align-items-start my-0 my-md-3 my-lg-0">
-                    <div class="header-buttons d-flex flex-column flex-md-row my-md-2 mx-1">
-                        {% if user.is_authenticated %}
-                        <a href="{% url 'account_logout' %}" class="btn btn-logout me-1 mt-2 {% if request.path == logout_url %}active{% endif %}" aria-current="page">Log Out</a>
-                        <a href="{% url 'my_appointments' %}" class="btn btn-appointments me-1 mt-2">Bookings</a>
+                    <div class="header-buttons d-flex flex-column flex-md-row my-md-2 mx-1"> 
+                        {% if user.is_authenticated %} 
+                        <a href="{% url 'account_logout' %}" 
+                        class="btn btn-logout me-1 mt-2 {% if request.path == logout_url %}active{% endif %}" 
+                        aria-current="page">Log Out</a>
+                        <a href="{% url 'my_appointments' %}" class="btn btn-appointments me-1 mt-2">Bookings</a> 
                         {% else %}
+
                         <!-- Redirect to My Appointments page after login. Source: https://realpython.com/django-redirects/ -->
-                        <a href="{% url 'account_login' %}?next={% url 'my_appointments' %}" class="btn btn-login me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Log In</a>
-                        <a href="{% url 'appointment' %}" class="btn btn-book me-2 mt-2">Book Now</a>
+                        <a href="{% url 'account_login' %}?next={% url 'my_appointments' %}" 
+                        class="btn btn-login me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Log In</a>
+                        <a href="{% url 'appointment' %}" class="btn btn-book me-2 mt-2">Book Now</a> 
                         {% endif %}
                     </div>
+
                     <!-- Authentication messages -->
-                    <div class="auth d-none d-lg-block">
-                        {% if user.is_authenticated %}
-                        <p class="auth text-end fs-6 my-0 me-2">You are logged in as {{ user }}</p>
-                        {% else %}
-                        <p class="auth text-end fs-6 my-0 me-4">You are not logged in</p>
-                        {% endif %}
+                    <div class="auth d-none d-lg-block"> 
+                        {% if user.is_authenticated %} 
+                        <p class="auth text-end fs-6 my-0 me-2">You are logged in as {{ user }}</p> 
+                        {% else %} 
+                        <p class="auth text-end fs-6 my-0 me-4">You are not logged in</p> 
+                        {% endif %} 
                     </div>
                 </div>
             </div>
@@ -124,20 +129,23 @@
         <!-- Displaying Django messages -->
         <div class="container d-messages">
             <div class="row mx-0">
-              <div>
-                {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show mb-0 text-center" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                {% endfor %}
+                <div> 
+                    {% for message in messages %} 
+                    <div class="alert {{ message.tags }} alert-dismissible fade show mb-0 text-center" 
+                    id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div> 
+                    {% endfor %} 
                 </div>
             </div>
         </div>
         <main>
+
             {% block content %}
-            <!-- Content Goes here --> 
+            <!-- Content Goes here -->
             {% endblock content %}
+
         </main>
 
         <!-- Footer -->
@@ -170,13 +178,18 @@
                 <!-- Social Media -->
                 <div class="row mt-3">
                     <div class="col-6 offset-3">
+
                         <!-- Instagram -->
-                        <a href="https://www.instagram.com/barks-in-bubbles/" target="_blank" rel="noopener" aria-label="Visit my Instagram page (opend in a new tab)">
-                            <iconify-icon icon="skill-icons:instagram" width="32" height="32"></iconify-icon></a>
+                        <a href="https://www.instagram.com/barks-in-bubbles/" target="_blank" 
+                        rel="noopener" aria-label="Visit my Instagram page (opend in a new tab)">
+                            <iconify-icon icon="skill-icons:instagram" width="32" height="32"></iconify-icon>
+                        </a>
 
                         <!-- Facebook -->
-                        <a href="https://www.facebook.com/barks-in-bubbles/" target="_blank" rel="noopener" aria-label="Visit my Facebook page (opend in a new tab)">
-                            <iconify-icon icon="devicon:facebook" width="32" height="32"></iconify-icon></a>
+                        <a href="https://www.facebook.com/barks-in-bubbles/" target="_blank" 
+                        rel="noopener" aria-label="Visit my Facebook page (opend in a new tab)">
+                            <iconify-icon icon="devicon:facebook" width="32" height="32"></iconify-icon>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -184,11 +197,14 @@
 
         <!-- IconifyIcon web component -->
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-        <!--  -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
-        {% block extras %}
-        {% endblock %}
+        <!-- Bootstrap JavaScript bundle for responsive behaviors and interactive components -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script> 
+
+    {% block extras %} 
+    {% endblock %}
     </body>
+
 </html>

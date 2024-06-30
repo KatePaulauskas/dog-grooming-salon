@@ -12,9 +12,7 @@ class StepOneForm(forms.ModelForm):
     """
     Specifies how date and time fields should be handled within the form
     Sets date field with Calendar widget.
-    Sources:
-    https://pythonassets.com/posts/date-field-with-calendar-widget-in-django-forms/
-    https://docs.djangoproject.com/en/5.0/ref/forms/fields/
+    Sources: Python Assets & Django Documentation - Form fields
     """
     date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
 
@@ -25,9 +23,7 @@ class StepOneForm(forms.ModelForm):
     """
     Prevent date booking in the past or
     more than 90 days in advance
-    Source:
-    https://stackoverflow.com/questions/4941974/
-    django-how-to-set-datefield-to-only-accept-today-future-dates
+    Source: Stack Overflow
     """
     def clean_date(self):
         selected_date = self.cleaned_data.get('date')
@@ -72,10 +68,7 @@ class StepTwoForm(forms.ModelForm):
         Retrieves the groomer's start and end times for a specific day.
         Converts the date into the day of the week and dynamically fetches
         the corresponding start and end times of the groomer.
-        Sources:
-        https://www.programiz.com/python-programming/datetime/strftime
-        https://stackoverflow.com/questions/51905712/
-        how-to-get-the-value-of-a-django-model-field-object
+        Sources:  Programiz and Stack Overflow
         """
         day_name = date.strftime('%A').lower()
         schedule = groomer.schedule

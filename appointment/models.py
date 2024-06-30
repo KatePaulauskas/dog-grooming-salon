@@ -10,7 +10,7 @@ from django.utils import timezone
 class Appointment(models.Model):
 
     """
-    Sourse: https://zerotobyte.com/django-choices-best-practices/
+    Sourse: ZeroToByte
     """
     STATUS_CHOICES = [
         ('scheduled', 'Scheduled'),

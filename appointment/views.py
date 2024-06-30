@@ -28,8 +28,7 @@ class AppointmentWizard(SessionWizardView):
     """
     View to habdle booking multistep form.
     Utilises Django Form Tools WizardView to manage form sessions.
-    Source:
-    https://django-formtools.readthedocs.io/en/latest/wizard.html
+    Sources: Medium and Django Formtools
     """
     form_list = FORMS
 
@@ -102,10 +101,15 @@ def my_appointments(request):
         # Add a flag to indicate if an appointment can be edited or deleted
         for appointment in appointments:
             # Combine the appointment date with a time (midnight)
-            appointment_datetime = datetime.datetime.combine(appointment.date, datetime.time())
+            appointment_datetime = datetime.datetime.combine(
+                appointment.date, datetime.time()
+                )
             # Make the combined datetime timezone-aware
-            appointment_datetime = timezone.make_aware(appointment_datetime, timezone.get_current_timezone())
-            appointment.can_edit_delete = (appointment_datetime - now).total_seconds() > 24 * 3600
+            appointment_datetime = timezone.make_aware(
+                appointment_datetime, timezone.get_current_timezone()
+                )
+            appointment.can_edit_delete = (
+                appointment_datetime - now).total_seconds() > 24 * 3600
 
         return render(request,
                       "appointment/my_appointments.html",
@@ -126,13 +130,13 @@ def appointment_delete(request, appointment_id):
     return HttpResponseRedirect(reverse('my_appointments'))
 
 
-def edit_appointment (request, appointment_id):
+def edit_appointment(request, appointment_id):
     """
     View to handle the first step of editing an appointment.
     Sets session variables to pre-fill the edit form.
     """
     appointment = get_object_or_404(Appointment, id=appointment_id)
-    
+
     # Save the relevant appointment details for future steps
     request.session['edit_appointment_id'] = appointment_id
     request.session['edit_service_id'] = appointment.service.id
@@ -141,11 +145,11 @@ def edit_appointment (request, appointment_id):
     request.session['edit_time'] = appointment.time.strftime('%H:%M')
     # Indicate the edit mode
     request.session['editing'] = True
-        
+
     # Render the form for editing the appointment.
     return redirect('edit_appointment')
 
-    
+
 class EditAppointmentWizard(SessionWizardView):
     """
     View to handle multi-step appointment editing.
@@ -174,13 +178,16 @@ class EditAppointmentWizard(SessionWizardView):
 
         if step == 'step_one':
             initial.update({
-                'service': get_object_or_404(Services, id=self.request.session['edit_service_id']),
-                'date': datetime.datetime.strptime(self.request.session['edit_date'], '%Y-%m-%d').date()
+                'service': get_object_or_404(
+                    Services, id=self.request.session['edit_service_id']),
+                'date': datetime.datetime.strptime(
+                    self.request.session['edit_date'], '%Y-%m-%d').date()
             })
 
         if step == 'step_two':
             initial.update({
-                'groomer': get_object_or_404(Groomers, id=self.request.session['edit_groomer_id']),
+                'groomer': get_object_or_404(
+                    Groomers, id=self.request.session['edit_groomer_id']),
             })
 
         if step == 'step_three':
@@ -189,7 +196,6 @@ class EditAppointmentWizard(SessionWizardView):
             })
 
         return initial
-
 
     def get_form_kwargs(self, step):
         """
@@ -230,6 +236,6 @@ class EditAppointmentWizard(SessionWizardView):
         del self.request.session['editing']
 
         messages.add_message(self.request, messages.SUCCESS,
-                             "Appointment appointment has been updated successfully!")
+                             "Appointment appointment has been updated!")
 
         return redirect('my_appointments')

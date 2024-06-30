@@ -14,8 +14,7 @@ class HomeView(ListView):
     """
     Use the get_context_data method to include multiple models' data
     in a Django class-based view
-    https://docs.djangoproject.com/en/5.0/topics/
-    class-based-views/generic-display/#adding-extra-context
+    Source: Django Documentation - Adding extra context
     """
     def get_context_data(self, **kwargs):
         # Call the base implementation first to get a context
