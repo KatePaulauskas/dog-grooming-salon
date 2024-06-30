@@ -39,18 +39,81 @@ Milestones were used to define the project’s iterations. Each user story was c
 
 By leveraging these Agile practices and tools, the project maintained a clear and organised structure, allowing for effective tracking and timely completion of all 17 user stories.
 
+## User Experience Design 
 
-## User Experience (UX)
+The Barks in Bubbles website was crafted using the Five Planes of Web Design approach. This methodology addresses each aspect of the design process, from strategy and scope to structure, skeleton, and surface, creating a positive user experience. By following this structured approach, it was possible to align user needs with business goals, resulting in an inviting, informative, and efficient online platform for pet owners in the Cork area.
 
-Upon visiting the Barks in Bubbles website, users are greeted with a welcoming message and a visually appealing image. 
+### Strategy
 
-The navigation menu provides easy access to information about the salon, including services offered, groomer profiles, and a gallery of previous grooming work. Users can also find contact details in the footer and a form for inquiries on the contact page.
+When approaching the Strategy Plane, the foundation of the user experience, user needs, and business objectives were taken into consideration. Furthermore, the three main areas of interest in this plane: focus, definition, and value, were identified for the current project.
 
-The site allows users to create personal accounts, book and manage grooming appointments, and interact with the salon through a user-friendly interface.
+#### - User Needs -
 
-Returning users can quickly access their accounts and manage their bookings.
+Understanding the users and their needs was essential. After conducting research, the **target audience** for the Barks in Bubbles website was identified as follows:
 
-### User Scenarios
+**- Pet Owners:** Individuals in the Cork area who are looking for reliable and high-quality grooming services for their dogs.
+
+**- Local Community Members:** Residents near the salon seeking convenient and professional pet grooming services.
+
+**- New Pet Owners:** Individuals who have recently acquired a dog or a puppy and are in need of reliable grooming services in Cork area to introduce the dog to grooming.
+
+**- Returning Pet Owners:** Customers looking for a consistent and reliable dog grooming provider in Cork area to use on a regular basis.
+
+**- Breeders:** Professionals around Cork who require grooming services to maintain the appearance and health of the dogs they are breeding.
+
+**- Exhibition and Competition Participants:** Owners who take part in dog exhibitions and competitions, requiring top-notch grooming services to prepare their dogs for events around Cork.
+
+**- Veterinary Clinics:** Clinics around Cork looking for potential partnerships and referrals to provide comprehensive care for pets.
+
+**- Dog Training Services:** Training providers around Cork area seeking grooming services for their clients' dogs as part of a complete care package.
+
+**- Animal Shelters:** Organisations looking for grooming services to help dogs in their care look their best, increasing their chances of adoption.
+
+These users need a platform that offers comprehensive, reliable, high-quality dog grooming services, including information about the salon, grooming services, and an easy appointment booking and management system.
+
+#### - Business Objectives -
+
+For Barks in Bubbles as a dog grooming salon, the primary objectives were identified. The salon is looking to streamline the grooming appointment process, showcase high-quality services, and build a strong online presence that attracts and retains customers. 
+
+This understanding of user needs and business objectives helped to formulate the project's overall goal.
+
+**Goal**
+
+The primary goal of the Barks in Bubbles website is to streamline the grooming appointment process for pet owners while ensuring an inviting, informative, and efficient online presence that showcases the high-quality services offered.
+
+#### - Focus, Definition, and Value -
+
+**Focus**
+
+For Barks in Bubbles, the focus is to streamline the grooming appointment process for pet owners in the Cork area. The key objectives include providing an inviting, informative, and efficient online presence that showcases the high-quality grooming services offered by the salon. 
+
+**Definition**
+
+It was decided to create a comprehensive online platform for Barks in Bubbles that serves as an informative and user-friendly website for pet owners. This platform will include:
+
+- Detailed information about the salon and its range of grooming services.
+- Profiles of groomers, highlighting their expertise.
+- An online booking system for scheduling, managing, and editing grooming appointments.
+- Contact details and a form for inquiries.
+- A visually appealing and easy-to-navigate interface.
+- This custom-built website will provide a tailored experience that generic social media platforms cannot offer.
+
+**Value**
+
+The value of the Barks in Bubbles website is multi-faceted:
+
+**For the Business:** The website will increase the salon’s visibility, streamline the appointment process, build a network of satisfied customers, and enhance the salon's reputation for high-quality services.
+
+**For the Users:** Pet owners will have proof of the salon's ability and quality through service descriptions, groomer profiles, and a gallery of previous work. They will experience convenience in booking and managing appointments online and will have confidence in the services provided by the salon.
+
+By focusing on these key areas, the Barks in Bubbles website aims to deliver a positive user experience that meets both business objectives and user needs.
+
+
+### Scope
+
+At the Scope Plane features and contented were developed through defining User Scenarios to understand how different users will interact with the site as well as Epics and User Stories to break down these scenarios into manageable tasks and features.
+
+### - User Scenarios -
 
 **First Time User:**
 
@@ -64,7 +127,7 @@ Returning users can quickly log in to their accounts to view and manage their ap
 
 Veterinary clinics, dog trainers, breeders, and animal shelters can find comprehensive information about the salon's services and expertise. They can view the quality of grooming services through the gallery, and contact the salon for potential collaborations using the dedicated contact form.
 
-### User Stories
+### - User Stories -
 
 **Epic 1: Homepage Above Fold and Navigation**
 
@@ -120,99 +183,99 @@ Veterinary clinics, dog trainers, breeders, and animal shelters can find compreh
 
 - As a Site Owner, I can view and manage all existing bookings so that I can oversee the salon's schedule and make changes or cancel bookings when needed.
 
-## User Experience Design 
 
-The Barks in Bubbles website was crafted using the Five Planes of Web Design approach. This methodology addresses each aspect of the design process, from strategy and scope to structure, skeleton, and surface, creating a positive user experience. By following this structured approach, it was possible to align user needs with business goals, resulting in an inviting, informative, and efficient online platform for pet owners in the Cork area.
-
-### Strategy
-
-When approaching the Strategy Plane, the foundation of the user experience, user needs, and business objectives were taken into consideration. Furthermore, the three main areas of interest in this plane: focus, definition, and value, were identified for the current project.
-
-#### User Needs
-
-Understanding the users and their needs was essential. After conducting research, the **target audience** for the Barks in Bubbles website was identified as follows:
-
-**- Pet Owners:** Individuals in the Cork area who are looking for reliable and high-quality grooming services for their dogs.
-
-**- Local Community Members:** Residents near the salon seeking convenient and professional pet grooming services.
-
-**- New Pet Owners:** Individuals who have recently acquired a dog or a puppy and are in need of reliable grooming services in Cork area to introduce the dog to grooming.
-
-**- Returning Pet Owners:** Customers looking for a consistent and reliable dog grooming provider in Cork area to use on a regular basis.
-
-**- Breeders:** Professionals around Cork who require grooming services to maintain the appearance and health of the dogs they are breeding.
-
-**- Exhibition and Competition Participants:** Owners who take part in dog exhibitions and competitions, requiring top-notch grooming services to prepare their dogs for events around Cork.
-
-**- Veterinary Clinics:** Clinics around Cork looking for potential partnerships and referrals to provide comprehensive care for pets.
-
-**- Dog Training Services:** Training providers around Cork area seeking grooming services for their clients' dogs as part of a complete care package.
-
-**- Animal Shelters:** Organisations looking for grooming services to help dogs in their care look their best, increasing their chances of adoption.
-
-These users need a platform that offers comprehensive, reliable, high-quality dog grooming services, including information about the salon, grooming services, and an easy appointment booking and management system.
-
-#### Business Objectives
-
-For Barks in Bubbles as a dog grooming salon, the primary objectives were identified. The salon is looking to streamline the grooming appointment process, showcase high-quality services, and build a strong online presence that attracts and retains customers. 
-
-This understanding of user needs and business objectives helped to formulate the project's overall goal.
-
-**Goal**
-
-The primary goal of the Barks in Bubbles website is to streamline the grooming appointment process for pet owners while ensuring an inviting, informative, and efficient online presence that showcases the high-quality services offered.
-
-#### Focus, Definition, and Value
-
-**Focus**
-
-For Barks in Bubbles, the focus is to streamline the grooming appointment process for pet owners in the Cork area. The key objectives include providing an inviting, informative, and efficient online presence that showcases the high-quality grooming services offered by the salon. 
-
-**Definition**
-
-It was decided to create a comprehensive online platform for Barks in Bubbles that serves as an informative and user-friendly website for pet owners. This platform will include:
-
-- Detailed information about the salon and its range of grooming services.
-- Profiles of groomers, highlighting their expertise.
-- An online booking system for scheduling, managing, and editing grooming appointments.
-- Contact details and a form for inquiries.
-- A visually appealing and easy-to-navigate interface.
-- This custom-built website will provide a tailored experience that generic social media platforms cannot offer.
-
-**Value**
-
-The value of the Barks in Bubbles website is multi-faceted:
-
-**For the Business:** The website will increase the salon’s visibility, streamline the appointment process, build a network of satisfied customers, and enhance the salon's reputation for high-quality services.
-
-**For the Users:** Pet owners will have proof of the salon's ability and quality through service descriptions, groomer profiles, and a gallery of previous work. They will experience convenience in booking and managing appointments online and will have confidence in the services provided by the salon.
-
-By focusing on these key areas, the Barks in Bubbles website aims to deliver a positive user experience that meets both business objectives and user needs.
-
-
-
-
-
-
-
-
-
-
-### Scope
 
 ### Structure
 
+At the Structure Plane, the information organisation and interaction design were developed by defining the site pages, database structure, and booking flow. 
+
+#### - Site Pages -
+
+The Barks in Bubbles website comprises several key pages, each designed to provide essential information and facilitate user interactions:
+
+**Home Page:**
+
+* Provides an overview of the salon’s mission and background.
+* Features a welcoming message and a catchy hero image to engage users.
+* Highlights all grooming services offered with descriptions, duration and pricing.
+* Provides inks to make a booking
+
+**Groomers Page:**
+
+* Introduces the team of professional groomers.
+* Includes profiles of each groomer, highlighting their expertise and experience.
+* Helps users choose a groomer based on their qualifications and specialties.
+
+**Gallery Page:**
+
+* Showcases photos of dogs during, and after grooming.
+* Provides visual proof of the quality and range of grooming services.
+* Engages users by displaying the salon's successful grooming results.
+
+**Appointment Booking Page:**
+
+* Allows users to book grooming appointments online.
+* Includes a step-by-step booking process, guiding users through selecting services, picking a date, choosing a groomer and selecting time.
+
+**Contact Page:**
+
+* Contains a contact form for inquiries and feedback.
+
+**Log In and Sign Up Pages:**
+
+* Enables users to create an account or log in to access personalised services.
+* Facilitates appointments management tracking.
+
+**All Appointments Page:**
+
+* Accessible to registered users for managing their appointments.
+* Displays upcoming and past appointments, allowing users to edit or cancel future bookings as needed.
+
+Each page is designed to provide valuable information and ensure a seamless user experience, making it easy for pet owners to learn about the salon, book appointments, and manage them.
+
+#### - Database Structute -
+
+
+
+#### - Booking Flow Chart -
+
+
+
 ### Skeleton
 
+At the sceleton plane the interface and navigation design was define through wireframes. 
+
+#### Wireframes
+
+The initial layout of the interface and navigation of the Bark in Bubbles website was developed using Balsamiq Studios software, through which a mockup wireframes ware crearted forthe main pages.
+
+**Home page:**
+
+![Home Page Wireframe](/media/wireframe-home-page.jpeg)
+
+**Groomers page:**
+![Groomers Page Wireframe](/media/wireframe-groomers-page.jpeg)
+
+**Gallery page:**
+![Gallery Page Wireframe](/media/wireframe-gallery-page.jpeg)
+
+**Contact page:**
+![Contact Page Wireframe](/media/wireframe-contact-page.jpeg)
+
+**Log In page:**
+![Log In Page Wireframe](/media/wireframe-log-in-page.jpeg)
+
+**Sign Up page:**
+![Sign Up Page Wireframe](/media/wireframe-sign-up-page.jpeg)
+
+**Book Appointment page:**
+![ook Appointment Page Wireframe](/media/wireframe-booking-form-page.jpeg)
+
+
 ### Surface
+At the Surface Plane the visual design of the site was developed, where more focus was given to the look and feel of the site.
 
-## Design
-
-
-
-### Wireframes
-### Database Structute 
-### Color Scheme
+#### Color Scheme
 
 The colors for the Barks in Bubbles site were carefully selected using [Coolors tool](https://coolors.co/) to create an inviting, professional, and engaging atmosphere. 
 
@@ -260,9 +323,41 @@ The primary background color used throughout the design is white. White is the p
 
 The combination of these colors ensures that the salon not only stands out visually but also conveys the values and quality of the services provided.
 
-### Typography
+#### Typography
+
+The fonts for the site were carefully selected using font pairing service [Font Joy](https://fontjoy.com/) to create a visually appealing and cohesive design. Each font was chosen to enhance the user experience and align with the brand's identity. 
+
+![Typography Font Paring](/media/typography-font-paring.jpeg)
+
+**Headings (H1)**
+
+The "Righteous" font was chosen for the main headings (H1) to make a bold and memorable first impression. This sans-serif font is playful and modern, reflecting the friendly and approachable nature of Barks in Bubbles. Its distinct style helps to draw attention to the main titles, ensuring that they stand out prominently on the page.
+
+**Subheadings (H2-H4)**
+
+For subheadings (H2-H4), "Cormorant Upright" was selected to provide a sophisticated and elegant look. This font adds a touch of class and refinement to the website, aligning with the high-quality grooming services offered by the salon. The larger font size ensures that these subheadings are easily readable and effectively break up the content into manageable sections.
+
+**Smaller Headings (H5-H6)**
+
+The "Cormorant Upright" font is also used for smaller headings (H5-H6) to maintain consistency across all heading levels. By using the same font family, the website achieves a harmonious and unified look. The smaller size still ensures readability while keeping the overall design cohesive.
+
+**Paragraphs**
+
+For the body text, "Khula" was chosen for its clean and modern appearance. This sans-serif font is easy to read, making it ideal for longer passages of text. The slightly larger font size enhances readability, ensuring that users can comfortably read the content. The font's simplicity complements the more decorative heading fonts, creating a balanced and aesthetically pleasing design.
+
+The combination of "Righteous" for main headings, "Cormorant Upright" for subheadings and smaller headings, and "Khula" for paragraphs creates a well-rounded and visually engaging typography approach for the Barks in Bubbles website. Each font was carefully selected to reflect the brand's personality, enhance readability, and ensure a cohesive user experience. The consistent use of the English Violet color (#3f3850) ties all the text elements together, reinforcing the site's elegant and professional appearance.
 
 ## Features
+
+Upon visiting the Barks in Bubbles website, users are greeted with a welcoming message and a visually appealing image. 
+
+The navigation menu provides easy access to information about the salon, including services offered, groomer profiles, and a gallery of previous grooming work. Users can also find contact details in the footer and a form for inquiries on the contact page.
+
+The site allows users to create personal accounts, book and manage grooming appointments, and interact with the salon through a user-friendly interface.
+
+Returning users can quickly access their accounts and manage their bookings.
+
+
 
 ### Existing Features
 ### Future Features
