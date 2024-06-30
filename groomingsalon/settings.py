@@ -14,6 +14,9 @@ from pathlib import Path
 import os
 import sys
 import dj_database_url
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 if os.path.isfile('env.py'):
     import env
 
@@ -160,6 +163,13 @@ USE_I18N = True
 
 USE_TZ = True
 
+# Ensures Cloudinary URLs are generated with HTTPS
+cloudinary.config(
+    secure=True
+)
+
+# Set the X-Frame-Options header value
+X_FRAME_OPTIONS = 'ALLOW-FROM https://barks-in-bubbles-a17d3839532d.herokuapp.com/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
