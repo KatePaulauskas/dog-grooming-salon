@@ -11,7 +11,7 @@ body {
 /* H1 style */
 h1 {
     font-family: "Righteous", sans-serif !important;
-    font-size: 150% !important;
+    font-size: 180% !important;
     color: #3f3850
 }
 
@@ -21,7 +21,7 @@ h3,
 h4
  {
     font-family: "Cormorant Upright", sans-serif !important;
-    font-size: 210% !important;
+    font-size: 220% !important;
     color: #3f3850
 }
 
@@ -30,7 +30,7 @@ h5,
 h6
  {
     font-family: "Cormorant Upright", sans-serif !important;
-    font-size: 160% !important;
+    font-size: 180% !important;
     color: #3f3850
 
  }
@@ -51,7 +51,7 @@ header {
 /* Style navbar text */
 .nav-link {
     color: #3f3850 !important;
-    font-size: 17px;
+    font-size: 16px;
     font-family: "Righteous", sans-serif !important;
 }
 
@@ -317,25 +317,24 @@ footer {
     border: 2px solid #3f3850 !important;
 }
 
+/* Disabled state for buttons */
+.btn:disabled, .btn[disabled] {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    border: none;
+}
+
+/* Specific disabled state for delete button tooverride the background color style */
+.btn-delete:disabled, .btn-delete[disabled] {
+    background-color: #cccccc;
+}
+
 /* Media query: mobile phones (320px and up) */
 @media screen and (min-width: 320px) {
+    /* Anchors offset */
     html {
-        scroll-padding-top: 260px;
-    }
-
-    /* H1 style */
-    h1 {
-        font-family: "Righteous", sans-serif !important;
-        font-size: 180% !important;
-    }
-
-    /* H2-4 styles */
-    h2,
-    h3,
-    h4
-    {
-    font-family: "Cormorant Upright", sans-serif !important;
-    font-size: 250% !important;
+        scroll-padding-top: 360px;
     }
 
     /* Table font size */
@@ -346,9 +345,31 @@ footer {
 
 /* Media query: tablets and larger screens (576px and up) */
 @media screen and (min-width: 576px) {
+    /* Anchors offset */
     html {
-        scroll-padding-top: 150px;
+        scroll-padding-top: 380px;
     }
+
+    /* H1 style */
+    h1 {
+        font-size: 200% !important;
+    }
+
+    /* H2-4 styles */
+    h2,
+    h3,
+    h4
+    {
+        font-size: 240% !important;
+    }
+
+    /* H5-6 styles */
+    h5,
+    h6
+    {
+        font-size: 200% !important;
+    }
+
     /* Table font size */
     table {
         font-size: 16px !important;
@@ -357,12 +378,42 @@ footer {
 
 /* Media query: larger devices (laptops & desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+    /* Anchors offset */
     html {
-        scroll-padding-top: 145px;
+        scroll-padding-top: 130px;
     }
+
+    /* H1 style */
+    h1 {
+        font-size: 220% !important;
+    }
+    
+    /* H2-4 styles */
+    h2,
+    h3,
+    h4
+    {
+        font-size: 260% !important;
+    }
+    
+    /* H5-6 styles */
+    h5,
+    h6
+    {
+        font-size: 220% !important;
+    }
+}
 
     /* Table font size */
     table {
         font-size: 18px !important;
+    }
+
+/* Media query: larger screens (1400px and up) */
+@media screen and (min-width: 1400px) {
+
+    /* Style navbar text */
+    .nav-link {
+        font-size: 20px;
     }
 }
