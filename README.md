@@ -10,7 +10,7 @@ With this application, customers can create personal accounts, book and manage g
 
 ### Project Link
 
-Live site can be found at the following [adress](https://barks-in-bubbles-a17d3839532d.herokuapp.com/).
+Live site can be found at the following [address](https://barks-in-bubbles-a17d3839532d.herokuapp.com/).
 
 
 ## Agile Methodology
@@ -435,6 +435,57 @@ After testign each file with Python code, no more errors were found:
 ### Bugs
 
 #### Solved Bugs
+
+The application encountered two main issues when attempting to get a responsive mockup on [Am I Responsive](https://ui.dev/amiresponsive):
+
+
+**1. Mixed Content Errors:**
+
+```
+Mixed Content: The page at '<URL>' was loaded over HTTPS, but requested an insecure element '<URL>'. This request was automatically upgraded to HTTPS
+```
+
+**2. X-Frame-Options Deny:**
+
+```
+Refused to display 'https://barks-in-bubbles-a17d3839532d.herokuapp.com/' in a frame because it set 'X-Frame-Options' to 'deny'
+```
+
+The application could not be displayed in a frame because of the X-Frame-Options header set to 'deny'. This security measure prevents the site from being embedded in an iframe, causing issues for certain use cases where framing the site is necessary.
+
+![Responsive Design Error](/media/responsive-design-error.jpeg)
+
+***SOLUTIONS***
+
+**1. Mixed Content Errors:**
+Configured Cloudinary to ensure that all URLs are generated with HTTPS by setting the secure parameter to True in the Cloudinary configuration using instructions from [Stack Overflow](https://stackoverflow.com/questions/48508750/how-to-force-https-in-a-django-project-using-cloudinary).
+
+```python
+import cloudinary 
+import cloudinary.uploader 
+import cloudinary.api
+
+# Ensures URLs are generated with HTTPS
+cloudinary.config(
+    secure=True
+)
+```
+Updated the `base.html` template to ensure it uses the Cloudinary template tag:
+
+```
+{% load cloudinary %}
+```
+
+**2. Modified X-Frame-Options Header:**
+
+Changed the X_FRAME_OPTIONS setting in Django to allow framing from the project  domain using instructions from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options):
+
+```python
+# Set the X-Frame-Options header value
+X_FRAME_OPTIONS = 'ALLOW-FROM https://barks-in-bubbles-a17d3839532d.herokuapp.com/'
+
+```
+
 ### Remaining Bugs
 
 ## Deployment
@@ -597,4 +648,9 @@ The deployed project link can be found at the following URL: [Dog Grooming Salon
 - Groomers' profile images were sourced from [Unsplash](https://unsplash.com/).
 - The hero image was sourced from [Vecteezy](https://www.vecteezy.com/).
 - Social media icons displayed in the footer were taken from [Iconify](https://iconify.design).
+
+### Fixing bugs
+
+- To resolve 'Mixed Content Errors' instruction from [Stack Overflow](https://stackoverflow.com/questions/48508750/how-to-force-https-in-a-django-project-using-cloudinary) was used.
+- To resolve issue with 'X-Frame-Options Deny' instructions from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) were used.
 
