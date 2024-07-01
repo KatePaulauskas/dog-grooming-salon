@@ -36,7 +36,7 @@
                         <td>{{ appointment.time|time:"H:i" }}</td>
                         <td class="d-none d-lg-block">{{ appointment.get_status_display }}</td>
                         <td>
-                            <div class="d-flex flex-column flex-md-row justify-content-center my-md-2 mx-3">
+                            <div class="d-flex flex-column flex-md-row justify-content-center my-md-2 mx-0">
                                 {% if appointment.can_edit_delete %}
                                 <button class="btn btn-edit m-1" data-appointment-id="{{ appointment.id }}">Edit</button>
                                 <button class="btn btn-delete m-1" data-appointment-id="{{ appointment.id }}">Delete</button>

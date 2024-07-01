@@ -330,16 +330,22 @@ footer {
     background-color: #cccccc;
 }
 
-/* Media query: mobile phones (320px and up) */
+/* Media query: mobile phones (270px and up) */
 @media screen and (min-width: 320px) {
     /* Anchors offset */
     html {
         scroll-padding-top: 360px;
     }
 
-    /* Table font size */
-    table {
-        font-size: 12px !important;
+    /* Style table on All Bookings page */
+    table, th, td, tr {
+        font-size: 10px !important;
+    }
+
+    table .btn {
+        font-size: 10px; 
+        width: 60px;
+        height: 25px;
     }
 }
 
@@ -370,9 +376,15 @@ footer {
         font-size: 200% !important;
     }
 
-    /* Table font size */
-    table {
-        font-size: 16px !important;
+    /* Style table on All Bookings page */
+    table, th, td, tr {
+        font-size: 14px !important;
+    }
+
+    table .btn {
+        font-size: 14px; 
+        width: 80px;
+        height: 35px;
     }
 }
 
@@ -402,12 +414,18 @@ footer {
     {
         font-size: 220% !important;
     }
-}
 
-    /* Table font size */
-    table {
-        font-size: 18px !important;
+    /* Style table on All Bookings page */
+    table, th, td, tr {
+        font-size: 16px !important;
     }
+
+    table .btn {
+        font-size: 16px; 
+        width: 100px;
+        height: 45px;
+    }
+}
 
 /* Media query: larger screens (1400px and up) */
 @media screen and (min-width: 1400px) {
