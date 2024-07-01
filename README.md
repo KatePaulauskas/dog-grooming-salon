@@ -233,7 +233,7 @@ The Barks in Bubbles website comprises several key pages, each designed to provi
 
 Each page is designed to provide valuable information and ensure a seamless user experience, making it easy for pet owners to learn about the salon, book appointments, and manage them.
 
-#### - Database Structute -
+#### - Database Structure -
 
 
 
@@ -243,7 +243,7 @@ Each page is designed to provide valuable information and ensure a seamless user
 
 ### Skeleton
 
-At the sceleton plane the interface and navigation design was define through wireframes. 
+At the skeleton plane the interface and navigation design was define through wireframes. 
 
 #### Wireframes
 
@@ -494,6 +494,11 @@ Users, as well as superusers, have an option to edit or delete their future book
 
 ![Book Appointment Confirmation](/media/book-appointment-confirmation.jpeg)
 
+**Editign and deletign appointents**
+
+![Delete Appointment Pop Up](/media/delete-appointment-pop-up.jpeg)
+
+![Deleted Appointment Confirmation](/media/appointment-deleted-confirmation.jpeg)
 
 
 **Footer**
@@ -604,30 +609,52 @@ The footer is displayed at the bottom of every page and contains essential infor
 | Click 'Log Out' button in the header | Redirects to Log Out confirmation page | Pass |
 | Confirm log out  by clicking on 'Log Out' button | Redirects to Home page, notification about successful logout displayed | Pass |
 
+#### Book Appointment Page
+
+| Action/Feature          | Expected Behavior       | Status         |
+|-------------------------|-------------------------|----------------|
+| Click on any 'Book Now' button while logged out | User is redirected to login page with message: "Log in here to book your appointment" | Pass |
+| Click on any 'Book Now' button while logged in | User is redirected to the booking appointment form. Step one of the booking form loads with options to select service and date. Options to 'Cancel' or move to the 'Next' step available | Pass |
+| In the step one click on 'Cancel' option | Booking is cancelled, user is directed to the All Bookings Page | Pass |
+| Click on 'Next' button in the step one | A notification 'Please select an item in the list' appears in the Services dropdown list | Pass |
+| Select Service form the dropdown list and click on 'Next' button in the step one | 'Please fill in this field' appears in the Date dropdown | Pass |
+| Select Service form the dropdown list and select a past date in step one then  click 'Next' | Error message "Not possible to select date in the past" is displayed | Pass |
+| Select Service form the dropdown list and select a date more than 90 days ahead in step one and click 'Next' | Error message "Not possible to select a date more than 90 days in advance" is displayed | Pass |
+| Book an appointment for today after salon closing hours (after 5:30pm on weekday or after 4pm on weekend). Select Service form the dropdown list and select today's date in step one and click 'Next' | Error message "Not possible to book for today as the salon is already closed" is displayed | Pass |
+| Select Service form the dropdown list and select a date within next 90 days and click 'Next' | Step two of the booking form loads with options to select a groomer. Options to go to the 'Prev step', 'Next' or 'Cancel' are available | Pass |
+| Click on 'Prev step' in Step two | 'Please select an item in the list' appears in the Groomers dropdown list. After selectign a groomer, and clicking on 'Prev step' again, user is directed back to step one with previously entered service and date details retained | Pass |
+| Click on 'Cancel' in Step two | Booking process is cancelled, user is directed to 'All Bookings' page | Pass |
+| Click on 'Next' in Step two | 'Please select an item in the list' appears in the Groomers dropdown list | Pass |
+| Select a groomer in step two and click 'Next' | Step three of the booking form loads with available time slots. Options to go to the 'Prev step', 'Cancel' or 'Submit' are available | Pass |
+| Click 'Prev step' in step three | User is directed back to step two with previously selected groomer retained | Pass |
+| Click 'Cancel' in step three | Booking process is cancelled, user is directed to 'All Bookings' page | Pass |
+| In step three, select a time slot and click 'Submit' | Appointment is successfully booked, user is directed to 'All Bookings' page with a confirmation message: "Thank you for booking your appointment!" | Pass |
+
 #### All Bookings Page
 
 | Action/Feature          | Expected Behavior       | Status         |
 |-------------------------|-------------------------|----------------|
-| New user has signed up tp the site | 'All Bookings' page loads with the message "No appointments scheduled". 'Book Appointment' button displayed | Pass   |
+| New user has signed up to the site | 'All Bookings' page loads with the message "No appointments scheduled". 'Book Appointment' button displayed | Pass   |
 | User with no appointments has logged in  |  'All Bookings' page loads with the message "No appointments scheduled". 'Book Appointment' button displayed | Pass   |
-|User with scheduled appointments has logged in | 'All Bookings' page lists all appointments with 'Book New Appointment' buttons displayed | Pass   |
-| Superuser loggs in to the site |  'All Bookings' page lists all appointments with 'Book New Appointment' buttons displayed. Superuser can see users' name associated withthe appointments  | Pass |
-| Click on Delete a future appointment | A pop-up window appears asking: 'Delete appointment? Are you sure you want to delete this appointment? This action cannot be undone.' Options to close or confirm delete are available | Pass |
-| Confirm Delete appointment | The appointment is deleted, and the user is redirected to the 'All Bookings' page with a confirmation message | Pass |
-| Close Delete appointment | The pop-up window is closed, and no changes are made to the appointment | Pass           |
-| Click on Edit a future appointment | Step one of the booking form loads with the prefilled details of the appointment. Service and date can be changed from the dropdown. Options to 'cancel' or move to the 'next' step available | Pass |
-| Click on 'cancel' option | Editing is cancelled, user is directed to the All Bookings Page | Pass |
-| Click on 'Edit' a future appointment and in the 'step one' change 'service' and 'date' within next 90 days, then click 'next' | Step two of the booking form loads with the prefilled groomer name. Groomer name can be changed from the dropdown. Options to go to the 'prev step', 'next' or 'cancel' are available | Pass |
-| Choose a past date in Step One | Error message "Not possible to select date in the past" is displayed | Pass |
-| Choose a date more than 90 days ahead in Step one | Error message "Not possible to select a date more than 90 days in advance" is displayed | Pass |
-| Click on 'prev step' in Step two | User is directed back to Step one with the previously entered service and date details retained | Pass |
-| Click on 'cancel' in Step two | Editing is cancelled, user is directed to the All Bookings Page | Pass |
-| Click on 'next' in Step two | Step three of the booking form loads with the available time slots. Options to go to the 'prev step', 'cancel' or 'submit' are available | Pass |
-| Click on 'prev step' in Step three | User is directed back to Step two with the previously entered groomer name retained  | Pass |
-| Click on 'cancel' in Step three | Editing is cancelled, user is directed to the All Bookings Page | Pass |
-| Select a time slot in Step three and click 'submit' | Appointment is successfully updated, user is directed to the 'All Bookings' Page with a confirmation message | Pass |
-| Older bookings edit options | Editing options for older bookings are grayed out| Pass |
-| Older bookings delete options | Delete options for older bookings are grayed out| Pass |
+| User with scheduled appointments has logged in | 'All Bookings' page lists all appointments with 'Book New Appointment' buttons displayed | Pass   |
+| Superuser logs in to the site |  'All Bookings' page lists all appointments with 'Book New Appointment' buttons displayed. Superuser can see users' name associated with the appointments  | Pass |
+| Click on 'Delete' next to any future appointment | A pop-up window appears asking: 'Delete appointment? Are you sure you want to delete this appointment? This action cannot be undone.' Options to close or confirm delete are available | Pass |
+| Click on 'Delete' next to any future appointment, in the pop-up window click 'Delete' button | The appointment is deleted, and the user is redirected to the 'All Bookings' page with a confirmation message: 'Appointment deleted!'| Pass |
+| Click on 'Delete' next to any future appointment, in the pop-up window click 'Close' button | The pop-up window is closed, and no changes are made to the appointment | Pass |
+| Click on Edit next to any future appointment | Step one of the booking form loads with the prefilled details of the appointment. Service and date can be changed from the dropdown. Options to 'Cancel' or move to the 'Next' step available | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. Service and date can be changed from the dropdown. Click on 'Cancel' option | Editing is cancelled, user is directed to the All Bookings Page | Pass |
+| After 5:30pm on weekday or after 4pm on weekend click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', select today's date | Error message "Not possible to book for today as the salon is already closed" is displayed	| Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', choose a past date | Error message "Not possible to select date in the past" is displayed | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', choose a date more than 90 days ahead | Error message "Not possible to select a date more than 90 days in advance" is displayed | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', select date within next 90 days, then click 'Next' | Step two of the booking form loads with the prefilled groomer name (if available on that date, or the dropdown is blank). Groomer name can be changed from the dropdown. Options to go to the 'Prev step', 'Next' or 'Cancel' are available | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', select date within next 90 days, then click 'Next'. Step two of the booking form loads with the prefilled groomer name (if available on that date, or the dropdown is blank). Click on 'Prev step' in Step two | User is directed back to Step one with the previously entered service and date details retained, if groomer name is selected, otherwise user needs to select groomer to be able to go to the previous step | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', select date within next 90 days, then click 'Next'. Step two of the booking form loads with the prefilled groomer name (if available on that date, or the dropdown is blank). Click on 'Cancel' in Step two | Editing is cancelled, user is directed to the All Bookings Page | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', select date within next 90 days, then click 'Next'. Step two of the booking form loads with the prefilled groomer name (if available on that date, or the dropdown is blank). Change/select groomer. Click on 'Next' in Step two | Step three of the booking form loads with the available time slots. Options to go to the 'Prev step', 'Cancel' or 'Submit' are available | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', select date within next 90 days, then click 'Next'. Step two of the booking form loads with the prefilled groomer name (if available on that date, or the dropdown is blank). Change/select groomer. Click on 'Next' in Step two. Step three of the booking form loads with the available time slots. Click on 'Prev step' in Step three | User is directed back to Step two with the previously entered groomer name retained  | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', select date within next 90 days, then click 'Next'. Step two of the booking form loads with the prefilled groomer name (if available on that date, or the dropdown is blank). Change/select groomer. Click on 'Next' in Step two. Step three of the booking form loads with the available time slots. Click on 'Cancel' in Step three | Editing is cancelled, user is directed to the All Bookings Page | Pass |
+| Click on Edit next to any future appointment. Step one of the booking form loads with the prefilled details of the appointment. In step one change 'service' and 'date', select date within next 90 days, then click 'Next'. Step two of the booking form loads with the prefilled groomer name (if available on that date, or the dropdown is blank). Change/select groomer. Click on 'Next' in Step two. Step three of the booking form loads with the available time slots. Select a time slot in Step three from the dropdown or keep the offered time slot, click 'Submit' | Appointment is successfully updated, user is directed to the 'All Bookings' Page with a confirmation message: 'Thank you for booking your appointment!' | Pass |
+| Try to edit any past bookings, before today's date | Editing option for older bookings are grayed out| Pass |
+| Try to edit any past bookings, before today's date | Delete options for older bookings are grayed out| Pass |
 
 #### User Stories
 | User Story | Expected Behavior  | Actual Behavior | Status |
@@ -771,7 +798,7 @@ After testign each file with Python code, no more errors were found:
 ![Python Code Validation](/media/python-validator.jpeg)
 
 
-### Responsinvess
+### Responsivness
 ### Lighthouse Testing
 ### Accessibility Testing
 
@@ -830,6 +857,10 @@ X_FRAME_OPTIONS = 'ALLOW-FROM https://barks-in-bubbles-a17d3839532d.herokuapp.co
 ```
 
 ### Remaining Bugs
+
+In step two of the booking process, during the initial booking, users must choose a groomer to go back to the previous step. If a groomer is not selected, a notification stating 'Please select an item in the list' appears. The same issue occurs during the editing of an appointment. If the previously selected groomer is unavailable on the selected date, the groomer dropdown is blank. To proceed back to step one, the user must select a groomer. Although this is part of the validation process, it does not provide the best user experience. This bug remains unresolved due to time constraint.
+
+![Bug - Step Two Booking process](/media/bug-step-two-booking-form.jpeg)
 
 ## Deployment
 
@@ -974,6 +1005,7 @@ The deployed project link can be found at the following URL: [Dog Grooming Salon
 - To store the selected service, groomer, and date in the session to be used in step two of the booking process, the following resources were used: [Django Tutorial On How To Create A Booking System For A Health Clinic](https://blog.devgenius.io/django-tutorial-on-how-to-create-a-booking-system-for-a-health-clinic-9b1920fc2b78) and Django Documentation: [Working with Forms](https://docs.djangoproject.com/en/5.0/topics/forms/) & [Form and Field Validation](https://docs.djangoproject.com/en/5.0/ref/forms/validation/).
 - To retrieve the selected service, groomer, and date stored in the session, the `get_object_or_404` method was used following instructions from [GeeksforGeeks](https://www.geeksforgeeks.org/get_object_or_404-method-in-django-models/).
 - WizardView form application was used to enhance booking process utilisign the following sources: [Medium](https://medium.com/@rts_16853/complete-example-of-django-multi-step-form-with-dynamic-form-choices-36dc1e9a2f48) and [Django Form Tools](https://django-formtools.readthedocs.io/en/latest/wizard.html).
+- To ensure that only authenticated users can access both function-based and class-based Appointment views [Django Documentation](https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-login-required-decorator) instructions were used.
 
 ### Content & Design
 
