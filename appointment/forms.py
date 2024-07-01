@@ -34,8 +34,8 @@ class StepOneForm(forms.ModelForm):
             raise ValidationError("Not possible to select date in the past")
 
         elif selected_date > today + timedelta(days=90):
-            raise ValidationError
-            ("Not possible to select a date more than 90 days in advance")
+            raise ValidationError(
+                "Not possible to select a date more than 90 days in advance")
 
         return selected_date
 
