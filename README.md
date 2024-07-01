@@ -349,14 +349,6 @@ The combination of "Righteous" for main headings, "Cormorant Upright" for subhea
 
 ## Features
 
-Upon visiting the Barks in Bubbles website, users are greeted with a welcoming message and a visually appealing image. 
-
-The navigation menu provides easy access to information about the salon, including services offered, groomer profiles, and a gallery of previous grooming work. Users can also find contact details in the footer and a form for inquiries on the contact page.
-
-The site allows users to create personal accounts, book and manage grooming appointments, and interact with the salon through a user-friendly interface.
-
-Returning users can quickly access their accounts and manage their bookings.
-
 ### Existing Features
 
 **Header**
@@ -366,6 +358,10 @@ The header contains the navigation bar, logo, and 'Log In' and 'Book Now' button
 The 'Log In' and 'Book Now' buttons are positioned on the right side by side, facilitating quick access to appointment booking and management for users. Below these two buttons, there is a notification informing the user whether they are logged in or not.
 
 ![Header](/media/header.jpeg)
+
+Once the user is logged in, the 'Log In' and 'Book Now' buttons transform to 'Log Out' and 'Bookings' buttons respectively, and a notification about successful sign-in appears:
+
+![Header for Logged In User](/media/header-user-logged-in.jpeg)
 
 **Navigation Bar**
 
@@ -387,13 +383,13 @@ On tablets and mobile devices, the menu is represented by a hamburger icon.
 
 Clicking on it reveals a dropdown menu showcasing the current page highlighted and underlined to ensure smooth navigation. The menu items are displayed on a full-width background, creating a cohesive block with the header.
 
-The notification informing the user whether they are logged in or not is displayed in the dropdown menu. The Log In and Book Now buttons are positioned vertically to ensure the limited screen space is utilized efficiently.
+The notification informing the user whether they are logged in or not is displayed in the dropdown menu. The 'Log In' and 'Book Now' buttons are positioned vertically to ensure the limited screen space is utilized efficiently.
 
 ![Tablet and Mobile Navbar Opened](/media/mobile-tablet-navbar-opened.jpeg)
 
 **Above the Fold**
 
-The above-the-fold section on the homepage features a welcoming message and a catchy hero image with a happy dog in a buthtub. This section is designed to engage users immediately, providing a positive first impression of the salon and its services.
+Upon visiting the Barks in Bubbles website, users are greeted with a welcoming message and a visually appealing hero image with a happy dog in a bathtub. This section is designed to engage users immediately, providing a positive first impression of the salon and its services.
 
 ![Above Fold](/media/above-fold.jpeg)
 
@@ -405,7 +401,7 @@ The About Us section provides an insightful overview of the salon's mission, vis
 
 **Services**
 
-The Services section, displayed on the homepage, highlights all grooming services offered by Barks in Bubbles. It includes detailed descriptions, duration and pricing for each service, allowing users to quickly learn about the different grooming options available.
+The Services section, displayed on the homepage, highlights all grooming services offered by Barks in Bubbles. It includes detailed descriptions, duration, and pricing for each service, allowing users to quickly learn about the different grooming options available.
 
 ![Services](/media/services.jpeg)
 
@@ -415,7 +411,6 @@ The Groomers Page introduces the team of professional groomers and highlights th
 
 ![Groomers Page](/media/groomers-page.jpeg)
 
-
 **Gallery Page**
 
 The Gallery Page showcases a collection of photos featuring dogs during and after grooming sessions. This page provides visual proof of the high-quality grooming services offered by the salon and engages users by displaying successful grooming results.
@@ -424,22 +419,82 @@ The Gallery Page showcases a collection of photos featuring dogs during and afte
 
 **Contact Us Page**
 
-The Contact Us Page provides a user-friendly contact form for inquiries and feedback. 
-This page is designed to facilitate smooth communication between the salon and its clients, so that clients can easily reach out to the salon for any questions or appointment bookings. 
+The Contact Us Page provides a user-friendly contact form for inquiries and feedback. This page is designed to facilitate smooth communication between the salon and its clients, so that clients can easily reach out to the salon for any questions or appointment bookings.
 
 ![Contact Us Page](/media/contact-us-page.jpeg)
 
+Upon submitting a request through the form, the user gets a notification about successful submission, and the form gets refreshed in case the user would like to send another request:
+
+![Contact Us Page - Submission Confirmation](/media/contact-us-page-submission-comfirmation.jpeg)
+
 **Log In Page**
 
-The Log In page allows existing users to access their accounts and manage their appointments. This page ensures secure authentication and provides an easy way for users to log in and access personalised services.
+The Log In page allows existing users to access their accounts and manage their appointments. This page ensures secure authentication and provides an easy way for users to log in and access personalized services.
 
 ![Log In Page](/media/log-in-page.jpeg)
 
+After logging in, customers are taken to the 'All Bookings' page and notified about their successful login:
+
+![Header for Logged In User](/media/header-user-logged-in.jpeg)
+
 **Sign Up Page**
 
-The Sign Up page of the Barks in Bubbles website allows new users to create an account, enabling them to book and manage appointments online.
+If a user does not have an existing account, they can click on the 'Sign Up' link on the "Log In" page. As a result, they are redirected to the 'Sign Up' page, which allows new users to create an account, enabling them to book and manage their appointments online.
 
 ![Sign Up Page](/media/sign-up-page.jpeg)
+
+After signing up, customers are taken to the 'All Bookings' page and notified about their successful login:
+
+![Sign Up Page Success Message](/media/sign-up-success-message.jpeg)
+
+**Log Out Page**
+
+Upon clicking on the Log Out button in the header, the user is taken to the Sign Out page, where they have to confirm their intent to sign out:
+
+![Sign Out Page](/media/log-out-page.jpeg)
+
+Upon confirmation, the user is redirected to the home page and notified of their successful action:
+
+![Sign Out Confirmation](/media/sign-out-confirmation.jpeg)
+
+**All Bookings Page**
+
+If the user is logged in, there are two scenarios for the 'All Bookings' Page.
+
+* If a customer does not have any appointments scheduled yet, they are redirected to the 'All Bookings' Page, where it says that they have no appointments scheduled. They are presented with the 'Book Appointment' button underneath the notification:
+
+![All Bookings Page - User With No Appointments](/media/all-bookings-page-user-has-no-appointments.jpeg)
+
+* If a customer already has scheduled appointments, they see the list of their appointments, as well as 'Book New Appointment' buttons:
+
+![All Bookings Page - User Has Appointments](/media/all-bookings-page-user-has-appointments.jpeg)
+
+* Superuser sees additional information on the 'All Bookings' Page, such as usernames:
+
+![All Bookings Superuser View](/media/all-bookings-superuser-view.jpeg)
+
+Users, as well as superusers, have an option to edit or delete their future bookings. Whereas the older bookings editing options are grayed out.
+ 
+
+**Book Appointment Page**
+
+![Book Appointment Step One](/media/book-appointment-step-one.jpeg)
+
+![Book Appointment Step One - Select Service](/media/book-appointment-step-one-select-service.jpeg)
+
+![Book Appointment Step One - Select Date](/media/book-appointment-step-one-select-date.jpeg)
+
+![Book Appointment Step Two](/media/book-appointment-step-two.jpeg)
+
+![Book Appointment Step Two - Select Groomer](/media/book-appointment-step-two-select-groomer.jpeg)
+
+![Book Appointment Step Three](/media/book-appointment-step-three.jpeg)
+
+![Book Appointment Step Three - Select Time](/media/book-appointment-step-three-select-time.jpeg)
+
+![Book Appointment Confirmation](/media/book-appointment-confirmation.jpeg)
+
+
 
 **Footer**
 
@@ -541,6 +596,38 @@ The footer is displayed at the bottom of every page and contains essential infor
 | Enter username, a password and password (again), use a password similar to personal information and click Sign Up | Error message "Your password can’t be too similar to your other personal information." is displayed | Pass |
 | Enter username, a password and password (again), use different passwords for password and password (again) and click Sign Up | Error message "You must type the same password each time." is displayed | Pass |
 | Fill out all fields correctly: enter username, a password and password (again), use the same passwords, if addign email, add email that was not previously registed and click Sign Up | User is redirected to the appointment booking page | Pass |
+
+#### Log Out Page
+
+| Action/Feature          | Expected Behavior       | Status         |
+|-------------------------|-------------------------|----------------|
+| Click 'Log Out' button in the header | Redirects to Log Out confirmation page | Pass |
+| Confirm log out  by clicking on 'Log Out' button | Redirects to Home page, notification about successful logout displayed | Pass |
+
+#### All Bookings Page
+
+| Action/Feature          | Expected Behavior       | Status         |
+|-------------------------|-------------------------|----------------|
+| New user has signed up tp the site | 'All Bookings' page loads with the message "No appointments scheduled". 'Book Appointment' button displayed | Pass   |
+| User with no appointments has logged in  |  'All Bookings' page loads with the message "No appointments scheduled". 'Book Appointment' button displayed | Pass   |
+|User with scheduled appointments has logged in | 'All Bookings' page lists all appointments with 'Book New Appointment' buttons displayed | Pass   |
+| Superuser loggs in to the site |  'All Bookings' page lists all appointments with 'Book New Appointment' buttons displayed. Superuser can see users' name associated withthe appointments  | Pass |
+| Click on Delete a future appointment | A pop-up window appears asking: 'Delete appointment? Are you sure you want to delete this appointment? This action cannot be undone.' Options to close or confirm delete are available | Pass |
+| Confirm Delete appointment | The appointment is deleted, and the user is redirected to the 'All Bookings' page with a confirmation message | Pass |
+| Close Delete appointment | The pop-up window is closed, and no changes are made to the appointment | Pass           |
+| Click on Edit a future appointment | Step one of the booking form loads with the prefilled details of the appointment. Service and date can be changed from the dropdown. Options to 'cancel' or move to the 'next' step available | Pass |
+| Click on 'cancel' option | Editing is cancelled, user is directed to the All Bookings Page | Pass |
+| Click on 'Edit' a future appointment and in the 'step one' change 'service' and 'date' within next 90 days, then click 'next' | Step two of the booking form loads with the prefilled groomer name. Groomer name can be changed from the dropdown. Options to go to the 'prev step', 'next' or 'cancel' are available | Pass |
+| Choose a past date in Step One | Error message "Not possible to select date in the past" is displayed | Pass |
+| Choose a date more than 90 days ahead in Step one | Error message "Not possible to select a date more than 90 days in advance" is displayed | Pass |
+| Click on 'prev step' in Step two | User is directed back to Step one with the previously entered service and date details retained | Pass |
+| Click on 'cancel' in Step two | Editing is cancelled, user is directed to the All Bookings Page | Pass |
+| Click on 'next' in Step two | Step three of the booking form loads with the available time slots. Options to go to the 'prev step', 'cancel' or 'submit' are available | Pass |
+| Click on 'prev step' in Step three | User is directed back to Step two with the previously entered groomer name retained  | Pass |
+| Click on 'cancel' in Step three | Editing is cancelled, user is directed to the All Bookings Page | Pass |
+| Select a time slot in Step three and click 'submit' | Appointment is successfully updated, user is directed to the 'All Bookings' Page with a confirmation message | Pass |
+| Older bookings edit options | Editing options for older bookings are grayed out| Pass |
+| Older bookings delete options | Delete options for older bookings are grayed out| Pass |
 
 #### User Stories
 | User Story | Expected Behavior  | Actual Behavior | Status |
