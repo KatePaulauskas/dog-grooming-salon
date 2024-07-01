@@ -361,9 +361,9 @@ Returning users can quickly access their accounts and manage their bookings.
 
 **Header**
 
-The header contains the navigation bar, logo, and Log In and Book Now buttons. The navigation bar is positioned on the left, while the logo is prominently displayed in the center, ensuring brand recognition. The logo features a drawing of a happy dog in colorful bubbles and foam, representing the brand and providing a clear visual hint about the site's focus on dog grooming.
+The header contains the navigation bar, logo, and 'Log In' and 'Book Now' buttons. The navigation bar is positioned on the left, while the logo is prominently displayed in the center, ensuring brand recognition. The logo features a drawing of a happy dog in colorful bubbles and foam, representing the brand and providing a clear visual hint about the site's focus on dog grooming.
 
-The Log In and Book Now buttons are positioned on the right side by side, facilitating quick access to appointment booking and management for users. Below these two buttons, there is a notification informing the user whether they are logged in or not.
+The 'Log In' and 'Book Now' buttons are positioned on the right side by side, facilitating quick access to appointment booking and management for users. Below these two buttons, there is a notification informing the user whether they are logged in or not.
 
 ![Header](/media/header.jpeg)
 
@@ -442,6 +442,7 @@ The Sign Up page of the Barks in Bubbles website allows new users to create an a
 ![Sign Up Page](/media/sign-up-page.jpeg)
 
 **Footer**
+
 The footer is displayed at the bottom of every page and contains essential information and links:
 
 * Working Hours: Information about the salon's operating hours.
@@ -450,9 +451,6 @@ The footer is displayed at the bottom of every page and contains essential infor
 * Social Media Links: Icons linking to the salon's Instagram and Facebook pages, allowing users to connect with the salon on social platforms.
 
 ![Footer](/media/footer.jpeg)
-
-**Log In**
-
 
 
 ### Future Features

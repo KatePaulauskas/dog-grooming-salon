@@ -5,7 +5,7 @@
 
 {% block content %}
     <div class="row justify-content-center m-0">
-        <div class="col-9 col-md-6 m-3">
+        <div class="col-12 col-sm-9 col-md-6 m-1">
             {% if user.is_authenticated %}
             <h1 class="text-center my-3">
                 {% if editing %}
@@ -26,8 +26,8 @@
                 </div>
             </form>
             {% else %}
-            <div class="alert alert-info" role="alert">
-                <p class="text-center m-2">Log in <a href="{% url 'account_login' %}">here</a> to book your appointment.</p>
+            <div class="alert alert-info mt-5" role="alert">
+                <p class="text-center m-1">Log in <a href="{% url 'account_login' %}">here</a> to book your appointment.</p>
             </div>
             {% endif %}
         </div>
