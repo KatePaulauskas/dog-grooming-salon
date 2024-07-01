@@ -2,9 +2,7 @@ from django import forms
 from django.contrib import messages
 from .models import Appointment, Services, Groomers
 import datetime
-from datetime import date
-from datetime import datetime
-from datetime import timedelta
+from datetime import date, time, datetime, timedelta
 from django.core.exceptions import ValidationError
 
 
@@ -30,8 +28,22 @@ class StepOneForm(forms.ModelForm):
         today = date.today()
         now = datetime.now()
 
+        # Define closing times for weekdays and weekends
+        weekday_closing_time = time(17, 30)
+        weekend_closing_time = time(16, 0)
+
         if selected_date < today:
             raise ValidationError("Not possible to select date in the past")
+
+        # Determine closing time based on the day of the week
+        if selected_date.weekday() < 5:
+            closing_time = weekday_closing_time
+        else:
+            closing_time = weekend_closing_time
+            
+        if selected_date == today and now.time() > closing_time:
+            raise ValidationError(
+                "Not possible to book for today as the salon is already closed")
 
         elif selected_date > today + timedelta(days=90):
             raise ValidationError(
