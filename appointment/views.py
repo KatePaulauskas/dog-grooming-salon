@@ -1,12 +1,17 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.contrib import messages
-from .forms import StepOneForm, StepTwoForm, StepThreeForm
-from django.http import HttpResponseRedirect
-from .models import Groomers, Appointment, Services
-from django.utils import timezone
 import datetime
+
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse
+from django.utils import timezone
+
 from formtools.wizard.views import SessionWizardView
+
+from .forms import StepOneForm, StepTwoForm, StepThreeForm
+from .models import Groomers, Appointment, Services
 
 
 # Define the steps and forms for the wizard
@@ -24,7 +29,7 @@ TEMPLATES = {
 }
 
 
-class AppointmentWizard(SessionWizardView):
+class AppointmentWizard(LoginRequiredMixin, SessionWizardView):
     """
     View to habdle booking multistep form.
     Utilises Django Form Tools WizardView to manage form sessions.
@@ -80,7 +85,7 @@ class AppointmentWizard(SessionWizardView):
                              "Thank you for booking your appointment!")
         return redirect('my_appointments')
 
-
+@login_required
 def my_appointments(request):
     """
     View to display the logged-in user's appointments.
@@ -119,6 +124,7 @@ def my_appointments(request):
         return redirect(reverse('account_login'))
 
 
+@login_required
 def appointment_delete(request, appointment_id):
     """
     View to delete an appointment.
@@ -130,6 +136,7 @@ def appointment_delete(request, appointment_id):
     return HttpResponseRedirect(reverse('my_appointments'))
 
 
+@login_required
 def edit_appointment(request, appointment_id):
     """
     View to handle the first step of editing an appointment.
@@ -150,7 +157,7 @@ def edit_appointment(request, appointment_id):
     return redirect('edit_appointment')
 
 
-class EditAppointmentWizard(SessionWizardView):
+class EditAppointmentWizard(LoginRequiredMixin, SessionWizardView):
     """
     View to handle multi-step appointment editing.
     """

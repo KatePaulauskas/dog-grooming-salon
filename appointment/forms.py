@@ -1,9 +1,11 @@
-from django import forms
-from django.contrib import messages
-from .models import Appointment, Services, Groomers
 import datetime
 from datetime import date, time, datetime, timedelta
+
+from django import forms
+from django.contrib import messages
 from django.core.exceptions import ValidationError
+
+from .models import Appointment, Services, Groomers
 
 
 class StepOneForm(forms.ModelForm):
