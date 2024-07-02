@@ -235,9 +235,39 @@ Each page is designed to provide valuable information and ensure a seamless user
 
 #### - Database Structure -
 
+The Database Structure below visualises the relationships between the key models of the project: User, Services, Groomers, GroomerSchedule, and Appointment. The database schema is designed to effectively manage appointments by linking the Appointment model to the User, Services, and Groomers models.
+
+![Database Structure](/media/database-structure.jpeg)
+
+* **User:** Represents the clients who book grooming appointments.
+
+* **Services:** Details the various grooming services offered, including their descriptions, prices, and durations.
+
+* **Groomers:** Lists the groomers available at the salon, along with their profiles and schedules.
+
+* **GroomerSchedule:** Manages the availability of each groomer on different days of the week.
+
+* **Appointment:** Tracks individual appointments, linking each appointment to a specific user, service, and groomer, along with the date, time, and status.
+
+The GroomerSchedule model provides the availability times for each groomer, which are used in the application logic to determine valid appointment slots. The Appointment model uses the Groomers model to determine availability through the GroomerSchedule model.
+
+Time slots are generated for every 2 hours, accounting for a each service duration of 1 hour and 30 minutes, with a 30-minute buffer time at the end of each appointment, accounting for breaks, running over time, and cleaning at the end of the day. 
 
 
-#### - Booking Flow Chart -
+##### Additional Models
+
+To enhance the functionality of the Barks in Bubbles application, two additional models were created to allow superusers to update information about the salon and upload images:
+
+* **About:** This model manages the content of the "About Us" section of the website. It includes fields for a welcome message, a title, content text, and an image (stored using Cloudinary):
+
+![About Model](/media/about-model.jpeg)
+
+* **Gallery:** This model is used to manage images displayed in the gallery section of the website. It includes fields for the image name, the image itself (stored using Cloudinary), and a timestamp for when the image was last updated.
+
+![Gallery Model](/media/gallery-model.jpeg)
+
+These models enable superusers to easily keep the website content up-to-date with fresh information and images, ensuring that visitors always have access to the latest details about the salon and its services.
+
 
 
 
