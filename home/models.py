@@ -4,10 +4,12 @@ from cloudinary.models import CloudinaryField
 
 
 class About(models.Model):
+    id = models.AutoField(primary_key=True)
     image = CloudinaryField('image', default='placeholder')
     welcome_message = title = models.CharField(max_length=200)
     title = models.CharField(max_length=200)
     content = models.TextField()
+    updated_on = models.DateTimeField(auto_now=True)
 
 
     """

@@ -124,7 +124,7 @@ class StepThreeForm(forms.Form):
 
         """
         Create time intervals of 2 hours,
-        accountign for 30 min buffer time after each session
+        accounting for 30 min buffer time after each session
         """
         interval = timedelta(hours=2)
         times = []
