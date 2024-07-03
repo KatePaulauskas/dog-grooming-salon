@@ -381,6 +381,7 @@ The combination of "Righteous" for main headings, "Cormorant Upright" for subhea
 
 ### Existing Features
 
+#### Website Features
 **Header**
 
 The header contains the navigation bar, logo, and 'Log In' and 'Book Now' buttons. The navigation bar is positioned on the left, while the logo is prominently displayed in the center, ensuring brand recognition. The logo features a drawing of a happy dog in colorful bubbles and foam, representing the brand and providing a clear visual hint about the site's focus on dog grooming.
@@ -459,7 +460,7 @@ Upon submitting a request through the form, the user gets a notification about s
 
 **Log In Page**
 
-The Log In page allows existing users to access their accounts and manage their appointments. This page ensures secure authentication and provides an easy way for users to log in and access personalized services.
+The Log In page allows existing users to access their accounts and manage their appointments. This page ensures secure authentication and provides an easy way for users to log in and access personalized services. There is also a notification to contact the salon if the user wants to reset their password.
 
 ![Log In Page](/media/log-in-page.jpeg)
 
@@ -472,6 +473,10 @@ After logging in, customers are taken to the 'All Bookings' page and notified ab
 If a user does not have an existing account, they can click on the 'Sign Up' link on the "Log In" page. As a result, they are redirected to the 'Sign Up' page, which allows new users to create an account, enabling them to book and manage their appointments online.
 
 ![Sign Up Page](/media/sign-up-page.jpeg)
+
+If a user does not follow the recommendations for creating secure credentials, notifications appear in a bright color to draw their attention to the issue with the credentials to assist with fixing.
+
+![Sign Up Page Errors List](/media/sign-up-page-error-list.jpeg)
 
 After signing up, customers are taken to the 'All Bookings' page and notified about their successful login:
 
@@ -628,6 +633,61 @@ The footer is displayed at the bottom of every page and contains essential infor
 
 ![Footer](/media/footer.jpeg)
 
+#### Admin Panel Features
+
+A superuser, who is presumably the owner of a salon, can access the admin panel, where they get additional functionalities:
+
+The superuser can view all appointments, sort them by status, groomer name, service type, and date, and manually add new appointments:
+
+![Appointments View Admin Panel](/media/admin-appointments-view.jpeg)
+
+By selecting a specific appointment, the superuser can fully edit it, change its status, save, or delete it:
+
+![Admin Panel - Edit Appointments](/media/admin-edit-appointment.jpeg) 
+
+The superuser can view existing users, edit or update their details by clicking on the name of the individual user, and manually add new users. This is a part of the existing User model functionality, which is really handy for managing the salon:
+
+![Admin Panel User View](/media/admin-user-view.jpeg)
+
+The superuser can also assist users in resetting their passwords:
+
+![Admin Panel Reset User Password](/media/admin-update-user-info.jpeg)
+
+The superuser can view the list of existing groomers, edit or update their profiles by clicking on their name:
+
+![Admin Panel Groomer View](/media/admin-groomers-view.jpeg)
+
+As well as add a new groomer:
+
+![Admin Panel Add New Groomer](/media/admin-add-new-groomer.jpeg)
+
+The superuser can overview the schedules of each groomer:
+
+![Admin Panel - Groomers Schedule View](/media/admin-groomers-schedule-view.jpeg)
+
+By clicking on the name of a specific groomer, the superuser can edit, save, or delete their schedule:
+
+![Admin Panel - Edit Groomer Schedule](/media/admin-edit-groomer-schedule.jpeg)
+
+The superuser can update information about the salon:
+
+![Admin Panel About Information](/media/admin-update-about-us.jpeg)
+
+Additionally, the superuser can view, filter, and update existing services:
+
+![Admin Panel Services View](/media/admin-services-view.jpeg)
+
+As well as add new services:
+
+![Admin Panel - Add New Service](/media/admin-add-new-service.jpeg)
+
+The superuser has access to the gallery, where they can view existing items, edit them, or add new items:
+
+![Admiv Gallery View](/media/admin-gallery-view.jpeg)
+
+To add a new item to the gallery, the superuser needs to add a name and upload an image:
+
+![Admin Add new Gallery Item](/media/admin-add-gallery-item.jpeg)
 
 ### Future Features
 
@@ -818,7 +878,9 @@ The following erros were identified and addressed:
 Element p not allowed as child of element span in this context. (Suppressing further errors from this subtree.)
 ```
 
-It was identified that the `span` elements are pulled from the Summernote package used in the Django backend and not from the project HTML code. Therefore, it is not possible to remove `span` elements. To ensure consistent style and font on the home page, the `p` element was added to the 'About' content, which is added through the admin panel. Without it, it is impossible to style the home page nicely, as fonts conflict and inconsistencies arise. Therefore, the `p` element cannot be removed from the HTML. The fonts used in the project could potentially be imported into Summernote, but due to time constraints, it was decided not to investigate this possibility further.
+It was identified that the issue with the `p` elements appearing as children of `span` elements are pulled from the Summernote package used in the Django backend and not from the project HTML code. Therefore, it is not possible to refactor the code to fix this issue.
+
+
 
 **Error 2:** 
 ```
@@ -826,6 +888,8 @@ Error: No 'p' element in scope but a 'p' end tag seen.
 ```
 
 It was identified that this issue is also caused by Summernote styling conflicting with the HTML style settings.
+
+To ensure consistent design across the site and that the content matches the project's styling, the content added through the back end is wrapped in HTML tags, and global CSS styles are applied to this content. Without this approach, it is impossible to have a consistently styled home page. Therefore, the p element cannot be removed from the HTML. The fonts used in the project could potentially be imported into Summernote, but due to time constraints, it was decided not to investigate this possibility further.
 
 ![Home page HTML Validator](/media/html-checker-home-page.jpeg)
 
@@ -856,19 +920,38 @@ The issue was resolved:
 
 The rest of the pages passed validation with no errors.
 
-![Groomers Page]()
+**Groomers Page:**
 
-![Gallery Page]()
+![Groomers Page](/media/html-validation-groomers-page.jpeg)
 
-![Contact Page]()
+**Gallery Page:**
+![Gallery Page](/media/html-validation-gallery-page.jpeg)
 
+**Contact Us Page:**
+![Contact Us Page](/media/html-validation-contact-us-page.jpeg)
+
+**Log In Page:**
 ![Log In Page]()
 
-![Log Out Page]()
+**Sign Up Page:**
+![Sign Up Page]()
 
-![Make Appointment Booking Page]()
+**Log Out Page:**
+![Log Out Page](/media/html-validation-log-out-page.jpeg)
 
-![My Appointments Page]()
+**Book Appointment Page**
+
+Step One:
+![Book Appointment Page - Step One](/media/html-validation-booking-step-one.jpeg)
+
+Step Two:
+![Book Appointment Page - Step Two](/media/html-validation-booking-step-two.jpeg)
+
+Step 3:
+![Book Appointment Page - Step Three](/media/html-validation-booking-step-three.jpeg)
+
+**All Bookings Page:**
+![All Bookings Page](/media/html-validation-all-bookings-page.jpeg)
 
 #### CSS
 
@@ -878,7 +961,7 @@ Initially, no errors were identified.
 
 ![CSS Validation](/media/css-validation.jpeg)
 
-However, a few days later, when checking it again, the following errors occurred:
+However, a few days later, when checking it again by pastign the site URL, the following errors occurred:
 
 ![CSS Validation Errors](/media/css-validation-errors.jpeg)
 
@@ -908,7 +991,11 @@ These warnings can be grouped in 3 main categories:
 
 - **Color Warnings:** State that the same color was used for background and border. These warnings do not affect the site intended design and therefore can be ignored.
 
-![Css Color Warnings](/media/css-color-warnings.jpeg)
+![CSS Color Warnings](/media/css-color-warnings.jpeg)
+
+When testing the CSS code through the direct input, no issues identified:  
+
+![CSS Validation Direct Input](/media/css-validation-direct-input.jpeg)
 
 #### JavaScript
 
