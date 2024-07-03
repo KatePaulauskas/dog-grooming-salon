@@ -41,7 +41,7 @@
                                 <h2 class="card-title">{{ service.name }}</h2>
                                 <div class="image-container">
                                     <img src="{{ service.service_image.url }}" 
-                                    class="service-img" alt="{{ service.name }}">
+                                    class="service-img" loading="lazy" alt="{{ service.name }}">
                                 </div>
                                 {{ service.description | safe }}
                                 <p class="mb-1"><strong>Price:</strong> {{ service.price }}</p>

@@ -11,7 +11,7 @@
     <div class="row">
         {% for image in page_obj %}
         <div class="col-md-6 col-lg-4 mb-4">
-            <div class="card">
+            <div class="card image-container">
                 <img src="{{ image.image.url }}" class="card-img-top gallery-img" alt="{{ image.name }}">
             </div>
         </div>
