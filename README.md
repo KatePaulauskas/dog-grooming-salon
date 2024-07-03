@@ -807,21 +807,36 @@ To ensure adherence to web standards and improve accessibility, the site's HTML 
 
 The following erros were identified and addressed:
 
-- **Error 1:** There were multiple warnings about trailing slashes on void elements, which were fixed by removing the trailing slashes and extra spaces.
+- On the home page, the following issues was identified:
 
-- **Error 2:** On the home page, the following issue was identified: 
+![Home page HTML Validator errors](/media/html-checker-home-page-errors-part-one.jpeg)
 
+![Home page HTML Validator errors](/media/html-checker-home-page-errors-part-two.jpeg)
+
+**Error 1 type:** 
+```
+Element p not allowed as child of element span in this context. (Suppressing further errors from this subtree.)
+```
+
+It was identified that the `span` elements are pulled from the Summernote package used in the Django backend and not from the project HTML code. Therefore, it is not possible to remove `span` elements. To ensure consistent style and font on the home page, the `p` element was added to the 'About' content, which is added through the admin panel. Without it, it is impossible to style the home page nicely, as fonts conflict and inconsistencies arise. Therefore, the `p` element cannot be removed from the HTML. The fonts used in the project could potentially be imported into Summernote, but due to time constraints, it was decided not to investigate this possibility further.
+
+**Error 2:** 
 ```
 Error: No 'p' element in scope but a 'p' end tag seen.
 ```
 
-![Home page HTML Validator errors](/media/html-checker-home-page-errors.jpeg)
-
-It was identified that the issue was caused by Summernote styling, and after removing paragraph styling from the service descriptions in Summernote, the issue was resolved:
+It was identified that this issue is also caused by Summernote styling conflicting with the HTML style settings.
 
 ![Home page HTML Validator](/media/html-checker-home-page.jpeg)
 
-- __Error 3:__ The second step of the booking process resulted in the following error:
+**Error 3 type:** 
+```
+CSS: font-optical-sizing: Property font-optical-sizing doesn't exist.
+```
+This issue is addressed in the [CSS Validation section](#css).
+
+**Error 4:**  
+The second step of the booking process resulted in the following error:
 
 ![Step Two Booking Form HTML Validator Error](/media/html-checker-booking-step-two-error.jpeg)
 
@@ -836,6 +851,8 @@ if not service_id or not groomer_id or not date_str:
 The issue was resolved: 
 
 ![Step Two Booking Form HTML Validator](/media/html-checker-booking-step-two.jpeg)
+
+- There were multiple warnings about trailing slashes on void elements, which were fixed by removing the trailing slashes and extra spaces.
 
 The rest of the pages passed validation with no errors.
 
@@ -855,11 +872,31 @@ The rest of the pages passed validation with no errors.
 
 #### CSS
 
-For compliance with web standards and accessibility guidelines, the site's CSS code was checked using the [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarks-in-bubbles-a17d3839532d.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en). No errors were identified.
+For compliance with web standards and accessibility guidelines, the site's CSS code was checked using the [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarks-in-bubbles-a17d3839532d.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en). 
+
+Initially, no errors were identified.
 
 ![CSS Validation](/media/css-validation.jpeg)
 
-434 warning were identified:
+However, a few days later, when checking it again, the following errors occurred:
+
+![CSS Validation Errors](/media/css-validation-errors.jpeg)
+
+The source code causing the errors was identified:
+
+![CSS Error - Source Code](/media/home-page-source-code.jpeg)
+
+It was impossible to locate the source of the font-optical-sizing styling:
+
+![Inspection of Element Causing Error on the Live Site](/media/css-errors-element-inspection-one.jpeg)
+
+Therefore, the assumption was made that font-optical-sizing might be included in the styles used by the Django admin interface, which was confirmed upon further investigation:
+
+![Inspection of Element Causing Error in Django Admin Panel](/media/django-admin-panel-font-optical-sizing-style.jpeg)
+
+There is no way to remove this styling, as it is outside the project's scope.
+
+Furthermore, 434 warning were identified by CSS Validatior:
 
 ![CSS Validator Warnings](/media/css-validator-warnings.jpeg)
 
@@ -870,6 +907,8 @@ These warnings can be grouped in 3 main categories:
 - ***Deprecated Properties:*** These warnings are managed by the Bootstrap team.
 
 - **Color Warnings:** State that the same color was used for background and border. These warnings do not affect the site intended design and therefore can be ignored.
+
+![Css Color Warnings](/media/css-color-warnings.jpeg)
 
 #### JavaScript
 

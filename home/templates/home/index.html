@@ -3,6 +3,7 @@
 {% block content %}
 
 <!-- index.html content starts here -->
+
 <!-- Above Fold Section -->
 <div class="container-fluid">
     <div class="row">
@@ -15,12 +16,13 @@
             <div class="heroimage-container">
                 <img src="{{ about.image.url }}" class="hero-img" alt="Welcome Image">
             </div>
+
             <!-- About Us -->
             <section id="about">
                 <h2 class="my-4 text-center">{{ about.title }}</h2>
                 <p class="about-us mx-1 mx-sm-2 mx-md-3 mx-lg-5 text-center">
                     {{ about.content | safe }}</p>
-            </section> <!-- Closing section tag instead of div -->
+            </section>
         </div>
     </div>
 </div>
@@ -43,7 +45,7 @@
                                 </div>
                                 {{ service.description | safe }}
                                 <p class="mb-1"><strong>Price:</strong> {{ service.price }}</p>
-                                <p class="mb-1"><strong>Duration:</strong>{{ service.duration_in_hours_minutes }}</p>
+                                <p class="mb-1"><strong>Duration:</strong> {{ service.duration_in_hours_minutes }}</p>
                             </div>
                         </div>
                     </div>
