@@ -20,7 +20,7 @@
             {% csrf_token %}
             {{ wizard.form|crispy }}
             <div class="d-flex justify-content-between mt-3">
-                <button name="wizard_goto_step" type="submit" value="step_two" class="btn btn-back mx-1">{% translate "Prev step" %}</button>
+                <button name="wizard_goto_step" type="submit" value="step_two" class="btn btn-back mx-1">{% translate "Prev Step" %}</button>
                 <button class="btn btn-appointment mx-1" type="submit">{% translate "Submit" %}</button>
             </div>
             <div class="d-flex justify-content-center mt-3">

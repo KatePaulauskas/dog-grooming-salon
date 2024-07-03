@@ -85,11 +85,14 @@ class AppointmentWizard(LoginRequiredMixin, SessionWizardView):
                              "Thank you for booking your appointment!")
         return redirect('my_appointments')
 
+
 @login_required
 def my_appointments(request):
     """
     View to display the logged-in user's appointments.
     """
+    update_past_appointments_status()
+
     # Check if the user is authenticated
     if request.user.is_authenticated:
         # Check if the logged-in user is an admin
@@ -122,6 +125,18 @@ def my_appointments(request):
     else:
         # If the user is not logged in, redirect them to the login page
         return redirect(reverse('account_login'))
+
+
+@login_required
+def update_past_appointments_status():
+    """
+    Function to update the status of past appointments to completed.
+    """
+    now = timezone.now()
+    past_appointments = Appointment.objects.filter(
+        date__lt=now.date(), status='scheduled'
+        )
+    past_appointments.update(status='completed')
 
 
 @login_required
@@ -243,6 +258,6 @@ class EditAppointmentWizard(LoginRequiredMixin, SessionWizardView):
         del self.request.session['editing']
 
         messages.add_message(self.request, messages.SUCCESS,
-                             "Appointment appointment has been updated!")
+                             "Appointment has been updated!")
 
         return redirect('my_appointments')

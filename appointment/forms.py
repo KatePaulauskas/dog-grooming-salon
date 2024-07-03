@@ -42,10 +42,10 @@ class StepOneForm(forms.ModelForm):
             closing_time = weekday_closing_time
         else:
             closing_time = weekend_closing_time
-            
+
         if selected_date == today and now.time() > closing_time:
             raise ValidationError(
-                "Not possible to book for today as the salon is already closed")
+                "Not possible to make booking. Salon is already closed")
 
         elif selected_date > today + timedelta(days=90):
             raise ValidationError(
