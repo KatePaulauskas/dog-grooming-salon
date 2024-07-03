@@ -195,7 +195,7 @@ h2.card-title
     border-color: #50514F;
 }
 
-/* Sty Forms labels font */
+/* Style Forms labels font */
 label {
     font-family: "Khula", sans-serif !important;
     font-size: 110% !important;
@@ -240,7 +240,16 @@ footer {
 }
 
 .signup label {
-    width: 160px;
+    width: 180px;
+}
+
+.errorlist {
+    color:#ff5cb7
+}
+
+/* Style Log In form */
+.password-reset {
+    color: #fe8b32;
 }
 
 /* Style Log In and Sign up buttons on account pages */
@@ -330,16 +339,22 @@ footer {
     background-color: #cccccc;
 }
 
-/* Media query: mobile phones (320px and up) */
+/* Media query: mobile phones (270px and up) */
 @media screen and (min-width: 320px) {
     /* Anchors offset */
     html {
         scroll-padding-top: 360px;
     }
 
-    /* Table font size */
-    table {
-        font-size: 12px !important;
+    /* Style table on All Bookings page */
+    table, th, td, tr {
+        font-size: 10px !important;
+    }
+
+    table .btn {
+        font-size: 10px; 
+        width: 60px;
+        height: 25px;
     }
 }
 
@@ -370,9 +385,15 @@ footer {
         font-size: 200% !important;
     }
 
-    /* Table font size */
-    table {
-        font-size: 16px !important;
+    /* Style table on All Bookings page */
+    table, th, td, tr {
+        font-size: 14px !important;
+    }
+
+    table .btn {
+        font-size: 14px; 
+        width: 80px;
+        height: 35px;
     }
 }
 
@@ -402,12 +423,24 @@ footer {
     {
         font-size: 220% !important;
     }
-}
 
-    /* Table font size */
-    table {
-        font-size: 18px !important;
+    /* Style table on All Bookings page */
+    table, th, td, tr {
+        font-size: 16px !important;
     }
+
+    table .btn {
+        font-size: 16px; 
+        width: 100px;
+        height: 45px;
+    }
+
+    /* Remove border on the table sells that are hidden on mobile */
+
+    .table .d-none.d-lg-block {
+        border: none;
+    }
+}
 
 /* Media query: larger screens (1400px and up) */
 @media screen and (min-width: 1400px) {

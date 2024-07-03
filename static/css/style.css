@@ -195,7 +195,7 @@ h2.card-title
     border-color: #50514F;
 }
 
-/* Sty Forms labels font */
+/* Style Forms labels font */
 label {
     font-family: "Khula", sans-serif !important;
     font-size: 110% !important;
@@ -240,7 +240,16 @@ footer {
 }
 
 .signup label {
-    width: 160px;
+    width: 180px;
+}
+
+.errorlist {
+    color:#ff5cb7
+}
+
+/* Style Log In form */
+.password-reset {
+    color: #fe8b32;
 }
 
 /* Style Log In and Sign up buttons on account pages */
