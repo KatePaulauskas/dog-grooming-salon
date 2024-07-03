@@ -425,6 +425,12 @@ footer {
         width: 100px;
         height: 45px;
     }
+
+    /* Remove border on the table sells that are hidden on mobile */
+
+    .table .d-none.d-lg-block {
+        border: none;
+    }
 }
 
 /* Media query: larger screens (1400px and up) */

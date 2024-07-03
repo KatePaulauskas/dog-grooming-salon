@@ -89,8 +89,9 @@ class AppointmentWizard(LoginRequiredMixin, SessionWizardView):
 @login_required
 def my_appointments(request):
     """
-    View to display the logged-in user's appointments.
+    View to display the logged-in user's appointments and update past appointments' status.
     """
+    # Update the status of past appointments
     update_past_appointments_status()
 
     # Check if the user is authenticated
@@ -111,11 +112,11 @@ def my_appointments(request):
             # Combine the appointment date with a time (midnight)
             appointment_datetime = datetime.datetime.combine(
                 appointment.date, datetime.time()
-                )
+            )
             # Make the combined datetime timezone-aware
             appointment_datetime = timezone.make_aware(
                 appointment_datetime, timezone.get_current_timezone()
-                )
+            )
             appointment.can_edit_delete = (
                 appointment_datetime - now).total_seconds() > 24 * 3600
 
@@ -127,7 +128,6 @@ def my_appointments(request):
         return redirect(reverse('account_login'))
 
 
-@login_required
 def update_past_appointments_status():
     """
     Function to update the status of past appointments to completed.
@@ -135,7 +135,7 @@ def update_past_appointments_status():
     now = timezone.now()
     past_appointments = Appointment.objects.filter(
         date__lt=now.date(), status='scheduled'
-        )
+    )
     past_appointments.update(status='completed')
 
 
