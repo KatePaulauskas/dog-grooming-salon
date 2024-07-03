@@ -491,7 +491,7 @@ Upon confirmation, the user is redirected to the home page and notified of their
 
 If the user is logged in, there are two scenarios for the 'All Bookings' Page.
 
-* If a customer does not have any appointments scheduled yet, they are redirected to the 'All Bookings' Page, where it says that they have no appointments scheduled. They are presented with the 'Book Appointment' button underneath the notification:
+* If a customer does not have any appointments scheduled yet, they are redirected to the 'All Bookings' Page, where they are notified that they have no appointments scheduled yet. Customers are also presented with the 'Book Appointment' button underneath the notification:
 
 ![All Bookings Page - User With No Appointments](/media/all-bookings-page-user-has-no-appointments.jpeg)
 
@@ -499,37 +499,113 @@ If the user is logged in, there are two scenarios for the 'All Bookings' Page.
 
 ![All Bookings Page - User Has Appointments](/media/all-bookings-page-user-has-appointments.jpeg)
 
-* Superuser sees additional information on the 'All Bookings' Page, such as usernames:
+* Superuser sees all the appointment that are scheduled on the All Bookings' Page, as well as additionally they have a username displayed for each booked appointment:
 
 ![All Bookings Superuser View](/media/all-bookings-superuser-view.jpeg)
 
-Users, as well as superusers, have an option to edit or delete their future bookings. Whereas the older bookings editing options are grayed out.
- 
+Users, that have scheduled appointments, have an option to edit or delete their future bookings. As well as superuser can schedule or delete appointments on the customer's behalf. The edit and delete options are grayed out for any past bookings.
+
+If a user who is not logged in attempts to access the All Bookings page by using a direct [URL](https://barks-in-bubbles-a17d3839532d.herokuapp.com/appointment/my-appointments/), they are redirected to the Login Page.
 
 **Book Appointment Page**
 
+There are multiple entry points for logged-in users to make bookings. 
+
+On the Home, Groomers, and Gallery pages, users are presented with a 'Book Now' button. On the All Bookings page, the 'Book Appointment' button is available for users without any appointments, while 'Book New Appointment' buttons are placed both above and beneath the All Bookings table for users with existing appointments. These buttons are accessible to superusers as well. 
+
+*- Book Appointment - Step One -*
+
+Clicking on any of these buttons directs the user to the Book Appointment page, where the first step of the booking process is displayed in a form:
+
 ![Book Appointment Step One](/media/book-appointment-step-one.jpeg)
+
+This form allows users to select service:
 
 ![Book Appointment Step One - Select Service](/media/book-appointment-step-one-select-service.jpeg)
 
+And date:
+
 ![Book Appointment Step One - Select Date](/media/book-appointment-step-one-select-date.jpeg)
+
+After making a selection, users can proceed to the next step of the booking process by clicking on 'Next Step' button. Also they can cancel the booking at any point by clicking on 'Cancel' button, which directs them back to the All Bookings page.
+
+*- Book Appointment - Step Two -* 
+
+In the second step of the booking form, users are presented with a dropdown menu to select a groomer:
 
 ![Book Appointment Step Two](/media/book-appointment-step-two.jpeg)
 
+Depending on the chosen date, customers will see the names of groomers who are available on that date and have open time slots:
+
 ![Book Appointment Step Two - Select Groomer](/media/book-appointment-step-two-select-groomer.jpeg)
+
+The following actions are available in Step Two:
+
+* 'Cancel' Button: Cancels the booking process and returns the customer or superuser to the All Bookings page.
+
+* 'Prev Step' Button: Takes the customer or superuser back to Step One. Note: a groomer must be selected before returning to the previous step. This issue is noted in the bugs section.
+
+* 'Next Step' Button: Allows progression to the final step of the booking process—Step Three.
+
+*- Book Appointment - Step Three -*
+
+In Step Three of the booking process, customers or superuser must select a timeslot. The first available timeslot for the selected date and groomer is preloaded in the dropdown menu:
 
 ![Book Appointment Step Three](/media/book-appointment-step-three.jpeg)
 
+By clicking on the dropdown, other available timeslots for the selected date and groomer can be selected, if available: 
+
 ![Book Appointment Step Three - Select Time](/media/book-appointment-step-three-select-time.jpeg)
+
+The following actions are available in Step Three:
+
+* 'Cancel' Button: Cancels the booking process and returns the customer or superuser to the All Bookings page.
+
+* 'Prev Step' Button: Takes the customer or superuser back to Step Two.
+
+* 'Submit' Button: Finalises the booking by creating an appointment and adding it to the table on the All Bookings page.
+
+*- Time Slots Generation -*
+
+Timeslots are generated for available groomers using the following logic: each service is allocated two hours, considering the duration of each grooming session—1.5 hours plus a 30-minute buffer for breaks, to account for any overlap in appointments and cleaning at the end of the day. 
+
+Therefore, timeslots are available every two hours, aligning with salon working hours: Monday to Friday from 9:30 AM to 5:30 PM, and Saturday to Sunday from 10:00 AM to 4:00 PM. Timeslot availability also depends on the groomer’s schedule and previously booked appointments.
+
+*- Book Appointment - Confirmation -*
+
+Upon clicking the 'Submit' button in Step Three of the booking form, customers or superuser are redirected to the All Bookings Page. Here, they receive a notification: 'Thank you for booking your appointment!' The newly created appointment is then displayed on the All Bookings page, organised alongside other appointments in chronological order.
+
+*- Book Appointment - User Not Logged In -*
 
 ![Book Appointment Confirmation](/media/book-appointment-confirmation.jpeg)
 
+If a user who is not logged in tries to access the Book Appointment page either by using a direct [URL](https://barks-in-bubbles-a17d3839532d.herokuapp.com/appointment/) or by clicking on any of the booking entry points (such as the 'Book Now' button), they are redirected to a separate page. On this page, they are prompted to log in to book an appointment, and a link to the login page is provided.
+
+![Book Appointment - User Has Not Logged In](/media/book-appointment-user-not-logged-in.jpeg)
+
 **Editign and deletign appointents**
+
+On the All Bookings page, which is accessible only to logged-in users, there are options to edit and delete future appointments (up to 24 hours before the appointment time). For past appointments, this functionality is not available and is therefore grayed out.
+
+*- Edit Appointment -*
+
+Upon clicking the 'Edit' button next to a future appointment, customers or superusers are redirected to the first step of the booking process. The page has the heading 'Edit Appointment,' and the service and date fields are pre-filled. Users can change the service and date via dropdown menus, and they have the option to cancel the editing or proceed to the second step.
+
+The second step has the groomer's name pre-filled if the previously selected groomer is available on the chosen date. Otherwise, the dropdown is blank, and the user must select an available groomer. As with the initial booking process, users can cancel the editing, return to the previous step, or proceed to the final step of the booking process. The 'Cancel' button cancels the editing process. The 'Prev Step' button takes users back to step one with details pre-filled. The 'Next Step' button takes users to step three.
+
+Cancel button cancels the editing process, prev step button takes back to step one and the deltails are prefilled, nest step button take to the step three. 
+
+In the third step, based on the date and selected groomer, the first available timeslot is pre-filled. By clicking on the dropdown, users can view and select from other available timeslots. Timeslots are generated using the same approach as in the initial booking process. Also, similar to the initial booking process, there is a 'Cancel' button that cancels the editing, a 'Prev Step' button that takes users back to the second step with the groomer's name pre-filled, and a 'Submit' button that updates the appointment based on the edits introduced. After submitting, customers or superusers are taken to the All Bookings page, where they are presented with the notification: 'Appointment has been updated!' The updated appointment is displayed in the All Bookings table in chronological order with other appointments.
+
+*- Delete Appointment -*
+
+Upon clicking the 'Delete' button next to a future appointment, customers or superusers are presented with a pop-up window asking for their confirmation to delete the appointment. This window informs them that the action cannot be undone. Two buttons are available in this window: the 'Close' button, which closes the window without taking any action, and the 'Delete' button.
 
 ![Delete Appointment Pop Up](/media/delete-appointment-pop-up.jpeg)
 
-![Deleted Appointment Confirmation](/media/appointment-deleted-confirmation.jpeg)
+Clicking the 'Delete' button permanently removes the appointment. Following this action, the customer or superuser is presented with a notification: 'Appointment deleted!'
 
+![Deleted Appointment Confirmation](/media/appointment-deleted-confirmation.jpeg)
 
 **Footer**
 
