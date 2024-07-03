@@ -1,10 +1,10 @@
 # Barks in Bubbles - Dog Grooming Salon
 
-Barks in Bubbles is a web-based application designed to provide an exceptional dog grooming service in the Cork area through a comprehensive online platform.
+Barks in Bubbles is a website designed for an imaginary dog grooming salon based in the Cork area, aiming to deliver exceptional service through a comprehensive online platform.
 
 The website offers a seamless and user-friendly interface, allowing customers to easily navigate through information about the salon, including services offered, groomer profiles, and a gallery of previous grooming work.
 
-With this application, customers can create personal accounts, book and manage grooming appointments, and contact the salon directly through a contact form.
+Using this application, customers can create personal accounts, book and manage grooming appointments, and directly contact the salon via a dedicated contact form.
 
 ![Responsive Mockup](media/responsive-mockup.jpeg)
 
@@ -880,23 +880,26 @@ Element p not allowed as child of element span in this context. (Suppressing fur
 
 It was identified that the issue with the `p` elements appearing as children of `span` elements are pulled from the Summernote package used in the Django backend and not from the project HTML code. Therefore, it is not possible to refactor the code to fix this issue.
 
-
-
 **Error 2:** 
 ```
 Error: No 'p' element in scope but a 'p' end tag seen.
 ```
 
+The code causign Error 1 type and Error 2: 
+![HTML Home Page Errors Source Code](/media/html-validator-home-page-errors-part-one-source-code.jpeg)
+
 It was identified that this issue is also caused by Summernote styling conflicting with the HTML style settings.
 
 To ensure consistent design across the site and that the content matches the project's styling, the content added through the back end is wrapped in HTML tags, and global CSS styles are applied to this content. Without this approach, it is impossible to have a consistently styled home page. Therefore, the p element cannot be removed from the HTML. The fonts used in the project could potentially be imported into Summernote, but due to time constraints, it was decided not to investigate this possibility further.
-
-![Home page HTML Validator](/media/html-checker-home-page.jpeg)
 
 **Error 3 type:** 
 ```
 CSS: font-optical-sizing: Property font-optical-sizing doesn't exist.
 ```
+The code casuign the error: 
+
+![HTML Home Page Errors Source Code](/media/html-validator-home-page-errors-part-two-source-code.jpeg)
+
 This issue is addressed in the [CSS Validation section](#css).
 
 **Error 4:**  
@@ -950,8 +953,29 @@ Step Two:
 Step 3:
 ![Book Appointment Page - Step Three](/media/html-validation-booking-step-three.jpeg)
 
-**All Bookings Page:**
+**All Bookings Page - Owner View:**
 ![All Bookings Page](/media/html-validation-all-bookings-page.jpeg)
+
+**All Bookings Page - User View - No Appointments:**
+![All Bookings Page](/media/html-validation-all-bookings-page-no-bookings.jpeg)
+
+**All Bookings Page - User View - User Has Appointments:**
+![All Bookings Page](/media/html-validation-all-bookings-page-reg-user.jpeg)
+
+**Edit Booking Appointment Page**
+
+Step One:
+![Edit Appointment Page - Step One](/media/html-validation-edit-booking-step-one.jpeg)
+
+Step Two:
+![Edit Appointment Page - Step Two](/media/html-validation-edit-booking-step-two.jpeg)
+
+Step 3:
+![Edit Appointment Page - Step Three](/media/html-validation-edit-booking-step-three.jpeg)
+
+**Delete Booking Appointment Modal**
+
+![Delete Booking Appointment Modal](/media/html-validation-delete-bookings-modal.jpeg)
 
 #### CSS
 
@@ -1018,6 +1042,12 @@ To ensure conformity with web standards and accessibility requirements, the site
 Five types errors were identified on multiple pages:
 
 ![Python Code Validation Errors](/media/python-validator-errors.jpeg)
+
+Appointment app:
+
+![Appointment Forms](/media/python-validation-appointment-forms.jpeg)
+![Appointment URLs](/media/python-validation-appointment-url.jpeg)
+![Appointment Views](/media/python-validation-appointment-views.jpeg)
 
 The errors were addressed, as described below:
 
