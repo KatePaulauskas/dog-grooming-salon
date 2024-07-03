@@ -721,6 +721,9 @@ To add a new item to the gallery, the superuser needs to add a name and upload a
 | Click on the Services link on the Home page | Scrolls to Services section | Pass |
 | Click on the Groomers page link | Groomers page loads | Pass |
 | Click on the Gallery page link | Gallery page loads | Pass |
+| On the Gallery page click on the tab '2' | Next 8 images load | Pass |
+| On the Gallery page click on the tab 'PREV' | Previouse 8 images load | Pass |
+| On the Gallery page click on the tab 'NEXT' | Next 8 images load | Pass |
 | Click on the Contact page link | Contact page loads | Pass |
 | Click on the hamburger menu icon on the mobile or tablet devise | Menu items expand inside the header in a dropdown | Pass |
 | Hamburger menu icon on larger screens | Hidden | Pass |
