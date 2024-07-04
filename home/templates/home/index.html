@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block extra_head %}
+<link rel="preload" href="{{ about.image.url }}" as="image">
+{% endblock extra_head %}
+
 {% block content %}
 
 <!-- index.html content starts here -->
