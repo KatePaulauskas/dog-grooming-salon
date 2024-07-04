@@ -386,7 +386,6 @@ In addition to the selected fonts, the backdrop font across the website is also 
 
 ### Existing Features
 
-#### Website Features
 **Header**
 
 The header contains the navigation bar, logo, and 'Log In' and 'Book Now' buttons. The navigation bar is positioned on the left, while the logo is prominently displayed in the center, ensuring brand recognition. The logo features a drawing of a happy dog in colorful bubbles and foam, representing the brand and providing a clear visual hint about the site's focus on dog grooming.
@@ -1221,7 +1220,7 @@ The site was tested on various devices using multiple browsers including Chrome,
 | Galaxy Z Fold 5            | Pass   | Pass    | N/A    | Pass  |
 | Samsung Galaxy A51/71      | Pass   | Pass    | N/A    | Pass  |
 
-<details>
+</details>
 
 ### Lighthouse Testing
 
@@ -1377,6 +1376,8 @@ Due to time constraints, this issue could not be addressed in the current develo
 
 During the booking process, users encounter a step where selecting a groomer is mandatory before proceeding or returning to the previous step. Specifically, if a user attempts to navigate back to the first step of the booking process without selecting a groomer, they are prompted with an error message stating 'Please select an item in the list.' This issue also appears when editing an appointment; if the previously selected groomer is unavailable for the new date, the groomer dropdown remains blank and obstructs the user's ability to navigate back without making a selection. Although this behavior is part of the input validation process, it can frustrate users.
 
+![Bug - Step Two Booking process](/media/bug-step-two-booking-form.jpeg)
+
 *Steps to Reproduce:*
 
 1. Log In
@@ -1389,8 +1390,6 @@ During the booking process, users encounter a step where selecting a groomer is 
 
 *Reason for Non-Resolution:*
 Due to time constraints, this issue could not be addressed in the current development cycle. The functionality, as currently designed, enforces selection rules that ensure data integrity but at the cost of user convenience. Future iterations should seek a balance that maintains data validation without hindering user navigation and experience.
-
-![Bug - Step Two Booking process](/media/bug-step-two-booking-form.jpeg)
 
 ## Deployment
 

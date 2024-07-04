@@ -11,7 +11,6 @@ class About(models.Model):
     content = models.TextField()
     updated_on = models.DateTimeField(auto_now=True)
 
-
     """
     Add Meta class to the models to avoid 's'
     Being appended at the end of the model name in the Django admin panel
@@ -19,6 +18,7 @@ class About(models.Model):
     """
     class Meta:
         verbose_name_plural = "About"
+
 
 class Services(models.Model):
     id = models.AutoField(primary_key=True)

@@ -17,7 +17,7 @@ class Appointment(models.Model):
         ('completed', 'Completed'),
         ('cancelled', 'Cancelled'),
     ]
-    
+
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     service = models.ForeignKey(Services, on_delete=models.CASCADE)

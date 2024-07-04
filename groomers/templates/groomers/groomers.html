@@ -2,26 +2,29 @@
 {% load static %}
 {% block content %}
 
-<h1 class="text-uppercase text-center my-5">Meet our groomers</h1>
-<p class="mx-3 mx-lg-5 about-groomers text-center">Meet our team of professional and dedicated groomers 
-    who are passionate about providing top-notch care 
-    for your beloved pets. Each of our groomers brings 
-    a unique set of skills and a deep love for animals, 
-    ensuring that your pet receives the best grooming 
-    experience possible.</p>
+<div class="text-center my-5">
+    <h1 class="text-uppercase">Meet our groomers</h1>
+    <p class="mx-3 mx-lg-5 about-groomers">
+        Meet our team of professional and dedicated groomers who are passionate about providing top-notch care 
+        for your beloved pets. Each of our groomers brings a unique set of skills and a deep love for animals, 
+        ensuring that your pet receives the best grooming experience possible.
+    </p>
+</div>
+
 <div class="d-flex flex-column align-items-center">
     <a href="{% url 'appointment' %}" class="btn btn-book mt-3 w-45 mb-4">Book Now</a>
 </div>
+
 <div class="container-fluid p-0">
     <div class="row mx-3 mx-lg-5">
-        <div class="col-12 mt-3 left">
-            <div class="row"> 
-                {% for groomer in groomers %} 
+        <div class="col-12 mt-3">
+            <div class="row">
+                {% for groomer in groomers %}
                 <div class="col-12 col-sm-6 col-md-4 mb-4 my-1 p-0">
                     <div class="card mx-2 mx-lg-3">
                         <div class="card-body">
                             <div class="image-groomer-container">
-                                <img src="{{ groomer.groomer_image.url }}" class="img-fluid" alt=" {{ groomer.name }}"" width="300" height="450">
+                                <img src="{{ groomer.groomer_image.url }}" class="img-fluid" alt="{{ groomer.name }}" width="300" height="450">
                             </div>
                             <h2 class="card-title my-2">{{ groomer.name }}</h2>
                             <p class="text-center mb-1">{{ groomer.description | safe }}</p>
@@ -29,11 +32,13 @@
                     </div>
                 </div>
                 {% endfor %}
-             </div>
+            </div>
         </div>
     </div>
 </div>
+
 <div class="d-flex flex-column align-items-center">
     <a href="{% url 'appointment' %}" class="btn btn-book mt-3 w-45 mb-4">Book Now</a>
 </div>
+
 {% endblock %}
