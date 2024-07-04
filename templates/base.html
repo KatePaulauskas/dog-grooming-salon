@@ -50,6 +50,15 @@
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        
+        <!-- Metatags for social sharing -->
+        <meta property="og:title" content="Barks in Bubbles | Dog Grooming Salon">
+        <meta property="og:description" content="Barks in Bubbles is a premier dog grooming service providing top-notch care for your furry friends.">
+        <meta property="og:image" content="{% static 'images/logo/logo-barks-in-bubbles-high-res.webp' %}">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta property="og:url" content="https://8000-katepaulaus-doggrooming-98d5mf21glf.ws.codeinstitute-ide.net/">
+        <meta property="og:type" content="website">
     </head>
 
     <body class="d-flex flex-column min-vh-100">
@@ -117,7 +126,7 @@
 
                         <!-- Redirect to My Appointments page after login. Source: Real Python -->
                         <a href="{% url 'account_login' %}?next={% url 'my_appointments' %}" 
-                        class="btn btn-login me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Log In</a>
+                        class="btn btn-logout me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Log In</a>
                         <a href="{% url 'appointment' %}" class="btn btn-book me-2 mt-2">Book Now</a> 
                         {% endif %}
                     </div>

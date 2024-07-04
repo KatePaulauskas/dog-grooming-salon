@@ -266,5 +266,5 @@ class EditAppointmentWizard(LoginRequiredMixin, SessionWizardView):
 @login_required
 def cancel_action(request):
     messages.add_message(request, messages.INFO,
-                         "Action cancelled. No changes were made.")
+                         "Action cancelled. No changes were saved.")
     return redirect('my_appointments')

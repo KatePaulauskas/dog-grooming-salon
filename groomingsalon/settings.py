@@ -104,9 +104,7 @@ WSGI_APPLICATION = 'groomingsalon.wsgi.application'
 
 # Database configuration
 DATABASES = {
-    'default': dj_database_url.parse(
-        os.environ.get("DATABASE_URL", f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
-    )
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 if 'test' in sys.argv:

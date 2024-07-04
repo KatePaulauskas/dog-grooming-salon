@@ -1594,6 +1594,8 @@ The deployed project link can be found at the following URL: [Dog Grooming Salon
 - The colour palette for the site was designed using [Coolors](https://coolors.co/).
 - Site colours' accessibility was checked using [Adobe Color Accessibility Tool](https://color.adobe.com/).
 - The logo was created using [DALL-E](https://openai.com/index/dall-e/) based on the desired outcome description and colors' codes provided.
+- Favicon files were created using [Favicon.io](https://favicon.io/favicon-converter/).
+- Images for the site were converted and compressed using [11zon](https://www.11zon.com/) tool.
 
 ### Media
 
