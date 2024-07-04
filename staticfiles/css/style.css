@@ -178,7 +178,7 @@ header {
 }
 
 .gallery-img {
-    max-width: 60% !important;
+    max-width: 100% !important;
     border-radius: 0.375rem;
 }
 
