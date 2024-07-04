@@ -178,7 +178,7 @@ header {
 }
 
 .gallery-img {
-    max-width: 100%;
+    max-width: 60% !important;
     border-radius: 0.375rem;
 }
 
@@ -381,7 +381,7 @@ footer {
 @media screen and (min-width: 576px) {
     /* Anchors offset */
     html {
-        scroll-padding-top: 380px;
+        scroll-padding-top: 350px;
     }
 
     /* H1 style */
