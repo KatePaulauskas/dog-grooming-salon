@@ -1046,12 +1046,6 @@ Five types errors were identified on multiple pages:
 
 ![Python Code Validation Errors](/media/python-validator-errors.jpeg)
 
-Appointment app:
-
-![Appointment Forms](/media/python-validation-appointment-forms.jpeg)
-![Appointment URLs](/media/python-validation-appointment-url.jpeg)
-![Appointment Views](/media/python-validation-appointment-views.jpeg)
-
 The errors were addressed, as described below:
 
 **1. W293: Blank Line Contains Whitespace**
@@ -1078,10 +1072,87 @@ After testign each file with Python code, no more errors were found:
 
 ![Python Code Validation](/media/python-validator.jpeg)
 
+Below are examples from several pages containing the highest amount of code.
+
+Appointment app:
+
+![Appointment Forms](/media/python-validation-appointment-forms.jpeg)
+![Appointment URLs](/media/python-validation-appointment-url.jpeg)
+![Appointment Views](/media/python-validation-appointment-views.jpeg)
+
 
 ### Responsivness
+
+The site was tested on various devices using multiple browsers including Chrome, Firefox, Microsoft Edge, and Safari. During these tests, no issues were found with the site layout, loading times, or navigation across different pages:
+
+| Device/Browser     | Chrome | Firefox | Safari | Edge |
+|--------------------|--------|---------|--------|------|
+| MacBook Pro        | Pass   | Pass    | Pass   | N/A  |
+| MacBook Air        | Pass   | Pass    | Pass   | N/A  |
+| Windows 10 Desktop | Pass   | Pass    | N/A    | Pass |
+| Windows 11 Laptop  | Pass   | Pass    | N/A    | Pass |
+| iMac               | Pass   | Pass    | Pass   | N/A  |
+| iPad Pro           | Pass   | N/A     | Pass   | N/A  |
+| iPad Air           | Pass   | N/A     | Pass   | N/A  |
+| iPhone 12          | Pass   | N/A     | Pass   | N/A  |
+| iPhone 11          | Pass   | N/A     | Pass   | N/A  |
+| Samsung Galaxy S21 | Pass   | Pass    | N/A    | Pass |
+| Samsung Galaxy Tab | Pass   | N/A     | N/A    | Pass |
+| Google Pixel 5     | Pass   | Pass    | N/A    | Pass |
+| Huawei P40         | Pass   | Pass    | N/A    | N/A  |
+| OnePlus 9          | Pass   | Pass    | N/A    | Pass |
+| Microsoft Surface  | Pass   | Pass    | N/A    | Pass |
+
 ### Lighthouse Testing
+
+To ensure the accessibility requirements are met for the current project, Lighthouse testing was conducted for the site:
+
+**Home page:**
+![Initial Home Page Lighthouse Results](/media/lighthouse-home-page-initial.png)
+
+To improve performance, it was ensured that all images used on the site were converted to WEBP format and resized. Additionally, the styles of hero images, services, gallery, and groomers' images were enhanced by adding height and width attributes to optimize cumulative layout shift.
+
+![Improved Home Page Lighthouse Results](/media/lighthouse-home-page-improved.jpeg)
+
+Unfortunately, there is no way to improve Best Practices scores on some pages, as pages with images stored on Cloudinary trigger specific issues related to Cloudinary. It should be considered to use a different cloud-based image management service in the future.
+
+![Cloudinary Best Practices Issue](/media/cloudinary-best-practices-issue.jpeg)
+
+All other pages showed positive results:
+
+**Groomers Page:**
+![Page Lighthouse Results]
+
+**Gallery Page:**
+
+![Gallery Page Lighthouse Results](/media/lighthouse-gallery-page.jpeg)
+
+**Contact Us Page:**
+
+![Contact Us Page Lighthouse Results](/media/lighthouse-contact-us-page.jpeg)
+
+**Booking form page:**
+
+![Booking form Page Lighthouse Results](/media/lighthouse-booking-form-page.jpeg)
+
+**All Bookings Page:**
+
+![All Bookings Page Lighthouse Results](/media/lighthouse-all-bookings-page.jpeg)
+
+**Sign Up Page**
+![Page Lighthouse Results](/media/lighthouse-sign-up-page.jpeg)
+
+**Log In Page**
+![Sign Up Page Lighthouse Results](/media/lighthouse-log-in-page.jpeg)
+
+**Log Out Page**
+
+![Log Out Page Lighthouse Results](/media/lighthouse-sign-out-page.jpeg)
+
+
 ### Accessibility Testing
+
+The accessibility of the site was tested [Adoby Color Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer).
 
 ### Bugs
 
