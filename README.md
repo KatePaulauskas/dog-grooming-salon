@@ -377,6 +377,11 @@ For the body text, "Khula" was chosen for its clean and modern appearance. This 
 
 The combination of "Righteous" for main headings, "Cormorant Upright" for subheadings and smaller headings, and "Khula" for paragraphs creates a well-rounded and visually engaging typography approach for the Barks in Bubbles website. Each font was carefully selected to reflect the brand's personality, enhance readability, and ensure a cohesive user experience. The consistent use of the English Violet color (#3f3850) ties all the text elements together, reinforcing the site's elegant and professional appearance.
 
+**Backdrop Font**
+
+In addition to the selected fonts, the backdrop font across the website is also sans-serif. This backdrop enhances the modern and clean aesthetic, supporting the visual hierarchy and helping foreground content to pop against a clear, unobtrusive background.
+
+
 ## Features
 
 ### Existing Features
@@ -908,6 +913,8 @@ To add a new item to the gallery, the superuser needs to add a name and upload a
 ### Validator Testing
 
 #### HTML
+<details>
+  <summary>HTML Testing</summary>
 
 To ensure adherence to web standards and improve accessibility, the site's HTML was submitted to [W3C validation testing](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarks-in-bubbles-a17d3839532d.herokuapp.com%2F#l163c273).
 
@@ -1030,7 +1037,12 @@ Step 3:
 
 ![Delete Booking Appointment Modal](/media/html-validation-delete-bookings-modal.jpeg)
 
+</details>
+
 #### CSS
+
+<details>
+  <summary>CSS Testing</summary>
 
 For compliance with web standards and accessibility guidelines, the site's CSS code was checked using the [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbarks-in-bubbles-a17d3839532d.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en). 
 
@@ -1074,7 +1086,12 @@ When testing the CSS code through the direct input, no issues identified:
 
 ![CSS Validation Direct Input](/media/css-validation-direct-input.jpeg)
 
+</details>
+
 #### JavaScript
+
+<details>
+  <summary>JavaScript Testing</summary>
 
 To enhance adherence to web standards and ensure accessibility, the site's JavaScript code was validated using the [JSHint Validator](https://jshint.com/). No errors were identified in the JavaScript code.
 
@@ -1088,7 +1105,12 @@ All the warnings are **ES6 Features Warnings**
 
 - Solution: The code should be interpreted as ES6. Having Python runtime version specified in the runtime.txt file helps to address this warning. 
 
+</details>
+
 #### Python
+
+<details>
+  <summary>Python Testing</summary>
 
 To ensure conformity with web standards and accessibility requirements, the site's Python code from every relevant file was tested using the [PEP8 Python Validator](https://pep8ci.herokuapp.com). 
 
@@ -1118,42 +1140,93 @@ The errors were addressed, as described below:
 - Description: This error occurs when a continuation line (following an opening parenthesis) is not indented correctly.
 - Resolution: It was ensured that continuation lines with such error are indented to the same level as the opening parenthesis.
 
-After testign each file with Python code, no more errors were found: 
+After testign each file with Python code, no more errors were found:
 
-![Python Code Validation](/media/python-validator.jpeg)
+**Home app:**
 
-Below are examples from several pages containing the highest amount of code.
+![Home Models](/media/python-validation-home-models.jpeg)
+![CHome Admin](/media/python-validation-home-admin.jpeg)
+![Home Views](/media/python-validation-home-view.jpeg)
+![Home URLs](/media/python-validation-home-urls.jpeg)
 
-Appointment app:
+**Groomers app:**
 
+![Groomers Models](/media/python-validation-groomers-models.jpeg)
+![Groomers Admin](/media/python-validation-groomers-admin.jpeg)
+![Groomers Views](/media/python-validation-gallery-view.jpeg)
+![Groomers URLs](/media/python-validation-groomers-url.jpeg)
+
+
+**Appointment app:**
+
+![Contact Request Models](/media/python-validation-appointment-models.jpeg)
+![Contact Request Admin](/media/python-validation-appointment-admin.jpeg)
 ![Appointment Forms](/media/python-validation-appointment-forms.jpeg)
-![Appointment URLs](/media/python-validation-appointment-url.jpeg)
 ![Appointment Views](/media/python-validation-appointment-views.jpeg)
+![Appointment URLs](/media/python-validation-appointment-url.jpeg)
 
+**Contact Request app:**
+
+![Contact Request Models](/media/python-validation-contact-request-model.jpeg)
+![Contact Request Admin](/media/python-validation-contact-request-admin.jpeg)
+![Contact Request Views](/media/python-validation-contact-request-views.jpeg)
+![Contact Request Forms](/media/python-validation-contact-request-forms.jpeg)
+![Contact Request URLs](/media/python-validation-contact-request-url.jpeg)
+
+**Gallery app:**
+
+![Gallery Models](/media/python-validation-gallery-model.jpeg)
+![Gallery Admin](/media/python-validation-gallery-admin.jpeg)
+![Gallery Views](/media/python-validation-gallery-view.jpeg)
+![Gallery URLs](/media/python-validation-gallery-urls.jpeg)
+
+</details>
 
 ### Responsivness
 
+<details>
+  <summary>Responsivness Testing</summary>
+
 The site was tested on various devices using multiple browsers including Chrome, Firefox, Microsoft Edge, and Safari. During these tests, no issues were found with the site layout, loading times, or navigation across different pages:
 
-| Device/Browser     | Chrome | Firefox | Safari | Edge |
-|--------------------|--------|---------|--------|------|
-| MacBook Pro        | Pass   | Pass    | Pass   | N/A  |
-| MacBook Air        | Pass   | Pass    | Pass   | N/A  |
-| Windows 10 Desktop | Pass   | Pass    | N/A    | Pass |
-| Windows 11 Laptop  | Pass   | Pass    | N/A    | Pass |
-| iMac               | Pass   | Pass    | Pass   | N/A  |
-| iPad Pro           | Pass   | N/A     | Pass   | N/A  |
-| iPad Air           | Pass   | N/A     | Pass   | N/A  |
-| iPhone 12          | Pass   | N/A     | Pass   | N/A  |
-| iPhone 11          | Pass   | N/A     | Pass   | N/A  |
-| Samsung Galaxy S21 | Pass   | Pass    | N/A    | Pass |
-| Samsung Galaxy Tab | Pass   | N/A     | N/A    | Pass |
-| Google Pixel 5     | Pass   | Pass    | N/A    | Pass |
-| Huawei P40         | Pass   | Pass    | N/A    | N/A  |
-| OnePlus 9          | Pass   | Pass    | N/A    | Pass |
-| Microsoft Surface  | Pass   | Pass    | N/A    | Pass |
+| Device/Browser             | Chrome | Firefox | Safari | Edge  |
+|----------------------------|--------|---------|--------|-------|
+| MacBook Pro                | Pass   | Pass    | Pass   | Pass  |
+| MacBook Air                | Pass   | Pass    | Pass   | Pass  |
+| Windows 10 Desktop         | Pass   | Pass    | N/A    | Pass  |
+| Windows 11 Laptop          | Pass   | Pass    | N/A    | Pass  |
+| iMac                       | Pass   | Pass    | Pass   | Pass  |
+| iPad Pro                   | Pass   | N/A     | Pass   | N/A   |
+| iPad Air                   | Pass   | N/A     | Pass   | N/A   |
+| iPhone 12                  | Pass   | N/A     | Pass   | N/A   |
+| iPhone 11                  | Pass   | N/A     | Pass   | N/A   |
+| Samsung Galaxy S21         | Pass   | Pass    | N/A    | Pass  |
+| Samsung Galaxy Tab         | Pass   | N/A     | N/A    | Pass  |
+| Google Pixel 5             | Pass   | Pass    | N/A    | Pass  |
+| Huawei P40                 | Pass   | Pass    | N/A    | N/A   |
+| OnePlus 9                  | Pass   | Pass    | N/A    | Pass  |
+| Microsoft Surface          | Pass   | Pass    | N/A    | Pass  |
+| iPhone SE                  | Pass   | N/A     | Pass   | N/A   |
+| iPhone XR                  | Pass   | N/A     | Pass   | N/A   |
+| iPhone 12 Pro              | Pass   | N/A     | Pass   | N/A   |
+| iPhone 14 Pro Max          | Pass   | N/A     | Pass   | N/A   |
+| iPhone 15 Pro              | Pass   | N/A     | Pass   | N/A   |
+| Pixel 3 XL                 | Pass   | Pass    | N/A    | Pass  |
+| Pixel 7                    | Pass   | Pass    | N/A    | Pass  |
+| Samsung Galaxy S8+         | Pass   | Pass    | N/A    | Pass  |
+| Samsung Galaxy S20 Ultra   | Pass   | Pass    | N/A    | Pass  |
+| iPad Mini                  | Pass   | N/A     | Pass   | N/A   |
+| Surface Pro 7              | Pass   | Pass    | N/A    | Pass  |
+| Surface Duo                | Pass   | Pass    | N/A    | Pass  |
+| Galaxy Z Fold 5            | Pass   | Pass    | N/A    | Pass  |
+| Samsung Galaxy A51/71      | Pass   | Pass    | N/A    | Pass  |
+
+<details>
 
 ### Lighthouse Testing
+
+<details>
+  <summary>Lighthouse Testing</summary>
 
 To ensure the accessibility requirements are met for the current project, Lighthouse testing was conducted for the site:
 
@@ -1199,8 +1272,12 @@ All other pages showed positive results:
 
 ![Log Out Page Lighthouse Results](/media/lighthouse-sign-out-page.jpeg)
 
+</details>
 
 ### Accessibility Testing
+
+<details>
+  <summary>Accessibility Testing</summary>
 
 The accessibility of the site was tested using the [Adoby Color Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer).
 
@@ -1216,6 +1293,7 @@ Multiple tests were conducted since the site features a white background, dark b
 
 ![Color Blind Safe Checker Color Pallet with White Background, Pink Excluded](/media/color-blind-checker-whithout-pink.jpeg)
 
+</details>
 
 ### Bugs
 
@@ -1273,7 +1351,44 @@ X_FRAME_OPTIONS = 'ALLOW-FROM https://barks-in-bubbles-a17d3839532d.herokuapp.co
 
 ### Remaining Bugs
 
-In step two of the booking process, during the initial booking, users must choose a groomer to go back to the previous step. If a groomer is not selected, a notification stating 'Please select an item in the list' appears. The same issue occurs during the editing of an appointment. If the previously selected groomer is unavailable on the selected date, the groomer dropdown is blank. To proceed back to step one, the user must select a groomer. Although this is part of the validation process, it does not provide the best user experience. This bug remains unresolved due to time constraint.
+
+**Issue 1: Inconsistent Navbar Collapse Behavior Across Different Pages**
+
+When the navbar is collapsed on smaller devices, two anchor links ("About" and "Services") on the homepage behave as expected because `scroll-padding-top` is set correctly. This ensures that when these links are clicked, the page scrolls to the appropriate section with the navbar not covering the content, and the navbar remains expanded.
+
+![Anchor Link Accessed From Home Page](/media/anchor-link-accessed-from-home-page.jpeg)
+
+However, when these same links are accessed from another page (e.g., "Groomers" or "Gallery"), clicking the links leads to the homepage as expected, the navbar folds back, and the `scroll-padding-top` is applyed. This results in the targeted content appearing in the middle of the screen, rather than at the top. This behavior affects user experience by making the navigation seem inconsistent.
+
+![Anchor Link Accessed Not From Home Page](/media/anchor-link-accessed-not-from-home-page.jpeg)
+
+*Steps to Reproduce:*
+
+1. Navigate to the homepage on a mobile device or a narrow browser window where the navbar collapses into a hamburger menu.
+2. Click the hamburger menu and select "About" or "Services."
+3. Observe that the navbar remains expanded and the page scrolls correctly.
+4. Navigate to the "Groomers" or "Gallery" page and repeat the process.
+5. Notice that after redirection and auto-collapse of the navbar, the content appears in the middle of the screen.
+
+*Reason for Non-Resolution:* 
+Due to time constraints, this issue could not be addressed in the current development cycle. Although the functionality allows users to access the information despite the bug, improving this aspect would enhance the user experience significantly.
+
+**Issue 2: Groomer Selection Navigation Issue**
+
+During the booking process, users encounter a step where selecting a groomer is mandatory before proceeding or returning to the previous step. Specifically, if a user attempts to navigate back to the first step of the booking process without selecting a groomer, they are prompted with an error message stating 'Please select an item in the list.' This issue also appears when editing an appointment; if the previously selected groomer is unavailable for the new date, the groomer dropdown remains blank and obstructs the user's ability to navigate back without making a selection. Although this behavior is part of the input validation process, it can frustrate users.
+
+*Steps to Reproduce:*
+
+1. Log In
+2. Start the initial booking process.
+3. Reach the second step where a groomer must be selected.
+4. Attempt to return to the first step without selecting a groomer from the dropdown.
+5. Observe the validation message that prevents navigation: 'Please select an item in the list.'
+6. Edit an existing appointment and change the date to a time when the previously selected groomer is unavailable.
+7. Try to navigate back to the first step without selecting a new groomer.
+
+*Reason for Non-Resolution:*
+Due to time constraints, this issue could not be addressed in the current development cycle. The functionality, as currently designed, enforces selection rules that ensure data integrity but at the cost of user convenience. Future iterations should seek a balance that maintains data validation without hindering user navigation and experience.
 
 ![Bug - Step Two Booking process](/media/bug-step-two-booking-form.jpeg)
 
