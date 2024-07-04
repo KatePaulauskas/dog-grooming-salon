@@ -1,10 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-
-{% block extra_head %}
-<link rel="preload" href="{{ about.image.url }}" as="image">
-{% endblock extra_head %}
-
 {% block content %}
 
 <!-- index.html content starts here -->
@@ -19,7 +14,7 @@
                 <a href="{% url 'appointment' %}" class="btn btn-book mt-3 w-45 mb-4">Book Now</a>
             </div>
             <div class="heroimage-container">
-                <img src="{{ about.image.url }}" class="hero-img" alt="Welcome Image">
+                <img src="{{ about.image.url }}" class="hero-img" alt="Welcome Image" width="1920" height="1080">
             </div>
 
             <!-- About Us -->
