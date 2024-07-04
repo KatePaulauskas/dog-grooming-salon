@@ -703,14 +703,57 @@ To add a new item to the gallery, the superuser needs to add a name and upload a
 ## Technologies used
 
 ### Languages
-### Frameworks
-### Database
+
+* **Python (version 3.12.3):** The primary programming language used for backend logic in this project.
+
+* **HTML, CSS & Django Template Language:** Employed for structuring and designing the webpages, ensuring a seamless user interface.
+
+* **JavaScript:** Used to add interactivity for editing or deleting appointments directly on the web interface.
+
+### Libraries and Frameworks
+
+* **Django (version 4.2.13):** The primary framework used to build this project, providing a robust back-end platform that includes an automatically configured admin panel and numerous helper template tags for efficient coding.
+
+* **Bootstrap (version 5.3.3):** The base front-end framework used to create a responsive and visually appealing design that works seamlessly with Django's backend functionalities.
+
+* **Django Allauth (version 0.57.2):** Integrated for authentication processes, enhancing the site with login/logout capabilities and social account integration.
+
+* **Django Summernote (version 0.8.20.0):** Allowed adding rich text editing capabilities, enabling dynamic content management through the admin panel.
+
+* **Django Formtools (version 2.5.1):** Utilised specifically for implementing a multi-step form wizard that guides users through the process of booking grooming appointments, ensuring a user-friendly experience.
+
+### Technologies
+
+* **ElephantSQL:** Acts as the PostgreSQL hosting service, managing the project's database operations.
+
+* **Cloudinary (version 1.40.0):** Provides a solution for hosting and managing static and media files, optimizing content delivery.
+
+* **Heroku:** The platform for hosting the application, offering robust deployment capabilities.
+
+* **GitHub:** Used for source code management and as a collaborative platform, also facilitating project tracking through its Kanban board.
+
+* **Gitpod:** A cloud-based IDE that supports coding, running, and debugging the project directly within the browser.
+
+#### Dependencies:
+
+- asgiref==3.8.1
+- crispy-bootstrap5==0.7
+- dj-database-url==0.5.0
+- dj3-cloudinary-storage==0.0.6
+- django-crispy-forms==2.1
+- gunicorn==20.1.0
+- oauthlib==3.2.2
+- psycopg2==2.9.9
+- python3-openid==3.2.0
+- requests-oauthlib==2.0.0
+- sqlparse==0.5.0
+- urllib3==1.26.18
+- whitenoise==5.3.0
 
 ## Testing
 
 ### Manual Testing
 #### Site features and behaviour
-### Feature Testing
 
 | Action/Feature          | Expected Behavior       | Status         |
 |-------------------------|-------------------------|----------------|
@@ -868,13 +911,7 @@ To add a new item to the gallery, the superuser needs to add a name and upload a
 
 To ensure adherence to web standards and improve accessibility, the site's HTML was submitted to [W3C validation testing](https://validator.w3.org/nu/?doc=https%3A%2F%2Fbarks-in-bubbles-a17d3839532d.herokuapp.com%2F#l163c273).
 
-The following erros were identified and addressed:
-
 - On the home page, the following issues was identified:
-
-![Home page HTML Validator errors](/media/html-checker-home-page-errors-part-one.jpeg)
-
-![Home page HTML Validator errors](/media/html-checker-home-page-errors-part-two.jpeg)
 
 **Error 1 type:** 
 ```
@@ -888,17 +925,23 @@ It was identified that the issue with the `p` elements appearing as children of 
 Error: No 'p' element in scope but a 'p' end tag seen.
 ```
 
-The code causign Error 1 type and Error 2: 
-![HTML Home Page Errors Source Code](/media/html-validator-home-page-errors-part-one-source-code.jpeg)
+![Home page HTML Validator errors](/media/html-checker-home-page-errors-part-one.jpeg)
 
 It was identified that this issue is also caused by Summernote styling conflicting with the HTML style settings.
 
 To ensure consistent design across the site and that the content matches the project's styling, the content added through the back end is wrapped in HTML tags, and global CSS styles are applied to this content. Without this approach, it is impossible to have a consistently styled home page. Therefore, the p element cannot be removed from the HTML. The fonts used in the project could potentially be imported into Summernote, but due to time constraints, it was decided not to investigate this possibility further.
 
+The code from Summernote causing Error 1 type and Error 2: 
+![HTML Home Page Errors Source Code](/media/html-validator-home-page-errors-part-one-source-code.jpeg)
+
+
 **Error 3 type:** 
 ```
 CSS: font-optical-sizing: Property font-optical-sizing doesn't exist.
 ```
+
+![Home page HTML Validator errors](/media/html-checker-home-page-errors-part-two.jpeg)
+
 The code casuign the error: 
 
 ![HTML Home Page Errors Source Code](/media/html-validator-home-page-errors-part-two-source-code.jpeg)
@@ -924,6 +967,16 @@ The issue was resolved:
 
 - There were multiple warnings about trailing slashes on void elements, which were fixed by removing the trailing slashes and extra spaces.
 
+**Error 5:**
+
+Sign Up Page has resulted in a few errors:
+
+![Sign Up Page](/media/html-validator-sign-up-page.jpeg)
+
+This code is pulled from all-auth package and it was not possible to locate HTML file where the code is stored, therefore these erros remain unresolved due to the time limitation:
+
+![Sign Up Page HTML errors source](/media/html-sign-up-error-cause.jpeg)
+
 The rest of the pages passed validation with no errors.
 
 **Groomers Page:**
@@ -937,10 +990,7 @@ The rest of the pages passed validation with no errors.
 ![Contact Us Page](/media/html-validation-contact-us-page.jpeg)
 
 **Log In Page:**
-![Log In Page]()
-
-**Sign Up Page:**
-![Sign Up Page]()
+![Log In Page](/media/html-validator-log-in-page.jpeg)
 
 **Log Out Page:**
 ![Log Out Page](/media/html-validation-log-out-page.jpeg)
@@ -1152,7 +1202,20 @@ All other pages showed positive results:
 
 ### Accessibility Testing
 
-The accessibility of the site was tested [Adoby Color Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer).
+The accessibility of the site was tested using the [Adoby Color Contrast Checker](https://color.adobe.com/create/color-contrast-analyzer).
+
+![Contrast Checker](/media/contrast-checker.jpeg)
+
+The site's colors were also evaluated for accessibility to ensure they are safe for color-blind users using the [Adoby Color accessibility tool](https://color.adobe.com/create/color-accessibility), which returned the result: 'No conflicts found. Swatches are color-blind safe'.
+
+![Color Blind Safe Checker Color Pallet](/media/color-blind-safe-checker-color-pallet.jpeg)
+
+Multiple tests were conducted since the site features a white background, dark blue text, and four additional colors used for buttons and other text that needs to stand out:
+
+![Color Blind Safe Checker Color Pallet with White Background, Green Excluded](/media/color-blind-safe-checker-color-pallet-white.jpeg)
+
+![Color Blind Safe Checker Color Pallet with White Background, Pink Excluded](/media/color-blind-checker-whithout-pink.jpeg)
+
 
 ### Bugs
 
