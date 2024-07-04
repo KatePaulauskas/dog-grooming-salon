@@ -261,3 +261,10 @@ class EditAppointmentWizard(LoginRequiredMixin, SessionWizardView):
                              "Appointment has been updated!")
 
         return redirect('my_appointments')
+
+
+@login_required
+def cancel_action(request):
+    messages.add_message(request, messages.INFO,
+                         "Action cancelled. No changes were made.")
+    return redirect('my_appointments')

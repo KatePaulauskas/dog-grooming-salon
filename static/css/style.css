@@ -11,7 +11,7 @@ body {
 /* H1 style */
 h1 {
     font-family: "Righteous", sans-serif !important;
-    font-size: 180% !important;
+    font-size: 160% !important;
     color: #3f3850
 }
 
@@ -91,10 +91,14 @@ header {
 
 .btn-login:active {
     border: 2px solid #3f3850 !important;
+    background-color: #14cfdb !important;
+    color: #3f3850 !important;
+
 }
 
 .btn-login:visited {
     color: #14cfdb;
+    background-color: #3f3850 !important;
     border: 2px solid #3f3850 !important;
 }
 
@@ -167,7 +171,7 @@ header {
     display: block;
 }
 
-/* Style Service and Gallery images */ 
+/* Style Service images */ 
 
 .service-img {
     width: 100%;
@@ -175,19 +179,6 @@ header {
     max-width: 100%;
     border-radius: 0.375rem;
     object-fit: cover;
-}
-
-.gallery-img {
-    max-width: 100% !important;
-    border-radius: 0.375rem;
-}
-
-.img-fluid {
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-    border-radius: 0.375rem;
 }
 
 /* Style Services titles */
@@ -203,6 +194,12 @@ h2.card-title
     text-align: justify;
 }
 
+/* Style Gallery images */
+.gallery-img {
+    max-width: 100% !important;
+    border-radius: 0.375rem;
+}
+
 /* Style pagination bar */
 .pagination .page-item.active .page-link {
     background-color: #ff5cb7;
@@ -212,6 +209,15 @@ h2.card-title
 .pagination .page-item .page-link {
     background-color: #FFEBF6;
     border-color: #50514F;
+}
+
+/* Style Groomer images */
+.img-fluid {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 0.375rem;
 }
 
 /* Style Forms labels font */

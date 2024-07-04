@@ -21,7 +21,7 @@
                 {{ wizard.form|crispy }}
                 {% csrf_token %}
                 <div class="d-flex justify-content-center">
-                    <a href="{% url 'my_appointments' %}" class="btn btn-cancel mx-1">Cancel</a>
+                    <a href="{% url 'cancel_action' %}" class="btn btn-cancel mx-1">Cancel</a>
                     <button class="btn btn-appointment mx-1" type="submit">{% translate "Next Step" %}</button>
                 </div>
             </form>

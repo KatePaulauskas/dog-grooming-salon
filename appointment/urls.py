@@ -5,6 +5,7 @@ from .views import (
     appointment_delete,
     edit_appointment,
     EditAppointmentWizard,
+    cancel_action,
 )
 from .forms import StepOneForm, StepTwoForm, StepThreeForm
 
@@ -23,4 +24,5 @@ urlpatterns = [
          name='edit_appointment'),
     path('edit_appointment/', EditAppointmentWizard.as_view(FORMS),
          name='edit_appointment'),
+    path('cancel_action/', cancel_action, name='cancel_action'),
 ]

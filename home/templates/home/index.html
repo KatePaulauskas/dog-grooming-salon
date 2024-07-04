@@ -19,7 +19,7 @@
 
             <!-- About Us -->
             <section id="about">
-                <h2 class="my-4 text-center">{{ about.title }}</h2>
+                <h2 class="mt-4 mt-lg-5 mb-0 text-center">{{ about.title }}</h2>
                 <p class="about-us mx-1 mx-sm-2 mx-md-3 mx-lg-5 text-center">
                     {{ about.content | safe }}</p>
             </section>
@@ -29,7 +29,7 @@
 
 <!-- Service List -->
 <section id="services">
-    <h2 class="text-center">~Services~</h2>
+    <h2 class="text-center">~ Services ~</h2>
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 mt-3 left">
@@ -44,7 +44,7 @@
                                     class="service-img" loading="lazy" alt="{{ service.name }}">
                                 </div>
                                 {{ service.description | safe }}
-                                <p class="mb-1"><strong>Price:</strong> {{ service.price }}</p>
+                                <p class="mb-1"><strong>Price:</strong> €{{ service.price }}</p>
                                 <p class="mb-1"><strong>Duration:</strong> {{ service.duration_in_hours_minutes }}</p>
                             </div>
                         </div>
