@@ -1,6 +1,13 @@
 from django.views.generic import ListView
 from .models import About, Services
+from django.shortcuts import render
+from django.shortcuts import render
 
+def test_error(request):
+    """
+    View that deliberately raises an exception to test 500 error page.
+    """
+    raise Exception("This is a test 500 error!")
 
 class HomeView(ListView):
     model = Services

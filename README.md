@@ -113,7 +113,7 @@ By focusing on these key areas, the Barks in Bubbles website aims to deliver a p
 
 At the Scope Plane features and content were developed by defining User Scenarios to understand how different users will interact with the site, as well as Epics and User Stories to break down these scenarios into manageable tasks and features.
 
-### - User Scenarios -
+#### - User Scenarios -
 
 **First Time User:**
 
@@ -127,7 +127,7 @@ Returning users can quickly log in to their accounts to view and manage their ap
 
 Veterinary clinics, dog trainers, breeders, and animal shelters can find comprehensive information about the salon's services and expertise. They can view the quality of grooming services through the gallery, and contact the salon for potential collaborations using the dedicated contact form.
 
-### - User Stories -
+#### - User Stories -
 
 **Epic 1: Homepage Above Fold and Navigation**
 
@@ -265,9 +265,6 @@ To enhance the functionality of the Barks in Bubbles application, two additional
 ![Gallery Model](/media/gallery-model.jpeg)
 
 These models enable superusers to easily keep the website content up-to-date with fresh information and images, ensuring that visitors always have access to the latest details about the salon and its services.
-
-
-
 
 
 ### Skeleton
@@ -636,6 +633,12 @@ The footer is displayed at the bottom of every page and contains essential infor
 
 ![Footer](/media/footer.jpeg)
 
+**Custom Error Pages**
+
+In addition to the core functionalities of the site, custom error pages for 404 and 500 errors have been implemented to enhance the user experience. These error pages provide clear and helpful messages when a user encounters a broken link or when an internal server error occurs. By guiding users back to the home page, these error pages ensure a seamless browsing experience even in the event of an error. 
+
+![404 Error Page](/media/404-error-page.jpeg)
+
 #### Admin Panel Features
 
 A superuser, who is presumably the owner of a salon, can access the admin panel, where they get additional functionalities:
@@ -694,14 +697,15 @@ To add a new item to the gallery, the superuser needs to add a name and upload a
 
 ### Future Features
 
-1. Implement validation against double bookings and overlapping appointments in the admin panel when editing or scheduling appointments.
-2. Add functionality to respond to inquiries via email from the admin panel.
-3. Enable password recovery and reset functionality for existing users.
-4. Implement email notifications for when an appointment is booked, rescheduled, or deleted.
-5. Offer services with different durations and adjust the booking flow accordingly.
-6. Implement functionality to ensure certain services are performed only by specific groomers.
-7. Add a notes field for the superuser to be able to add comments to appointments.
-8. Provide more tailored services, taking into consideration the dog’s breed and size.
+1. Enable password recovery and reset functionality for existing users.
+2. Implement email notifications for when an appointment is booked, rescheduled, or deleted.
+3. Offer services with different durations and adjust the booking flow accordingly.
+4. Implement functionality to ensure certain services are performed only by specific groomers.
+5. Add a notes field for the superuser to be able to add comments to appointments.
+6. Provide more tailored services, taking into consideration the dog’s breed and size.
+7. Implement validation against double bookings and overlapping appointments in the admin panel when editing or scheduling appointments.
+8. Add functionality to respond to inquiries via email from the admin panel.
+9. Implement reviews and feedback collection from the existing customers.
 
 ## Technologies used
 
@@ -737,7 +741,7 @@ To add a new item to the gallery, the superuser needs to add a name and upload a
 
 * **Gitpod:** A cloud-based IDE that supports coding, running, and debugging the project directly within the browser.
 
-#### Dependencies:
+#### Dependencies
 
 - asgiref==3.8.1
 - crispy-bootstrap5==0.7
@@ -1167,6 +1171,11 @@ The errors were addressed, as described below:
 
 After testing each file with Python code, no more errors were found:
 
+**Project URLs & Views**
+
+[Progect Views](/media/python-validation-project-view.jpeg)
+![Project URLs](/media/python-validation-project-urls.jpeg)
+
 **Home app:**
 
 ![Home Models](/media/python-validation-home-models.jpeg)
@@ -1374,7 +1383,7 @@ X_FRAME_OPTIONS = 'ALLOW-FROM https://barks-in-bubbles-a17d3839532d.herokuapp.co
 
 ```
 
-### Remaining Bugs
+#### Remaining Bugs
 
 
 **Issue 1: Inconsistent Navbar Collapse Behaviour Across Different Pages**
@@ -1564,6 +1573,7 @@ The deployed project link can be found at the following URL: [Dog Grooming Salon
 - To retrieve the selected service, groomer, and date stored in the session, the `get_object_or_404` method was used following instructions from [GeeksforGeeks](https://www.geeksforgeeks.org/get_object_or_404-method-in-django-models/).
 - WizardView form application was used to enhance booking process utilisign the following sources: [Medium](https://medium.com/@rts_16853/complete-example-of-django-multi-step-form-with-dynamic-form-choices-36dc1e9a2f48) and [Django Form Tools](https://django-formtools.readthedocs.io/en/latest/wizard.html).
 - To ensure that only authenticated users can access both function-based and class-based Appointment views [Django Documentation](https://docs.djangoproject.com/en/5.0/topics/auth/default/#the-login-required-decorator) instructions were used.
+- Error pages 404 and 500 were set up using instructions provided by the Code Institute course facilitator: "Error Pages in Django."
 
 ### Content & Design
 
@@ -1587,3 +1597,8 @@ The deployed project link can be found at the following URL: [Dog Grooming Salon
 
 - To resolve 'Mixed Content Errors' instruction from [Stack Overflow](https://stackoverflow.com/questions/48508750/how-to-force-https-in-a-django-project-using-cloudinary) was used.
 - To resolve issue with 'X-Frame-Options Deny' instructions from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options) were used.
+
+## Acknowledgements
+- I would like to extend my heartfelt gratitude to my mentor, Dick Vlaanderen, for his invaluable guidance and support throughout this project. His insights, encouragement, and constructive feedback were instrumental in helping me navigate challenges and achieve my project goals. 
+
+- Additionally, I would like to thank Laura Mayock, the course facilitator, for her clear and comprehensive instructions and guides, which were extremely helpful in organizing my time and ensuring the quality and functionality of this project.

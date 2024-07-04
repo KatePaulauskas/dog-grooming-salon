@@ -34,8 +34,9 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '8000-katepaulaus-doggrooming-98d5mf21glf.ws.codeinstitute-ide.net',
-    '.herokuapp.com'
-]
+    '.herokuapp.com',
+    'localhost', 
+    '127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
@@ -103,7 +104,9 @@ WSGI_APPLICATION = 'groomingsalon.wsgi.application'
 
 # Database configuration
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(
+        os.environ.get("DATABASE_URL", f"sqlite:///{BASE_DIR / 'db.sqlite3'}")
+    )
 }
 
 if 'test' in sys.argv:
