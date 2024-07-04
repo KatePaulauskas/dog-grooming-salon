@@ -1171,7 +1171,7 @@ Unfortunately, there is no way to improve Best Practices scores on some pages, a
 All other pages showed positive results:
 
 **Groomers Page:**
-![Page Lighthouse Results]
+![Page Lighthouse Results](/media/lighthouse-groomers-page.jpeg)
 
 **Gallery Page:**
 
