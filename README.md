@@ -35,7 +35,7 @@ A Kanban board on GitHub Projects was employed to manage user stories. The board
 
 **Milestones and Iterations:**
 
-Milestones were used to define the project’s iterations. Each user story was categorised within one of five iterations, facilitating a structured development process and ensuring that work progresses in an organised manner. Project Milestones can be seen [here](https://github.com/KatePaulauskas/dog-grooming-salon/milestones).
+Milestones were used to define the project’s iterations. Each user story was categorised within one of five iterations, facilitating a structured development process and ensuring that work progresses in an organised manner. Project Milestones can be seen [here](https://github.com/KatePaulauskas/dog-grooming-salon/milestones?state=closed).
 
 By leveraging these Agile practices and tools, the project maintained a clear and organised structure, allowing for effective tracking and timely completion of all 17 user stories.
 
@@ -715,6 +715,7 @@ To add a new item to the gallery, the superuser needs to add a name and upload a
 8. Implement validation against double bookings and overlapping appointments in the admin panel when editing or scheduling appointments.
 9. Add functionality to respond to inquiries via email from the admin panel.
 10. Implement reviews and feedback collection from the existing customers.
+11. Add a calendar with upcoming bookings in the backend, display it in the front end for superuser use only.
 
 ## Technologies used
 
