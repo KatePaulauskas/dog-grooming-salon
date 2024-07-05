@@ -1347,25 +1347,14 @@ Multiple tests were conducted since the site features a white background, dark b
 The application encountered two main issues when attempting to get a responsive mockup on [Am I Responsive](https://ui.dev/amiresponsive):
 
 
-**1. Mixed Content Errors:**
+**Issue 1. Mixed Content Errors:**
 
 ```
 Mixed Content: The page at '<URL>' was loaded over HTTPS, but requested an insecure element '<URL>'. This request was automatically upgraded to HTTPS
 ```
 
-**2. X-Frame-Options Deny:**
+***SOLUTION***
 
-```
-Refused to display 'https://barks-in-bubbles-a17d3839532d.herokuapp.com/' in a frame because it set 'X-Frame-Options' to 'deny'
-```
-
-The application could not be displayed in a frame because of the X-Frame-Options header set to 'deny'. This security measure prevents the site from being embedded in an iframe, causing issues for certain use cases where framing the site is necessary.
-
-![Responsive Design Error](/media/responsive-design-error.jpeg)
-
-***SOLUTIONS***
-
-**1. Mixed Content Errors:**
 Configured Cloudinary to ensure that all URLs are generated with HTTPS by setting the secure parameter to True in the Cloudinary configuration using instructions from [Stack Overflow](https://stackoverflow.com/questions/48508750/how-to-force-https-in-a-django-project-using-cloudinary).
 
 ```python
@@ -1384,7 +1373,7 @@ Updated the `base.html` template to ensure it uses the Cloudinary template tag:
 {% load cloudinary %}
 ```
 
-**2. Modified X-Frame-Options Header:**
+**Issue 2. Modified X-Frame-Options Header:**
 
 Changed the X_FRAME_OPTIONS setting in Django to allow framing from the project  domain using instructions from [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options):
 
@@ -1393,6 +1382,48 @@ Changed the X_FRAME_OPTIONS setting in Django to allow framing from the project 
 X_FRAME_OPTIONS = 'ALLOW-FROM https://barks-in-bubbles-a17d3839532d.herokuapp.com/'
 
 ```
+
+***SOLUTION***
+
+```
+Refused to display 'https://barks-in-bubbles-a17d3839532d.herokuapp.com/' in a frame because it set 'X-Frame-Options' to 'deny'
+```
+
+The application could not be displayed in a frame because of the X-Frame-Options header set to 'deny'. This security measure prevents the site from being embedded in an iframe, causing issues for certain use cases where framing the site is necessary.
+
+![Responsive Design Error](/media/responsive-design-error.jpeg)
+
+**Issue 3: Log In button in the header**
+
+An issue was identified with the color of the login button in the header on the iPhone 15 Pro iOS 17.5.1 in the Chrome browser. When the Login page is visited, the button color turns black despite the style setting. This does not happen in other browsers or on other devices.
+
+```
+/* Style header login button */
+.btn-login {
+    background-color: #3f3850 !important;
+    color: #14cfdb;
+}
+
+.btn-login:hover {
+    background-color: #14cfdb !important;
+    color: #3f3850 !important;
+    border: none;
+}
+
+.btn-login:active {
+    border: 2px solid #3f3850 !important;
+    color: #3f3850 !important;
+}
+
+.btn-login:visited {
+    color: #14cfdb;
+    border: 2px solid #3f3850 !important;
+}
+```
+
+![Log In Button Bug](/media/log-in-button-bug.jpeg)
+
+The colour was specifically set to `#14cfdb` in the visited state to address the issue.
 
 #### Remaining Bugs
 

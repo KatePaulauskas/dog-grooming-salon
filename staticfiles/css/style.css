@@ -112,7 +112,7 @@ header {
 
 .btn-login:active {
     border: 2px solid #3f3850 !important;
-    color: #3f3850 !important;
+    color: #14cfdb;
 }
 
 .btn-login:visited {
