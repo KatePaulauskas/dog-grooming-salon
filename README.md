@@ -1445,58 +1445,69 @@ The Dog Grooming Salon 'Barks in Bubbles' website is hosted on Heroku, a contain
 1. **Log into Heroku Account**
 
 2. **Create a New App:**
-   - Select 'New' in the top-right corner of the Heroku Dashboard.
-   - Choose 'Create new app' from the drop-down menu.
-   - Enter the app name 'barks-in-bubbles' and select Europe as the region.
-   - Click 'Create App'.
+- Select 'New' in the top-right corner of the Heroku Dashboard.
+- Choose 'Create new app' from the drop-down menu.
+- Enter the app name 'barks-in-bubbles' and select Europe as the region.
+- Click 'Create App'.
 
 3. **Access Settings and Configure Environment Variables:**
-   - Go to the 'Settings' tab of the created app.
-   - Click on 'Config Vars'.
-   - Add the `DISABLE_COLLECTSTATIC` key with a value of `1`.
-   - Click 'Add'.
-   - Add the `CLOUDINARY_URL` key with a value in the following format: `cloudinary://<api_key>:<api_secret>@<cloud_name>`.
-   - Click 'Add'.
-   - Add the `DATABASE_URL` key with a value in the following format: `postgres://<username>:<password>@<host>:<port>/<dbname>`.
-   - Click 'Add'.
+- Go to the 'Settings' tab of the created app.
+- Click on 'Config Vars'.
+- Add the `DISABLE_COLLECTSTATIC` key with a value of `1`.
+- Click 'Add'.
+- Add the `CLOUDINARY_URL` key with a value in the following format: `cloudinary://<api_key>:<api_secret>@<cloud_name>`.
+- Click 'Add'.
+- Add the `DATABASE_URL` key with a value in the following format: `postgres://<username>:<password>@<host>:<port>/<dbname>`.
+- Click 'Add'.
+- Add the `SECRET_KEY` with a value in the following format: `secret key`.
+- Click 'Add'.
 
 ### Part 2 - Update Code for Deployment
 
 1. **Prepare Dependencies:**
-   - In the workspace terminal, run the command to create a `requirements.txt` file with the project's dependencies for each project dependency, while working on the project:
-     ```
-     pip3 freeze --local > requirements.txt
-     ```
+- In the workspace terminal, run the command to create a `requirements.txt` file with the project's dependencies for each project dependency, while working on the project:
+
+```
+    pip3 freeze --local > requirements.txt
+```
 
 2. **Install Gunicorn:**
-   - Install the web server Gunicorn:
-     ```
-     pip3 install gunicorn~=20.1
-     ```
-   - Add Gunicorn to the project requirements:
-     ```
-     pip3 freeze --local > requirements.txt
-     ```
+- Install the web server Gunicorn:
+
+```
+    pip3 install gunicorn~=20.1
+```
+
+- Add Gunicorn to the project requirements:
+
+```
+    pip3 freeze --local > requirements.txt
+```
 
 3. **Create a Procfile:**
-   - Create a `Procfile` at the root directory of the project.
-   - Declare the process as `web` and add a start command:
-     ```
-     web: gunicorn codestar.wsgi
-     ```
+- Create a `Procfile` at the root directory of the project.
+- Declare the process as `web` and add a start command:
+
+```
+    web: gunicorn codestar.wsgi
+```
 
 4. **Update Project settings.py File:**
-   - Change `DEBUG` to `False`:
-     ```
-     DEBUG = False
-     ```
-   - Add `'.herokuapp.com'` to the `ALLOWED_HOSTS` in the project settings:
-     ```
+- Change `DEBUG` to `False`:
+
+```
+    DEBUG = False
+```
+
+- Add `'.herokuapp.com'` to the `ALLOWED_HOSTS` in the project settings:
+
+```
      ALLOWED_HOSTS = [
-         '8000-katepaulaus-doggrooming-98d5mf21glf.ws.codeinstitute-ide.net',
-         '.herokuapp.com'
-     ]
-     ```
+    '8000-katepaulaus-doggrooming-98d5mf21glf.ws.codeinstitute-ide.net',
+    '.herokuapp.com',
+    'localhost', 
+    '127.0.0.1']
+```
 
 5. **Push Updated Code to GitHub**
 
@@ -1505,57 +1516,77 @@ The Dog Grooming Salon 'Barks in Bubbles' website is hosted on Heroku, a contain
 To ensure the deployed app looks as nicely styled as the local development version, the project was deployed with static files using the WhiteNoise Python package by following the steps below:
 
 1. **Install and Set Up the Python Package:**
-   - Install WhiteNoise:
-     ```
-     pip3 install whitenoise~=5.3.0
-     ```
-   - Add WhiteNoise to the project requirements:
-     ```
-     pip3 freeze --local > requirements.txt
-     ```
-   - Integrate WhiteNoise into Django's `MIDDLEWARE` in the `groomingsalon/settings.py` file, ensuring it is placed right after the Django `SecurityMiddleware`:
-     ```
+
+- Install WhiteNoise:
+
+```
+    pip3 install whitenoise~=5.3.0
+```
+
+- Add WhiteNoise to the project requirements:
+
+```
+    pip3 freeze --local > requirements.txt
+```
+
+- Integrate WhiteNoise into Django's `MIDDLEWARE` in the `groomingsalon/settings.py` file, ensuring it is placed right after the Django `SecurityMiddleware`:
+```
      MIDDLEWARE = [
          'django.middleware.security.SecurityMiddleware',
          'whitenoise.middleware.WhiteNoiseMiddleware',
          # Other middleware...
      ]
-     ```
+```
 
 2. **Create a Static Files Directory and Collect Static Files:**
-   - Set the `STATIC_ROOT` path in the `groomingsalon/settings.py` file:
-     ```
-     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-     ```
-   - Run the `collectstatic` command in the terminal to gather static files into the `staticfiles` directory:
-     ```
-     python3 manage.py collectstatic
-     ```
+- Set the `STATIC_ROOT` path in the `groomingsalon/settings.py` file:
+
+```
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+
+- Run the `collectstatic` command in the terminal to gather static files into the `staticfiles` directory:
+
+```
+    python3 manage.py collectstatic
+```
 
 3. **Deployment:**
-   - Check the Python version by running:
-     ```
-     python3 -V
-     ```
-   - From the [supported runtimes](https://devcenter.heroku.com/articles/python-support#specifying-a-python-version), copy the runtime closest to the current Python version.
-   - Add a `runtime.txt` file to the project's root directory with the copied Python version: `python-3.12.4`.
-   - Set `DEBUG` to `False` and push the changes to GitHub.
-   - Open the Heroku dashboard, go to the app 'Settings' tab, and under 'Reveal config vars', remove the `DISABLE_COLLECTSTATIC` key/value pair.
+
+- Check the Python version by running:
+
+```
+    python3 -V
+```
+
+- From the [supported runtimes](https://devcenter.heroku.com/articles/python-support#specifying-a-python-version), copy the runtime closest to the current Python version.
+
+- Add a `runtime.txt` file to the project's root directory with the copied Python version: `python-3.12.4`.
+
+- Set `DEBUG` to `False` and push the changes to GitHub.
+
+- Open the Heroku dashboard, go to the app 'Settings' tab, and under 'Reveal config vars', remove the `DISABLE_COLLECTSTATIC` key/value pair.
 
 ### Part 4 - Set Up Deployment from GitHub
 
 1. **Set Up Deployment from GitHub:**
-   - In the Heroku dashboard, switch to the 'Deploy' tab.
-   - Choose 'GitHub' as the deployment method and connect the GitHub account.
-   - In the search bar, type the repository name `dog-grooming-salon` and click 'Search' to find it on GitHub.
-   - Click 'Connect' to link the Heroku app to the GitHub repository.
+
+- In the Heroku dashboard, switch to the 'Deploy' tab.
+
+- Choose 'GitHub' as the deployment method and connect the GitHub account.
+
+- In the search bar, type the repository name `dog-grooming-salon` and click 'Search' to find it on GitHub.
+
+- Click 'Connect' to link the Heroku app to the GitHub repository.
 
 2. **Deploy the App:**
-   - Click 'Deploy Branch' to manually deploy the app.
-   - Wait for the app to build. Once ready, the message “Your app was successfully deployed” appears.
+- Click 'Deploy Branch' to manually deploy the app.
+
+- Wait for the app to build. Once ready, the message “Your app was successfully deployed” appears.
 
 3. **View Deployed App:**
-   - Click on the 'View' button to see the deployed project.
+
+- Click on the 'View' button to see the deployed project.
 
 The deployed project link can be found at the following URL: [Dog Grooming Salon: Barks in Bubbles](https://barks-in-bubbles-a17d3839532d.herokuapp.com/).
 
