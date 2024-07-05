@@ -1423,7 +1423,9 @@ An issue was identified with the color of the login button in the header on the 
 
 ![Log In Button Bug](/media/log-in-button-bug.jpeg)
 
-The colour was specifically set to `#14cfdb` in the visited state to address the issue.
+***SOLUTION***
+
+The color was specifically set to #14cfdb in the visited state to address the issue, but it did not help to address the issues, so it was decided to use the same style for the Login button as for the Logout button.
 
 #### Remaining Bugs
 

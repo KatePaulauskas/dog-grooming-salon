@@ -126,7 +126,7 @@
 
                         <!-- Redirect to My Appointments page after login. Source: Real Python -->
                         <a href="{% url 'account_login' %}?next={% url 'my_appointments' %}" 
-                        class="btn btn-login me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Log In</a>
+                        class="btn btn-logout me-2 mt-2 {% if request.path == login_url %}active{% endif %}" aria-current="page">Log In</a>
                         <a href="{% url 'appointment' %}" class="btn btn-book me-2 mt-2">Book Now</a> 
                         {% endif %}
                     </div>

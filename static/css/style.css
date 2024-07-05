@@ -98,29 +98,7 @@ header {
     color: #3f3850;
 }
 
-/* Style header login button */
-.btn-login {
-    background-color: #3f3850 !important;
-    color: #14cfdb;
-}
-
-.btn-login:hover {
-    background-color: #14cfdb !important;
-    color: #3f3850 !important;
-    border: none;
-}
-
-.btn-login:active {
-    border: 2px solid #3f3850 !important;
-    color: #14cfdb;
-}
-
-.btn-login:visited {
-    color: #14cfdb;
-    border: 2px solid #3f3850 !important;
-}
-
-/* Style Logout button */
+/* Style LogIn and Logout button */
 .btn-logout {
     background-color: #ff5cb7 !important;
     color: #3f3850;
