@@ -243,9 +243,15 @@ footer {
     width: 180px;
 }
 
+/* Style Error List */
 .errorlist {
     color:#ff5cb7;
 }
+
+ul.errorlist.nonfield li {
+    text-align: left; 
+}
+
 
 /* Style Log In form */
 .password-reset {
